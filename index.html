@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#fff6ee" />
-  <title>儿童绘本</title>
+  <title>儿童互动绘本</title>
   <style>
     :root {
       --ink: #3e342c;
@@ -29,21 +29,142 @@
     body {
       max-width: 720px;
       margin: 0 auto;
-      padding: 28px 18px 48px;
+      padding: 0 18px 48px;
     }
 
-    header { text-align: center; margin-bottom: 22px; }
+    /* 顶部导航条：吸顶，含标题、搜索、分类 */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      margin: 0 -18px;
+      padding: 14px 18px 10px;
+      background: rgba(255, 246, 236, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(180, 120, 80, 0.12);
+      transition: box-shadow 0.25s ease;
+    }
+    .topnav.is-stuck { box-shadow: 0 6px 18px rgba(120, 80, 40, 0.12); }
 
-    h1 {
-      margin: 0;
-      font-size: 2rem;
+    .nav-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: inherit;
+      font-size: 1.35rem;
       font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+    .logo-icon { width: 34px; height: 34px; }
+
+    .count {
+      font-size: 0.85rem;
+      color: #8a5a4a;
+      white-space: nowrap;
     }
 
-    header p {
-      margin: 8px 0 0;
+    .search {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      width: 18px;
+      height: 18px;
+      color: #b08a74;
+      pointer-events: none;
+    }
+    .search input {
+      width: 100%;
+      height: 44px;
+      padding: 0 42px 0 42px;
+      border: 2px solid #f1dcc8;
+      border-radius: 999px;
+      background: #fffdfa;
+      font: inherit;
+      font-size: 1rem;
+      color: var(--ink);
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .search input::placeholder { color: #bfa592; }
+    .search input:focus { border-color: var(--pink); box-shadow: 0 0 0 4px rgba(255, 143, 171, 0.18); }
+    .search input::-webkit-search-cancel-button { display: none; }
+    .clear {
+      position: absolute;
+      right: 8px;
+      width: 30px;
+      height: 30px;
+      border: none;
+      border-radius: 50%;
+      background: #f6e6d8;
+      color: #8a5a4a;
+      font-size: 1.1rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab {
+      flex-shrink: 0;
+      padding: 7px 14px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--ink);
+      font: inherit;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 2px 0 rgba(180, 120, 80, 0.12);
+    }
+    .tab.is-on { background: var(--pink); color: #fff; font-weight: 700; }
+
+    .intro {
+      margin: 14px 0 16px;
+      text-align: center;
       opacity: 0.72;
     }
+
+    .empty {
+      text-align: center;
+      padding: 40px 0 20px;
+      color: #8a5a4a;
+    }
+    .empty p { margin: 0 0 14px; }
+    .btn-all {
+      padding: 9px 22px;
+      border: none;
+      border-radius: 999px;
+      background: var(--mint);
+      color: #fff;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .book[hidden] { display: none; }
+    .book h2 mark { background: #ffe08a; color: inherit; border-radius: 4px; padding: 0 2px; }
 
     .shelf {
       display: grid;
@@ -124,12 +245,43 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>儿童绘本</h1>
-    <p>点一本，开始读。不用安装，打开就能看。</p>
+  <header class="topnav" id="top">
+    <div class="nav-row">
+      <a class="logo" href="#top" aria-label="儿童互动绘本，回到顶部">
+        <svg class="logo-icon" viewBox="0 0 40 40" aria-hidden="true">
+          <rect x="4" y="8" width="15" height="26" rx="3" fill="#ff8fab"/>
+          <rect x="21" y="8" width="15" height="26" rx="3" fill="#3aaa94"/>
+          <path d="M20 10 V34" stroke="#fff" stroke-width="2"/>
+          <path d="M8 15 H15 M8 20 H15 M25 15 H32 M25 20 H32" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+          <circle cx="31" cy="7" r="4" fill="#f0c14a"/>
+        </svg>
+        <span>儿童互动绘本</span>
+      </a>
+      <span class="count" id="count" aria-live="polite">共 13 本</span>
+    </div>
+    <label class="search">
+      <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/>
+        <path d="M15.5 15.5 L21 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <input type="search" id="q" placeholder="搜书名或年龄，如 小猫、3岁" autocomplete="off" aria-label="搜索绘本" />
+      <button type="button" class="clear" id="clear" aria-label="清空搜索" hidden>×</button>
+    </label>
+    <nav class="tabs" id="tabs" aria-label="绘本分类">
+      <button type="button" class="tab is-on" data-cat="all">全部</button>
+      <button type="button" class="tab" data-cat="story">品格故事</button>
+      <button type="button" class="tab" data-cat="learn">认知启蒙</button>
+      <button type="button" class="tab" data-cat="habit">生活习惯</button>
+      <button type="button" class="tab" data-cat="nature">自然天气</button>
+    </nav>
   </header>
+  <p class="intro">点一本，开始读。不用安装，打开就能看。</p>
+  <div class="empty" id="empty" hidden>
+    <p>没有找到这样的绘本，换个词试试。</p>
+    <button type="button" class="btn-all" id="showAll">看全部</button>
+  </div>
   <main class="shelf">
-    <article class="book moon" id="rabbit_moon">
+    <article class="book moon" id="rabbit_moon" data-cat="story" data-kw="兔子 小兔 月亮 池塘 乌龟 晚上 rabbit moon">
       <a class="book-link" href="rabbit_moon/index.html">
         <img class="thumb" src="previews/rabbit_moon.png" alt="小兔子的月亮首页" />
         <div class="meta">
@@ -140,7 +292,7 @@
         </div>
       </a>
     </article>
-    <article class="book share" id="share_cookies">
+    <article class="book share" id="share_cookies" data-cat="story" data-kw="清清 宁宁 姐妹 双胞胎 饼干 分享 cookie">
       <a class="book-link" href="share_cookies/index.html">
         <img class="thumb" src="previews/share_cookies.png" alt="清清和宁宁分饼干首页" />
         <div class="meta">
@@ -151,7 +303,7 @@
         </div>
       </a>
     </article>
-    <article class="book letters" id="english_letters">
+    <article class="book letters" id="english_letters" data-cat="learn" data-kw="清清 宁宁 字母 英语 单词 abc english">
       <a class="book-link" href="english_letters/index.html">
         <img class="thumb" src="previews/english_letters.png" alt="清清和宁宁学字母首页" />
         <div class="meta">
@@ -163,7 +315,7 @@
       </a>
     </article>
   
-    <article class="book" id="color_bear">
+    <article class="book" id="color_bear" data-cat="learn" data-kw="小熊 熊 颜色 红黄蓝 气球 苹果 橙色 bear color">
       <a class="book-link" href="color_bear/index.html">
         <img class="thumb" src="previews/color_bear.png" alt="小熊的彩色早晨首页" />
         <div class="meta">
@@ -175,7 +327,7 @@
       </a>
     </article>
   
-    <article class="book" id="count_birds">
+    <article class="book" id="count_birds" data-cat="learn" data-kw="小鸟 鸟 数数 数字 一二三 bird count">
       <a class="book-link" href="count_birds/index.html">
         <img class="thumb" src="previews/count_birds.png" alt="五只小鸟首页" />
         <div class="meta">
@@ -187,7 +339,7 @@
       </a>
     </article>
   
-    <article class="book" id="mood_cat">
+    <article class="book" id="mood_cat" data-cat="nature" data-kw="小猫 猫 天气 下雨 雨伞 彩虹 下雪 心情 cat">
       <a class="book-link" href="mood_cat/index.html">
         <img class="thumb" src="previews/mood_cat.png" alt="小猫看天气首页" />
         <div class="meta">
@@ -199,7 +351,7 @@
       </a>
     </article>
   
-    <article class="book" id="hello_puppy">
+    <article class="book" id="hello_puppy" data-cat="habit" data-kw="小狗 狗 小兔 你好 谢谢 对不起 再见 礼貌 dog">
       <a class="book-link" href="hello_puppy/index.html">
         <img class="thumb" src="previews/hello_puppy.png" alt="小狗问好首页" />
         <div class="meta">
@@ -211,7 +363,7 @@
       </a>
     </article>
   
-    <article class="book" id="day_penguin">
+    <article class="book" id="day_penguin" data-cat="habit" data-kw="企鹅 白天 黑夜 刷牙 睡觉 作息 星星 penguin">
       <a class="book-link" href="day_penguin/index.html">
         <img class="thumb" src="previews/day_penguin.png" alt="企鹅的一天首页" />
         <div class="meta">
@@ -223,7 +375,7 @@
       </a>
     </article>
   
-    <article class="book" id="grow_seed">
+    <article class="book" id="grow_seed" data-cat="nature" data-kw="种子 植物 浇水 发芽 开花 蜜蜂 seed">
       <a class="book-link" href="grow_seed/index.html">
         <img class="thumb" src="previews/grow_seed.png" alt="种子喝水首页" />
         <div class="meta">
@@ -235,7 +387,7 @@
       </a>
     </article>
   
-    <article class="book" id="cross_deer">
+    <article class="book" id="cross_deer" data-cat="habit" data-kw="小鹿 鹿 红绿灯 斑马线 过马路 交通 安全 deer">
       <a class="book-link" href="cross_deer/index.html">
         <img class="thumb" src="previews/cross_deer.png" alt="小鹿过马路首页" />
         <div class="meta">
@@ -247,7 +399,7 @@
       </a>
     </article>
   
-    <article class="book" id="sort_raccoon">
+    <article class="book" id="sort_raccoon" data-cat="habit" data-kw="浣熊 垃圾 分类 环保 回收 电池 raccoon">
       <a class="book-link" href="sort_raccoon/index.html">
         <img class="thumb" src="previews/sort_raccoon.png" alt="浣熊分垃圾首页" />
         <div class="meta">
@@ -259,7 +411,7 @@
       </a>
     </article>
   
-    <article class="book" id="wash_monkey">
+    <article class="book" id="wash_monkey" data-cat="habit" data-kw="小猴 猴子 洗手 肥皂 卫生 细菌 monkey">
       <a class="book-link" href="wash_monkey/index.html">
         <img class="thumb" src="previews/wash_monkey.png" alt="小猴洗手首页" />
         <div class="meta">
@@ -271,7 +423,7 @@
       </a>
     </article>
   
-    <article class="book" id="season_tree">
+    <article class="book" id="season_tree" data-cat="nature" data-kw="大树 树 松鼠 春夏秋冬 季节 雪 tree">
       <a class="book-link" href="season_tree/index.html">
         <img class="thumb" src="previews/season_tree.png" alt="树的四季首页" />
         <div class="meta">
@@ -284,12 +436,89 @@
     </article>
   </main>
   <script>
-    const id = decodeURIComponent(location.hash.replace(/^#/, ""));
-    document.querySelectorAll(".book").forEach((card) => {
-      card.classList.toggle("is-current", card.id === id);
-    });
-    const card = id && document.getElementById(id);
-    if (card) card.scrollIntoView({ block: "center" });
+    (() => {
+      const cards = Array.from(document.querySelectorAll(".book"));
+      const input = document.getElementById("q");
+      const clearBtn = document.getElementById("clear");
+      const tabs = Array.from(document.querySelectorAll(".tab"));
+      const countEl = document.getElementById("count");
+      const empty = document.getElementById("empty");
+      const nav = document.getElementById("top");
+      const CAT_NAMES = { story: "品格故事", learn: "认知启蒙", habit: "生活习惯", nature: "自然天气" };
+      let cat = "all";
+
+      // 每张卡片的搜索文本与适合年龄范围
+      const index = cards.map((card) => {
+        const title = card.querySelector("h2");
+        const text = [title.textContent, card.querySelector(".mark").textContent, card.querySelector("p").textContent,
+          card.querySelector(".age").textContent, card.dataset.kw || "", CAT_NAMES[card.dataset.cat] || ""].join(" ").toLowerCase();
+        const m = card.querySelector(".age").textContent.match(/(\d+)\s*[–-]\s*(\d+)\s*岁/);
+        return { card, title, raw: title.textContent, text, min: m ? +m[1] : 0, max: m ? +m[2] : 99 };
+      });
+
+      function escapeHtml(s) {
+        return s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+      }
+
+      function highlight(item, terms) {
+        let html = escapeHtml(item.raw);
+        terms.filter((t) => !/^\d+岁?$/.test(t)).forEach((t) => {
+          const safe = escapeHtml(t).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+          if (safe) html = html.replace(new RegExp(safe, "gi"), (m) => `<mark>${m}</mark>`);
+        });
+        item.title.innerHTML = html;
+      }
+
+      function apply() {
+        const q = input.value.trim().toLowerCase();
+        const terms = q ? q.split(/\s+/) : [];
+        let shown = 0;
+        index.forEach((item) => {
+          const okCat = cat === "all" || item.card.dataset.cat === cat;
+          // 每个词都要命中；纯数字或「3岁」按适合年龄范围判断
+          const okText = terms.every((t) => {
+            const age = t.match(/^(\d+)岁?$/);
+            if (age) return +age[1] >= item.min && +age[1] <= item.max;
+            return item.text.includes(t);
+          });
+          const show = okCat && okText;
+          item.card.hidden = !show;
+          if (show) shown += 1;
+          highlight(item, show ? terms : []);
+        });
+        clearBtn.hidden = !q;
+        empty.hidden = shown > 0;
+        countEl.textContent = shown === cards.length ? `共 ${cards.length} 本` : `找到 ${shown} 本`;
+      }
+
+      function setCat(next) {
+        cat = next;
+        tabs.forEach((t) => t.classList.toggle("is-on", t.dataset.cat === cat));
+        apply();
+      }
+
+      input.addEventListener("input", apply);
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") { input.value = ""; apply(); }
+      });
+      clearBtn.addEventListener("click", () => { input.value = ""; apply(); input.focus(); });
+      tabs.forEach((t) => t.addEventListener("click", () => setCat(t.dataset.cat)));
+      document.getElementById("showAll").addEventListener("click", () => { input.value = ""; setCat("all"); });
+
+      // 按 / 快速聚焦搜索框
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "/" && document.activeElement !== input) { e.preventDefault(); input.focus(); }
+      });
+
+      window.addEventListener("scroll", () => nav.classList.toggle("is-stuck", window.scrollY > 4), { passive: true });
+
+      // 从绘本「返回首页」回来：清空筛选，滚到该书并描边
+      const id = decodeURIComponent(location.hash.replace(/^#/, ""));
+      cards.forEach((card) => card.classList.toggle("is-current", card.id === id));
+      apply();
+      const current = id && document.getElementById(id);
+      if (current && current.classList.contains("book")) current.scrollIntoView({ block: "center" });
+    })();
   </script>
 </body>
 </html>
