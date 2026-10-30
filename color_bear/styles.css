@@ -402,14 +402,19 @@ button {
   height: min(42vw, 168px);
 }
 
+/* 小熊在左侧，颜料罐摆在右侧草地上，不挡脸 */
 .pot-row {
   position: absolute;
-  bottom: 8%;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 5%;
+  right: 5%;
   display: flex;
-  gap: 14px;
+  gap: 10px;
   z-index: 6;
+}
+
+/* .art 自带 absolute，放进 flex 行要改回 relative，否则三罐叠在一起 */
+.pot-row .pot {
+  position: relative;
 }
 
 .pot {
@@ -435,9 +440,10 @@ button {
   transition: opacity 0.35s, transform 0.45s;
 }
 
-.apple-wrap.a1 { top: 22%; left: 22%; }
-.apple-wrap.a2 { top: 18%; left: 48%; }
-.apple-wrap.a3 { top: 28%; left: 68%; }
+/* 苹果按树冠坐标定位：树宽 W=min(48vw,190px)、高 H=min(55vw,220px)，水平居中、top 8% */
+.apple-wrap.a1 { top: calc(8% + min(21.5vw, 86px)); left: calc(50% - min(8vw, 32px) - min(6vw, 24px)); }
+.apple-wrap.a2 { top: calc(8% + min(11.3vw, 45px)); left: calc(50% + min(2.4vw, 10px) - min(6vw, 24px)); }
+.apple-wrap.a3 { top: calc(8% + min(27vw, 108px)); left: calc(50% + min(11.2vw, 44px) - min(6vw, 24px)); }
 
 .apple-wrap.gone {
   opacity: 0;
@@ -459,9 +465,14 @@ button {
   width: min(28vw, 110px);
   height: min(16vw, 64px);
   bottom: 10%;
-  right: 10%;
-  z-index: 4;
+  left: 10%;
+  z-index: 6;
   cursor: pointer;
+}
+
+/* 未上色的太阳是淡白色，点黄颜料后才变黄 */
+#sunTarget:not(.is-painted) .art-svg {
+  filter: grayscale(1) brightness(1.3) opacity(0.8);
 }
 
 .mix-drop {

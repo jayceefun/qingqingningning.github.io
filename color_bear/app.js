@@ -214,7 +214,7 @@
         burstSparks(c.x, c.y, 14, ["#ffe08a", "#f0c14a", "#fff"]);
         bubble(c.x, c.y - 20, "黄色太阳");
         speak("黄色");
-        el.classList.add("glow");
+        el.classList.add("glow", "is-painted");
         break;
       }
 
