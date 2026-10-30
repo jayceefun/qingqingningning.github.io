@@ -1,116 +1,89 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
-<title>企鹅的一天</title><link rel="stylesheet" href="styles.css"/></head>
-<body data-book="day_penguin">
-<div class="app">
-<header class="topbar">
-<nav class="book-nav">
-<a class="home-link" href="../index.html#day_penguin">返回首页</a>
-<a class="home-link" href="../grow_seed/index.html">下一本</a>
-</nav>
-<span class="brand">企鹅的一天</span>
-<span class="page-indicator" id="pageIndicator">1 / 6</span>
-</header>
-<main class="stage" id="stage"><div class="toast" id="toast"></div>
-<section class="page is-active" data-page="0"><div class="sky"><svg class="scene" viewBox="0 0 360 460">
-      <rect id="bgDN" width="360" height="320" fill="#b7e3f7"/>
-      <ellipse cx="180" cy="430" rx="220" ry="90" fill="#e3f2fd"/>
-      <g id="skyStars" opacity="0"><circle cx="60" cy="70" r="3" fill="#fff"/><circle cx="100" cy="110" r="2" fill="#fff"/><circle cx="40" cy="140" r="2.5" fill="#fff"/><circle cx="200" cy="50" r="2" fill="#fff"/></g>
-      <g data-hot="penguin">
-        <ellipse cx="160" cy="280" rx="40" ry="54" fill="#2c3e50"/><ellipse cx="160" cy="290" rx="24" ry="38" fill="#fff"/>
-        <circle cx="160" cy="210" r="24" fill="#2c3e50"/><ellipse cx="160" cy="216" rx="14" ry="12" fill="#fff"/>
-        <circle cx="152" cy="212" r="2.2"/><circle cx="168" cy="212" r="2.2"/>
-        <path d="M156 222 l8 4 l-8 4 z" fill="#f0a030"/>
-        <ellipse cx="140" cy="330" rx="14" ry="6" fill="#f0a030"/><ellipse cx="180" cy="330" rx="14" ry="6" fill="#f0a030"/>
-      </g>
-      <g data-hot="igloo"><path d="M240 340 q40 -70 80 0 z" fill="#e8eef8"/><ellipse cx="280" cy="340" rx="44" ry="10" fill="#cfd8e6"/><ellipse cx="280" cy="330" rx="14" ry="12" fill="#90a4ae"/></g>
-      <g data-hot="sun"><circle cx="80" cy="380" r="28" fill="#ffe08a"/><g stroke="#f0c14a" stroke-width="3"><path d="M80 340 v10 M80 410 v10 M40 380 h10 M110 380 h10"/></g></g>
-      <g data-hot="moon"><circle cx="180" cy="380" r="26" fill="#fff6d0"/><circle cx="190" cy="372" r="18" fill="#e3f2fd"/></g>
-      <g data-hot="stars"><circle cx="280" cy="370" r="4" fill="#fff59d"/><circle cx="300" cy="390" r="3" fill="#fff59d"/><circle cx="260" cy="395" r="2.5" fill="#fff59d"/></g>
-    </svg></div><div class="caption"><p>太阳出来了。</p><p>点太阳图画，白天亮亮的。</p></div></section><section class="page" data-page="1"><div class="sky"><svg class="scene" viewBox="0 0 360 460">
-      <rect id="bgDN" width="360" height="320" fill="#b7e3f7"/>
-      <ellipse cx="180" cy="430" rx="220" ry="90" fill="#e3f2fd"/>
-      <g id="skyStars" opacity="0"><circle cx="60" cy="70" r="3" fill="#fff"/><circle cx="100" cy="110" r="2" fill="#fff"/><circle cx="40" cy="140" r="2.5" fill="#fff"/><circle cx="200" cy="50" r="2" fill="#fff"/></g>
-      <g data-hot="penguin">
-        <ellipse cx="160" cy="280" rx="40" ry="54" fill="#2c3e50"/><ellipse cx="160" cy="290" rx="24" ry="38" fill="#fff"/>
-        <circle cx="160" cy="210" r="24" fill="#2c3e50"/><ellipse cx="160" cy="216" rx="14" ry="12" fill="#fff"/>
-        <circle cx="152" cy="212" r="2.2"/><circle cx="168" cy="212" r="2.2"/>
-        <path d="M156 222 l8 4 l-8 4 z" fill="#f0a030"/>
-        <ellipse cx="140" cy="330" rx="14" ry="6" fill="#f0a030"/><ellipse cx="180" cy="330" rx="14" ry="6" fill="#f0a030"/>
-      </g>
-      <g data-hot="igloo"><path d="M240 340 q40 -70 80 0 z" fill="#e8eef8"/><ellipse cx="280" cy="340" rx="44" ry="10" fill="#cfd8e6"/><ellipse cx="280" cy="330" rx="14" ry="12" fill="#90a4ae"/></g>
-      <g data-hot="sun"><circle cx="80" cy="380" r="28" fill="#ffe08a"/><g stroke="#f0c14a" stroke-width="3"><path d="M80 340 v10 M80 410 v10 M40 380 h10 M110 380 h10"/></g></g>
-      <g data-hot="moon"><circle cx="180" cy="380" r="26" fill="#fff6d0"/><circle cx="190" cy="372" r="18" fill="#e3f2fd"/></g>
-      <g data-hot="stars"><circle cx="280" cy="370" r="4" fill="#fff59d"/><circle cx="300" cy="390" r="3" fill="#fff59d"/><circle cx="260" cy="395" r="2.5" fill="#fff59d"/></g>
-    </svg></div><div class="caption"><p>企鹅想睡觉。</p><p>点月亮图画，变成黑夜。</p></div></section><section class="page" data-page="2"><div class="sky"><svg class="scene" viewBox="0 0 360 460">
-      <rect id="bgDN" width="360" height="320" fill="#b7e3f7"/>
-      <ellipse cx="180" cy="430" rx="220" ry="90" fill="#e3f2fd"/>
-      <g id="skyStars" opacity="0"><circle cx="60" cy="70" r="3" fill="#fff"/><circle cx="100" cy="110" r="2" fill="#fff"/><circle cx="40" cy="140" r="2.5" fill="#fff"/><circle cx="200" cy="50" r="2" fill="#fff"/></g>
-      <g data-hot="penguin">
-        <ellipse cx="160" cy="280" rx="40" ry="54" fill="#2c3e50"/><ellipse cx="160" cy="290" rx="24" ry="38" fill="#fff"/>
-        <circle cx="160" cy="210" r="24" fill="#2c3e50"/><ellipse cx="160" cy="216" rx="14" ry="12" fill="#fff"/>
-        <circle cx="152" cy="212" r="2.2"/><circle cx="168" cy="212" r="2.2"/>
-        <path d="M156 222 l8 4 l-8 4 z" fill="#f0a030"/>
-        <ellipse cx="140" cy="330" rx="14" ry="6" fill="#f0a030"/><ellipse cx="180" cy="330" rx="14" ry="6" fill="#f0a030"/>
-      </g>
-      <g data-hot="igloo"><path d="M240 340 q40 -70 80 0 z" fill="#e8eef8"/><ellipse cx="280" cy="340" rx="44" ry="10" fill="#cfd8e6"/><ellipse cx="280" cy="330" rx="14" ry="12" fill="#90a4ae"/></g>
-      <g data-hot="sun"><circle cx="80" cy="380" r="28" fill="#ffe08a"/><g stroke="#f0c14a" stroke-width="3"><path d="M80 340 v10 M80 410 v10 M40 380 h10 M110 380 h10"/></g></g>
-      <g data-hot="moon"><circle cx="180" cy="380" r="26" fill="#fff6d0"/><circle cx="190" cy="372" r="18" fill="#e3f2fd"/></g>
-      <g data-hot="stars"><circle cx="280" cy="370" r="4" fill="#fff59d"/><circle cx="300" cy="390" r="3" fill="#fff59d"/><circle cx="260" cy="395" r="2.5" fill="#fff59d"/></g>
-    </svg></div><div class="caption"><p>星星眨眼睛。</p><p>点星星图画，它们会亮。</p></div></section><section class="page" data-page="3"><div class="sky"><svg class="scene" viewBox="0 0 360 460">
-      <rect id="bgDN" width="360" height="320" fill="#b7e3f7"/>
-      <ellipse cx="180" cy="430" rx="220" ry="90" fill="#e3f2fd"/>
-      <g id="skyStars" opacity="0"><circle cx="60" cy="70" r="3" fill="#fff"/><circle cx="100" cy="110" r="2" fill="#fff"/><circle cx="40" cy="140" r="2.5" fill="#fff"/><circle cx="200" cy="50" r="2" fill="#fff"/></g>
-      <g data-hot="penguin">
-        <ellipse cx="160" cy="280" rx="40" ry="54" fill="#2c3e50"/><ellipse cx="160" cy="290" rx="24" ry="38" fill="#fff"/>
-        <circle cx="160" cy="210" r="24" fill="#2c3e50"/><ellipse cx="160" cy="216" rx="14" ry="12" fill="#fff"/>
-        <circle cx="152" cy="212" r="2.2"/><circle cx="168" cy="212" r="2.2"/>
-        <path d="M156 222 l8 4 l-8 4 z" fill="#f0a030"/>
-        <ellipse cx="140" cy="330" rx="14" ry="6" fill="#f0a030"/><ellipse cx="180" cy="330" rx="14" ry="6" fill="#f0a030"/>
-      </g>
-      <g data-hot="igloo"><path d="M240 340 q40 -70 80 0 z" fill="#e8eef8"/><ellipse cx="280" cy="340" rx="44" ry="10" fill="#cfd8e6"/><ellipse cx="280" cy="330" rx="14" ry="12" fill="#90a4ae"/></g>
-      <g data-hot="sun"><circle cx="80" cy="380" r="28" fill="#ffe08a"/><g stroke="#f0c14a" stroke-width="3"><path d="M80 340 v10 M80 410 v10 M40 380 h10 M110 380 h10"/></g></g>
-      <g data-hot="moon"><circle cx="180" cy="380" r="26" fill="#fff6d0"/><circle cx="190" cy="372" r="18" fill="#e3f2fd"/></g>
-      <g data-hot="stars"><circle cx="280" cy="370" r="4" fill="#fff59d"/><circle cx="300" cy="390" r="3" fill="#fff59d"/><circle cx="260" cy="395" r="2.5" fill="#fff59d"/></g>
-    </svg></div><div class="caption"><p>回家休息。</p><p>点冰屋，企鹅进门。</p></div></section><section class="page" data-page="4"><div class="sky"><svg class="scene" viewBox="0 0 360 460">
-      <rect id="bgDN" width="360" height="320" fill="#b7e3f7"/>
-      <ellipse cx="180" cy="430" rx="220" ry="90" fill="#e3f2fd"/>
-      <g id="skyStars" opacity="0"><circle cx="60" cy="70" r="3" fill="#fff"/><circle cx="100" cy="110" r="2" fill="#fff"/><circle cx="40" cy="140" r="2.5" fill="#fff"/><circle cx="200" cy="50" r="2" fill="#fff"/></g>
-      <g data-hot="penguin">
-        <ellipse cx="160" cy="280" rx="40" ry="54" fill="#2c3e50"/><ellipse cx="160" cy="290" rx="24" ry="38" fill="#fff"/>
-        <circle cx="160" cy="210" r="24" fill="#2c3e50"/><ellipse cx="160" cy="216" rx="14" ry="12" fill="#fff"/>
-        <circle cx="152" cy="212" r="2.2"/><circle cx="168" cy="212" r="2.2"/>
-        <path d="M156 222 l8 4 l-8 4 z" fill="#f0a030"/>
-        <ellipse cx="140" cy="330" rx="14" ry="6" fill="#f0a030"/><ellipse cx="180" cy="330" rx="14" ry="6" fill="#f0a030"/>
-      </g>
-      <g data-hot="igloo"><path d="M240 340 q40 -70 80 0 z" fill="#e8eef8"/><ellipse cx="280" cy="340" rx="44" ry="10" fill="#cfd8e6"/><ellipse cx="280" cy="330" rx="14" ry="12" fill="#90a4ae"/></g>
-      <g data-hot="sun"><circle cx="80" cy="380" r="28" fill="#ffe08a"/><g stroke="#f0c14a" stroke-width="3"><path d="M80 340 v10 M80 410 v10 M40 380 h10 M110 380 h10"/></g></g>
-      <g data-hot="moon"><circle cx="180" cy="380" r="26" fill="#fff6d0"/><circle cx="190" cy="372" r="18" fill="#e3f2fd"/></g>
-      <g data-hot="stars"><circle cx="280" cy="370" r="4" fill="#fff59d"/><circle cx="300" cy="390" r="3" fill="#fff59d"/><circle cx="260" cy="395" r="2.5" fill="#fff59d"/></g>
-    </svg></div><div class="caption"><p>白天玩，黑夜睡。</p><p>再点太阳或月亮切换。</p></div></section><section class="page" data-page="5"><div class="sky"><svg class="scene" viewBox="0 0 360 460">
-      <rect id="bgDN" width="360" height="320" fill="#b7e3f7"/>
-      <ellipse cx="180" cy="430" rx="220" ry="90" fill="#e3f2fd"/>
-      <g id="skyStars" opacity="0"><circle cx="60" cy="70" r="3" fill="#fff"/><circle cx="100" cy="110" r="2" fill="#fff"/><circle cx="40" cy="140" r="2.5" fill="#fff"/><circle cx="200" cy="50" r="2" fill="#fff"/></g>
-      <g data-hot="penguin">
-        <ellipse cx="160" cy="280" rx="40" ry="54" fill="#2c3e50"/><ellipse cx="160" cy="290" rx="24" ry="38" fill="#fff"/>
-        <circle cx="160" cy="210" r="24" fill="#2c3e50"/><ellipse cx="160" cy="216" rx="14" ry="12" fill="#fff"/>
-        <circle cx="152" cy="212" r="2.2"/><circle cx="168" cy="212" r="2.2"/>
-        <path d="M156 222 l8 4 l-8 4 z" fill="#f0a030"/>
-        <ellipse cx="140" cy="330" rx="14" ry="6" fill="#f0a030"/><ellipse cx="180" cy="330" rx="14" ry="6" fill="#f0a030"/>
-      </g>
-      <g data-hot="igloo"><path d="M240 340 q40 -70 80 0 z" fill="#e8eef8"/><ellipse cx="280" cy="340" rx="44" ry="10" fill="#cfd8e6"/><ellipse cx="280" cy="330" rx="14" ry="12" fill="#90a4ae"/></g>
-      <g data-hot="sun"><circle cx="80" cy="380" r="28" fill="#ffe08a"/><g stroke="#f0c14a" stroke-width="3"><path d="M80 340 v10 M80 410 v10 M40 380 h10 M110 380 h10"/></g></g>
-      <g data-hot="moon"><circle cx="180" cy="380" r="26" fill="#fff6d0"/><circle cx="190" cy="372" r="18" fill="#e3f2fd"/></g>
-      <g data-hot="stars"><circle cx="280" cy="370" r="4" fill="#fff59d"/><circle cx="300" cy="390" r="3" fill="#fff59d"/><circle cx="260" cy="395" r="2.5" fill="#fff59d"/></g>
-    </svg></div><div class="caption"><p>今天玩得开心。</p><p>— 完 —</p></div></section>
-</main>
-<nav class="controls">
-<button class="btn" id="btnPrev" type="button">上一页</button>
-<div class="dots" id="dots"></div>
-<button class="btn btn-primary" id="btnNext" type="button">下一页</button>
-</nav>
-<p class="hint">适合 3–5 岁 · 点太阳月亮</p>
-</div>
-<script src="app.js"></script>
-</body></html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#81d4fa" />
+  <title>企鹅的一天</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- SVG 角色与道具库：同一角色只换姿势，不改五官规格 -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <radialGradient id="gSun" cx="38%" cy="35%" r="65%"><stop offset="0%" stop-color="#fff8d0"/><stop offset="55%" stop-color="#ffe08a"/><stop offset="100%" stop-color="#f5b82e"/></radialGradient><radialGradient id="gMoon" cx="38%" cy="35%" r="65%"><stop offset="0%" stop-color="#fffdf2"/><stop offset="50%" stop-color="#ffe9a8"/><stop offset="100%" stop-color="#e8c070"/></radialGradient>
+      <symbol id="ch-penguin-happy-down" viewBox="-15 -24 130 172"><ellipse cx="36" cy="137" rx="13" ry="6" fill="#f4a340"/><ellipse cx="64" cy="137" rx="13" ry="6" fill="#f4a340"/><ellipse cx="50" cy="86" rx="34" ry="52" fill="#3d4c63"/><ellipse cx="34" cy="44" rx="8" ry="4.5" fill="#fff" opacity=".22"/><ellipse cx="50" cy="102" rx="24" ry="35" fill="#fffaf2"/><path d="M50 42 C40 32 24 38 26 54 C28 68 40 72 50 70 C60 72 72 68 74 54 C76 38 60 32 50 42 Z" fill="#fffaf2"/><path d="M33 53 Q39 46 45 53" fill="none" stroke="#3a3228" stroke-width="2.5" stroke-linecap="round"/><path d="M55 53 Q61 46 67 53" fill="none" stroke="#3a3228" stroke-width="2.5" stroke-linecap="round"/><path d="M43 60 Q50 55 57 60 Q50 68 43 60 Z" fill="#f4a340"/><path d="M45 59 Q50 57 54 58" stroke="#fff" stroke-width="1.2" opacity=".6" fill="none"/><path d="M45 64 Q50 69 55 64" stroke="#c96a1e" stroke-width="1.4" fill="none" stroke-linecap="round"/><ellipse cx="32" cy="62" rx="6.5" ry="4.2" fill="#f5a8a0" opacity=".5"/><ellipse cx="68" cy="62" rx="6.5" ry="4.2" fill="#f5a8a0" opacity=".5"/><g transform="translate(20,88) rotate(20)"><ellipse cx="0" cy="18" rx="7.5" ry="21" fill="#3d4c63"/><ellipse cx="-2" cy="10" rx="2" ry="6" fill="#fff" opacity=".18"/></g><g transform="translate(80,88) rotate(-20)"><ellipse cx="0" cy="18" rx="7.5" ry="21" fill="#3d4c63"/><ellipse cx="-2" cy="10" rx="2" ry="6" fill="#fff" opacity=".18"/></g></symbol>
+      <symbol id="ch-penguin-happy-hold-brush" viewBox="-15 -24 130 172"><ellipse cx="36" cy="137" rx="13" ry="6" fill="#f4a340"/><ellipse cx="64" cy="137" rx="13" ry="6" fill="#f4a340"/><ellipse cx="50" cy="86" rx="34" ry="52" fill="#3d4c63"/><ellipse cx="34" cy="44" rx="8" ry="4.5" fill="#fff" opacity=".22"/><ellipse cx="50" cy="102" rx="24" ry="35" fill="#fffaf2"/><path d="M50 42 C40 32 24 38 26 54 C28 68 40 72 50 70 C60 72 72 68 74 54 C76 38 60 32 50 42 Z" fill="#fffaf2"/><path d="M33 53 Q39 46 45 53" fill="none" stroke="#3a3228" stroke-width="2.5" stroke-linecap="round"/><path d="M55 53 Q61 46 67 53" fill="none" stroke="#3a3228" stroke-width="2.5" stroke-linecap="round"/><path d="M43 60 Q50 55 57 60 Q50 68 43 60 Z" fill="#f4a340"/><path d="M45 59 Q50 57 54 58" stroke="#fff" stroke-width="1.2" opacity=".6" fill="none"/><path d="M45 64 Q50 69 55 64" stroke="#c96a1e" stroke-width="1.4" fill="none" stroke-linecap="round"/><ellipse cx="32" cy="62" rx="6.5" ry="4.2" fill="#f5a8a0" opacity=".5"/><ellipse cx="68" cy="62" rx="6.5" ry="4.2" fill="#f5a8a0" opacity=".5"/><g transform="translate(20,88) rotate(20)"><ellipse cx="0" cy="18" rx="7.5" ry="21" fill="#3d4c63"/><ellipse cx="-2" cy="10" rx="2" ry="6" fill="#fff" opacity=".18"/></g><g transform="translate(76,86) rotate(-150)"><ellipse cx="0" cy="18" rx="7.5" ry="21" fill="#3d4c63"/><ellipse cx="-2" cy="10" rx="2" ry="6" fill="#fff" opacity=".18"/></g><g transform="translate(70,66) rotate(-62)"><rect x="-3" y="-30" width="6" height="34" rx="3" fill="#64b5f6"/><rect x="-4" y="-38" width="8" height="10" rx="2" fill="#fff"/><path d="M-3 -38 l0 -4 M0 -38 l0 -4 M3 -38 l0 -4" stroke="#fff" stroke-width="1.6"/><ellipse cx="0" cy="-44" rx="5" ry="3" fill="#b3e5fc"/></g></symbol>
+      <symbol id="ch-penguin-happy-wave" viewBox="-15 -24 130 172"><ellipse cx="36" cy="137" rx="13" ry="6" fill="#f4a340"/><ellipse cx="64" cy="137" rx="13" ry="6" fill="#f4a340"/><ellipse cx="50" cy="86" rx="34" ry="52" fill="#3d4c63"/><ellipse cx="34" cy="44" rx="8" ry="4.5" fill="#fff" opacity=".22"/><ellipse cx="50" cy="102" rx="24" ry="35" fill="#fffaf2"/><path d="M50 42 C40 32 24 38 26 54 C28 68 40 72 50 70 C60 72 72 68 74 54 C76 38 60 32 50 42 Z" fill="#fffaf2"/><path d="M33 53 Q39 46 45 53" fill="none" stroke="#3a3228" stroke-width="2.5" stroke-linecap="round"/><path d="M55 53 Q61 46 67 53" fill="none" stroke="#3a3228" stroke-width="2.5" stroke-linecap="round"/><path d="M43 60 Q50 55 57 60 Q50 68 43 60 Z" fill="#f4a340"/><path d="M45 59 Q50 57 54 58" stroke="#fff" stroke-width="1.2" opacity=".6" fill="none"/><path d="M45 64 Q50 69 55 64" stroke="#c96a1e" stroke-width="1.4" fill="none" stroke-linecap="round"/><ellipse cx="32" cy="62" rx="6.5" ry="4.2" fill="#f5a8a0" opacity=".5"/><ellipse cx="68" cy="62" rx="6.5" ry="4.2" fill="#f5a8a0" opacity=".5"/><g transform="translate(20,88) rotate(20)"><ellipse cx="0" cy="18" rx="7.5" ry="21" fill="#3d4c63"/><ellipse cx="-2" cy="10" rx="2" ry="6" fill="#fff" opacity=".18"/></g><g transform="translate(78,84) rotate(-125)"><ellipse cx="0" cy="18" rx="7.5" ry="21" fill="#3d4c63"/><ellipse cx="-2" cy="10" rx="2" ry="6" fill="#fff" opacity=".18"/></g></symbol>
+      <symbol id="ch-penguin-normal-down" viewBox="-15 -24 130 172"><ellipse cx="36" cy="137" rx="13" ry="6" fill="#f4a340"/><ellipse cx="64" cy="137" rx="13" ry="6" fill="#f4a340"/><ellipse cx="50" cy="86" rx="34" ry="52" fill="#3d4c63"/><ellipse cx="34" cy="44" rx="8" ry="4.5" fill="#fff" opacity=".22"/><ellipse cx="50" cy="102" rx="24" ry="35" fill="#fffaf2"/><path d="M50 42 C40 32 24 38 26 54 C28 68 40 72 50 70 C60 72 72 68 74 54 C76 38 60 32 50 42 Z" fill="#fffaf2"/><ellipse cx="39" cy="52" rx="3.3" ry="3.9" fill="#3a3228"/><ellipse cx="61" cy="52" rx="3.3" ry="3.9" fill="#3a3228"/><circle cx="40.3" cy="50.6" r="1.15" fill="#fff"/><circle cx="62.3" cy="50.6" r="1.15" fill="#fff"/><path d="M43 60 Q50 55 57 60 Q50 68 43 60 Z" fill="#f4a340"/><path d="M45 59 Q50 57 54 58" stroke="#fff" stroke-width="1.2" opacity=".6" fill="none"/><ellipse cx="32" cy="62" rx="6.5" ry="4.2" fill="#f5a8a0" opacity=".5"/><ellipse cx="68" cy="62" rx="6.5" ry="4.2" fill="#f5a8a0" opacity=".5"/><g transform="translate(20,88) rotate(20)"><ellipse cx="0" cy="18" rx="7.5" ry="21" fill="#3d4c63"/><ellipse cx="-2" cy="10" rx="2" ry="6" fill="#fff" opacity=".18"/></g><g transform="translate(80,88) rotate(-20)"><ellipse cx="0" cy="18" rx="7.5" ry="21" fill="#3d4c63"/><ellipse cx="-2" cy="10" rx="2" ry="6" fill="#fff" opacity=".18"/></g></symbol>
+      <symbol id="ch-penguin-sleep-down-cap" viewBox="-15 -24 130 172"><ellipse cx="36" cy="137" rx="13" ry="6" fill="#f4a340"/><ellipse cx="64" cy="137" rx="13" ry="6" fill="#f4a340"/><ellipse cx="50" cy="86" rx="34" ry="52" fill="#3d4c63"/><ellipse cx="34" cy="44" rx="8" ry="4.5" fill="#fff" opacity=".22"/><ellipse cx="50" cy="102" rx="24" ry="35" fill="#fffaf2"/><path d="M50 42 C40 32 24 38 26 54 C28 68 40 72 50 70 C60 72 72 68 74 54 C76 38 60 32 50 42 Z" fill="#fffaf2"/><path d="M33 52 Q39 57 45 52" fill="none" stroke="#3a3228" stroke-width="2.2" stroke-linecap="round"/><path d="M55 52 Q61 57 67 52" fill="none" stroke="#3a3228" stroke-width="2.2" stroke-linecap="round"/><path d="M43 60 Q50 55 57 60 Q50 68 43 60 Z" fill="#f4a340"/><path d="M45 59 Q50 57 54 58" stroke="#fff" stroke-width="1.2" opacity=".6" fill="none"/><ellipse cx="32" cy="62" rx="6.5" ry="4.2" fill="#f5a8a0" opacity=".5"/><ellipse cx="68" cy="62" rx="6.5" ry="4.2" fill="#f5a8a0" opacity=".5"/><path d="M22 40 Q50 4 80 34 Q90 46 98 40" fill="#7e9ee8"/><path d="M22 40 Q50 32 80 34" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="99" cy="40" r="6" fill="#fff"/><g transform="translate(20,88) rotate(20)"><ellipse cx="0" cy="18" rx="7.5" ry="21" fill="#3d4c63"/><ellipse cx="-2" cy="10" rx="2" ry="6" fill="#fff" opacity=".18"/></g><g transform="translate(80,88) rotate(-20)"><ellipse cx="0" cy="18" rx="7.5" ry="21" fill="#3d4c63"/><ellipse cx="-2" cy="10" rx="2" ry="6" fill="#fff" opacity=".18"/></g></symbol>
+      <symbol id="fish" viewBox="0 0 60 36"><path d="M44 18 L58 6 L56 18 L58 30 Z" fill="#ff8a3d"/><ellipse cx="26" cy="18" rx="22" ry="13" fill="#ffa25a"/><path d="M18 7 Q22 18 18 29 M28 6 Q32 18 28 30" stroke="#ff7a2a" stroke-width="2.4" fill="none"/><ellipse cx="20" cy="12" rx="7" ry="3" fill="#fff" opacity=".45"/><circle cx="10" cy="15" r="2.6" fill="#2a3038"/><circle cx="10.8" cy="14.2" r=".8" fill="#fff"/></symbol>
+      <symbol id="igloo-dark" viewBox="0 0 170 110"><path d="M8 106 A77 77 0 0 1 162 106 Z" fill="#f5fbff"/><path d="M8 106 A77 77 0 0 1 162 106" fill="none" stroke="#cfe3f2" stroke-width="3"/><path d="M22 80 H148 M44 54 H126 M70 36 H100 M50 80 V106 M120 80 V106 M64 54 V80 M106 54 V80 M85 36 V54" stroke="#cfe3f2" stroke-width="2.4"/><path d="M64 106 L64 84 A21 21 0 0 1 106 84 L106 106 Z" fill="#3d5a80"/><ellipse cx="54" cy="44" rx="14" ry="6" fill="#fff" opacity=".8"/><circle cx="132" cy="70" r="9" fill="#546e7a"/></symbol>
+      <symbol id="igloo-lit" viewBox="0 0 170 110"><path d="M8 106 A77 77 0 0 1 162 106 Z" fill="#f5fbff"/><path d="M8 106 A77 77 0 0 1 162 106" fill="none" stroke="#cfe3f2" stroke-width="3"/><path d="M22 80 H148 M44 54 H126 M70 36 H100 M50 80 V106 M120 80 V106 M64 54 V80 M106 54 V80 M85 36 V54" stroke="#cfe3f2" stroke-width="2.4"/><path d="M64 106 L64 84 A21 21 0 0 1 106 84 L106 106 Z" fill="#3d5a80"/><ellipse cx="54" cy="44" rx="14" ry="6" fill="#fff" opacity=".8"/><circle cx="132" cy="70" r="9" fill="#ffe08a"/><circle cx="132" cy="70" r="14" fill="#ffe08a" opacity=".3"/><path d="M70 106 L70 88 A15 15 0 0 1 100 88 L100 106 Z" fill="#ffd54f" opacity=".75"/></symbol>
+      <symbol id="moon" viewBox="0 0 100 100"><path d="M60 10 A42 42 0 1 0 92 70 A34 34 0 1 1 60 10 Z" fill="url(#gMoon)"/><circle cx="40" cy="44" r="5" fill="#e6c888" opacity=".45"/><circle cx="34" cy="68" r="4" fill="#e6c888" opacity=".4"/><path d="M36 56 Q40 60 44 56" stroke="#b98a4a" stroke-width="2" fill="none" stroke-linecap="round"/><ellipse cx="34" cy="62" rx="4" ry="2.6" fill="#f5b8a0" opacity=".5"/></symbol>
+      <symbol id="star" viewBox="0 0 40 40"><path d="M20.0 3.0 L24.7 14.5 L37.1 15.4 L27.6 23.5 L30.6 35.6 L20.0 29.0 L9.4 35.6 L12.4 23.5 L2.9 15.4 L15.3 14.5 Z" fill="#ffe08a" stroke="#f5c542" stroke-width="2" stroke-linejoin="round"/><ellipse cx="15" cy="15" rx="3" ry="2" fill="#fff" opacity=".7"/></symbol>
+      <symbol id="sun" viewBox="0 0 120 120"><g stroke="#f5c542" stroke-width="5" stroke-linecap="round"><path d="M60 6 v14 M60 100 v14 M6 60 h14 M100 60 h14 M22 22 l10 10 M88 88 l10 10 M98 22 l-10 10 M22 98 l10 -10"/></g><circle cx="60" cy="60" r="34" fill="url(#gSun)"/><ellipse cx="47" cy="45" rx="9" ry="5" fill="#fff" opacity=".5"/><path d="M46 60 Q50 55 54 60 M66 60 Q70 55 74 60" stroke="#c98a1a" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M51 70 Q60 78 69 70" stroke="#c98a1a" stroke-width="2.4" fill="none" stroke-linecap="round"/><ellipse cx="42" cy="68" rx="5" ry="3.2" fill="#ff9e7a" opacity=".5"/><ellipse cx="78" cy="68" rx="5" ry="3.2" fill="#ff9e7a" opacity=".5"/></symbol>
+      <symbol id="toothbrush-cup" viewBox="0 0 40 60"><rect x="10" y="10" width="5" height="34" rx="2.5" fill="#64b5f6" transform="rotate(-10 12 40)"/><rect x="7" y="4" width="9" height="10" rx="2" fill="#fff" transform="rotate(-10 12 40)"/><path d="M6 30 L34 30 L31 58 L9 58 Z" fill="#a5d6a7"/><path d="M10 34 L12 54" stroke="#fff" stroke-width="2.4" opacity=".6"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="app" id="app">
+    <header class="topbar">
+      <nav class="book-nav">
+        <a class="home-link" href="../index.html#day_penguin">返回首页</a>
+        <a class="home-link" href="../grow_seed/index.html">下一本</a>
+      </nav>
+      <span class="brand">企鹅的一天</span>
+      <span class="page-indicator" id="pageIndicator">1 / 9</span>
+    </header>
+
+    <main class="stage" id="stage" aria-live="polite">
+      <div class="fx-layer" id="fxLayer" aria-hidden="true"></div>
+      <section class="page is-active" data-page="0">
+        <div class="sky sky-ice"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><use href="#sun" x="250.0" y="50.0" width="80.0" height="80.0"/><rect x="-500" y="380" width="1360" height="60" fill="#5fa8d3"/><path d="M-500 384 H860" stroke="#9fd0ee" stroke-width="3"/><path d="M-500 426 Q180 360 860 426 L860 1000 L-500 1000 Z" fill="#e8f3fb" opacity=".85"/><path d="M-500 460 Q180 410 860 460 L860 1000 L-500 1000 Z" fill="#f5fbff"/><path d="M-500 506 Q180 468 860 506 L860 1000 L-500 1000 Z" fill="#dcebf7" opacity=".55"/><use href="#igloo-lit" x="20.0" y="361.4" width="140.0" height="90.6"/><ellipse cx="230.0" cy="492.0" rx="38.0" ry="6.8" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="pet" role="button" aria-label="企鹅" data-say="你好呀" data-fx="hearts"><use href="#ch-penguin-happy-wave" x="168.2" y="336.3" width="123.5" height="163.4"/></g></svg><div class="vignette"></div></div>
+        <div class="caption caption-center"><h1>企鹅的一天</h1><p>点图画会有惊喜 · 点下一页开始</p></div>
+      </section>
+      <section class="page" data-page="1">
+        <div class="sky sky-dawn is-dim"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="380" width="1360" height="60" fill="#5fa8d3"/><path d="M-500 384 H860" stroke="#9fd0ee" stroke-width="3"/><path d="M-500 426 Q180 360 860 426 L860 1000 L-500 1000 Z" fill="#e8f3fb" opacity=".85"/><path d="M-500 460 Q180 410 860 460 L860 1000 L-500 1000 Z" fill="#f5fbff"/><path d="M-500 506 Q180 468 860 506 L860 1000 L-500 1000 Z" fill="#dcebf7" opacity=".55"/><rect class="night-shade" x="-500" y="-400" width="1360" height="1400" fill="#0e1838"/><g class="hot " data-interact="tap" role="button" aria-label="太阳" data-add="is-rise" data-target=".sky" data-target-remove="is-dim" data-also=".pg" data-also-swap="#ch-penguin-happy-wave" data-say="天亮啦，早上好" data-once="1" data-fx="sparks" data-color="#ffe08a" data-move="1"><use href="#sun" x="240.0" y="250.0" width="80.0" height="80.0"/></g><ellipse cx="160.0" cy="492.0" rx="38.0" ry="6.8" fill="#3c2a14" opacity=".16"/><g class="pg"><use href="#ch-penguin-sleep-down-cap" x="98.2" y="336.3" width="123.5" height="163.4"/></g></svg><div class="vignette"></div></div>
+        <div class="caption"><p>太阳出来了，小企鹅醒来伸伸懒腰。<br />点太阳，天就亮啦。</p></div>
+      </section>
+      <section class="page" data-page="2">
+        <div class="sky sky-ice"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><path d="M-500 406 Q180 340 860 406 L860 1000 L-500 1000 Z" fill="#e8f3fb" opacity=".85"/><path d="M-500 440 Q180 390 860 440 L860 1000 L-500 1000 Z" fill="#f5fbff"/><path d="M-500 486 Q180 448 860 486 L860 1000 L-500 1000 Z" fill="#dcebf7" opacity=".55"/><use href="#igloo-lit" x="205.0" y="345.9" width="130.0" height="84.1"/><use href="#toothbrush-cup" x="50.0" y="410.0" width="40.0" height="60.0"/><ellipse cx="170.0" cy="492.0" rx="40.0" ry="7.2" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="tap" role="button" aria-label="牙刷" data-say="刷刷刷，牙齿白白的" data-fx="bubbles" data-anim="is-pet"><use href="#ch-penguin-happy-hold-brush" x="105.0" y="328.0" width="130.0" height="172.0"/></g></svg><div class="vignette"></div></div>
+        <div class="caption"><p>小企鹅刷牙洗脸。<br />点小企鹅手里的牙刷，刷出好多泡泡。</p></div>
+      </section>
+      <section class="page" data-page="3">
+        <div class="sky sky-ice"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><use href="#sun" x="265.0" y="40.0" width="70.0" height="70.0"/><path d="M-500 446 Q180 380 860 446 L860 1000 L-500 1000 Z" fill="#e8f3fb" opacity=".85"/><path d="M-500 480 Q180 430 860 480 L860 1000 L-500 1000 Z" fill="#f5fbff"/><path d="M-500 526 Q180 488 860 526 L860 1000 L-500 1000 Z" fill="#dcebf7" opacity=".55"/><path d="M-500 230 L-40 230 Q60 230 120 280 Q190 340 280 420 Q320 446 860 446 L860 1000 L-500 1000 Z" fill="#e8f3fb"/><path d="M-500 230 L-40 230 Q60 230 120 280 Q190 340 280 420 Q320 446 860 446" stroke="#b3d4ec" stroke-width="5" fill="none"/><path d="M20 250 Q80 252 120 290" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" opacity=".8"/><ellipse cx="70.0" cy="234.0" rx="28.0" ry="5.0" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="tap" role="button" aria-label="小企鹅" data-add="is-slide" data-once="1" data-say="呼——滑下去啦" data-fx="snow" data-move="1"><use href="#ch-penguin-happy-down" x="24.5" y="119.8" width="91.0" height="120.4"/></g></svg><div class="vignette"></div></div>
+        <div class="caption"><p>小企鹅爬上冰坡，坐着滑下来。<br />点小企鹅，滑呀滑！</p></div>
+      </section>
+      <section class="page" data-page="4">
+        <div class="sky sky-ice"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><use href="#sun" x="45.0" y="40.0" width="70.0" height="70.0"/><path d="M-500 426 Q180 360 860 426 L860 1000 L-500 1000 Z" fill="#e8f3fb" opacity=".85"/><path d="M-500 460 Q180 410 860 460 L860 1000 L-500 1000 Z" fill="#f5fbff"/><path d="M-500 506 Q180 468 860 506 L860 1000 L-500 1000 Z" fill="#dcebf7" opacity=".55"/><ellipse cx="240" cy="470" rx="70" ry="18" fill="#2f6f9f"/><ellipse cx="240" cy="466" rx="60" ry="12" fill="#3f86bd"/><path d="M200 464 Q240 458 280 464" stroke="#9fd0ee" stroke-width="2" fill="none"/><g class="reveal fish"><use href="#fish" x="215.0" y="440.0" width="50.0" height="30.0"/></g><g class="hot" data-interact="tap" role="button" aria-label="冰洞" data-target=".fish" data-target-add="show" data-say="小鱼跳出来啦" data-fx="drops" data-color="#64b5f6"><ellipse cx="240" cy="470" rx="72" ry="20" fill="#000" opacity="0"/></g><ellipse cx="110.0" cy="492.0" rx="38.0" ry="6.8" fill="#3c2a14" opacity=".16"/><use href="#ch-penguin-normal-down" x="48.2" y="336.3" width="123.5" height="163.4"/></svg><div class="vignette"></div></div>
+        <div class="caption"><p>中午，小企鹅坐在冰洞边钓鱼。<br />点冰洞，小鱼跳出来。</p></div>
+      </section>
+      <section class="page" data-page="5">
+        <div class="sky sky-sunset"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><g class="hot " data-interact="tap" role="button" aria-label="太阳" data-add="is-sink" data-once="1" data-say="太阳公公，再见" data-fx="sparks" data-color="#ffb74d" data-move="1"><use href="#sun" x="175.0" y="240.0" width="90.0" height="90.0"/></g><rect x="-500" y="380" width="1360" height="60" fill="#5fa8d3"/><path d="M-500 384 H860" stroke="#9fd0ee" stroke-width="3"/><path d="M-500 426 Q180 360 860 426 L860 1000 L-500 1000 Z" fill="#e8f3fb" opacity=".85"/><path d="M-500 460 Q180 410 860 460 L860 1000 L-500 1000 Z" fill="#f5fbff"/><path d="M-500 506 Q180 468 860 506 L860 1000 L-500 1000 Z" fill="#dcebf7" opacity=".55"/><ellipse cx="110.0" cy="492.0" rx="38.0" ry="6.8" fill="#3c2a14" opacity=".16"/><use href="#ch-penguin-happy-wave" x="48.2" y="336.3" width="123.5" height="163.4"/></svg><div class="vignette"></div></div>
+        <div class="caption"><p>太阳慢慢下山，天空变成橙红色。<br />点太阳，跟它说再见。</p></div>
+      </section>
+      <section class="page" data-page="6" data-done="五颗星星亮晶晶">
+        <div class="sky sky-night is-night"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><use href="#moon" x="255.0" y="50.0" width="70.0" height="70.0"/><g class="hot dim" data-interact="count" role="button" aria-label="星星" ><use href="#star" x="45.0" y="60.0" width="30.0" height="30.0"/></g><g class="hot dim" data-interact="count" role="button" aria-label="星星" ><use href="#star" x="125.0" y="120.0" width="30.0" height="30.0"/></g><g class="hot dim" data-interact="count" role="button" aria-label="星星" ><use href="#star" x="185.0" y="40.0" width="30.0" height="30.0"/></g><g class="hot dim" data-interact="count" role="button" aria-label="星星" ><use href="#star" x="75.0" y="190.0" width="30.0" height="30.0"/></g><g class="hot dim" data-interact="count" role="button" aria-label="星星" ><use href="#star" x="215.0" y="170.0" width="30.0" height="30.0"/></g><path d="M-500 426 Q180 360 860 426 L860 1000 L-500 1000 Z" fill="#e8f3fb" opacity=".85"/><path d="M-500 460 Q180 410 860 460 L860 1000 L-500 1000 Z" fill="#f5fbff"/><path d="M-500 506 Q180 468 860 506 L860 1000 L-500 1000 Z" fill="#dcebf7" opacity=".55"/><rect class="night-shade" x="-500" y="-400" width="1360" height="1400" fill="#0e1838"/><ellipse cx="180.0" cy="492.0" rx="38.0" ry="6.8" fill="#3c2a14" opacity=".16"/><use href="#ch-penguin-happy-down" x="118.2" y="336.3" width="123.5" height="163.4"/></svg><div class="vignette"></div></div>
+        <div class="caption"><p>月亮升起来了。<br />点星星，一颗一颗亮起来。</p></div>
+      </section>
+      <section class="page" data-page="7">
+        <div class="sky sky-night is-night"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><use href="#moon" x="270.0" y="50.0" width="60.0" height="60.0"/><g class="night-only"><use href="#star" x="52.0" y="44.0" width="16.0" height="16.0"/></g><g class="night-only"><use href="#star" x="132.0" y="104.0" width="16.0" height="16.0"/></g><g class="night-only"><use href="#star" x="222.0" y="34.0" width="16.0" height="16.0"/></g><g class="night-only"><use href="#star" x="312.0" y="124.0" width="16.0" height="16.0"/></g><g class="night-only"><use href="#star" x="32.0" y="184.0" width="16.0" height="16.0"/></g><path d="M-500 426 Q180 360 860 426 L860 1000 L-500 1000 Z" fill="#e8f3fb" opacity=".85"/><path d="M-500 460 Q180 410 860 460 L860 1000 L-500 1000 Z" fill="#f5fbff"/><path d="M-500 506 Q180 468 860 506 L860 1000 L-500 1000 Z" fill="#dcebf7" opacity=".55"/><rect class="night-shade" x="-500" y="-400" width="1360" height="1400" fill="#0e1838"/><g class="hot " data-interact="tap" role="button" aria-label="冰屋" data-swap="#igloo-dark" data-once="1" data-target=".pg" data-target-swap="#ch-penguin-sleep-down-cap" data-say="晚安" data-fx="zz"><use href="#igloo-lit" x="110.0" y="340.6" width="200.0" height="129.4"/></g><ellipse cx="80.0" cy="498.0" rx="34.0" ry="6.1" fill="#3c2a14" opacity=".16"/><g class="pg"><use href="#ch-penguin-normal-down" x="24.8" y="358.9" width="110.5" height="146.2"/></g></svg><div class="vignette"></div></div>
+        <div class="caption"><p>小企鹅回到冰屋门口，困得打哈欠。<br />点冰屋，关灯睡觉，晚安！</p></div>
+      </section>
+      <section class="page" data-page="8">
+        <div class="sky sky-ice"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><g class="hot day-only" data-interact="tap" role="button" aria-label="太阳" data-target=".sky" data-target-remove="is-night" data-say="白天，出去玩" data-fx="sparks" data-color="#ffe08a"><use href="#sun" x="40.0" y="40.0" width="80.0" height="80.0"/></g><g class="hot " data-interact="tap" role="button" aria-label="月亮" data-target=".sky" data-target-add="is-night" data-say="黑夜，睡觉觉" data-fx="stars"><use href="#moon" x="255.0" y="50.0" width="70.0" height="70.0"/></g><g class="night-only"><use href="#star" x="52.0" y="44.0" width="16.0" height="16.0"/></g><g class="night-only"><use href="#star" x="132.0" y="104.0" width="16.0" height="16.0"/></g><g class="night-only"><use href="#star" x="222.0" y="34.0" width="16.0" height="16.0"/></g><g class="night-only"><use href="#star" x="312.0" y="124.0" width="16.0" height="16.0"/></g><g class="night-only"><use href="#star" x="32.0" y="184.0" width="16.0" height="16.0"/></g><rect x="-500" y="380" width="1360" height="60" fill="#5fa8d3"/><path d="M-500 384 H860" stroke="#9fd0ee" stroke-width="3"/><path d="M-500 426 Q180 360 860 426 L860 1000 L-500 1000 Z" fill="#e8f3fb" opacity=".85"/><path d="M-500 460 Q180 410 860 460 L860 1000 L-500 1000 Z" fill="#f5fbff"/><path d="M-500 506 Q180 468 860 506 L860 1000 L-500 1000 Z" fill="#dcebf7" opacity=".55"/><rect class="night-shade" x="-500" y="-400" width="1360" height="1400" fill="#0e1838"/><use href="#igloo-lit" x="210.0" y="374.4" width="120.0" height="77.6"/><ellipse cx="140.0" cy="492.0" rx="38.0" ry="6.8" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="pet" role="button" aria-label="企鹅" data-say="今天真快乐" data-fx="hearts"><use href="#ch-penguin-happy-down" x="78.2" y="336.3" width="123.5" height="163.4"/></g></svg><div class="vignette"></div></div>
+        <div class="caption caption-center"><p>白天玩耍，晚上睡觉，小企鹅的一天真快乐。<br />点太阳和月亮，换换白天黑夜。</p><p class="end-mark">— 完 —</p></div>
+      </section>
+    </main>
+
+    <nav class="controls">
+      <button class="btn" id="btnPrev" type="button">上一页</button>
+      <div class="dots" id="dots"></div>
+      <button class="btn btn-primary" id="btnNext" type="button">下一页</button>
+    </nav>
+    <p class="hint" id="hint">适合 3–5 岁 · 点图画过一天</p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

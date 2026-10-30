@@ -1,31 +1,205 @@
+/* 动物绘本通用样式（按《小熊的彩色早晨》标准） */
+:root {
+  --ink: #3e342c;
+  --paper: #fffaf2;
+  --accent: #ff8fab;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
 
-:root{--ink:#3e342c;--pink:#ff8fab}
-*{box-sizing:border-box}
-html,body{margin:0;height:100%;font-family:"Microsoft YaHei","PingFang SC","Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(165deg,#fff8ef,#ffe9d6);overflow:hidden}
-button{font:inherit;color:inherit;border:none;background:none;padding:0;cursor:pointer}
-.app{max-width:480px;margin:0 auto;height:100%;display:flex;flex-direction:column;padding:8px 12px 6px}
-.topbar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 2px}
-.book-nav{display:flex;gap:6px}
-.home-link{text-decoration:none;color:inherit;font-size:.75rem;padding:4px 8px;border-radius:999px;border:1px solid currentColor}
-.brand{font-weight:700;font-size:.95rem}
-.page-indicator{font-size:.8rem;opacity:.7}
-.stage{position:relative;flex:1;min-height:0;border-radius:22px;overflow:hidden;background:#fffaf4;box-shadow:0 10px 28px rgba(90,60,40,.12);touch-action:pan-y}
-.page{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;visibility:hidden;pointer-events:none}
-.page.is-active{opacity:1;visibility:visible;pointer-events:auto;z-index:2}
-.sky{position:relative;flex:1;min-height:0;overflow:hidden}
-.sky svg.scene{width:100%;height:100%;display:block}
-.caption{margin:8px;padding:10px 12px;border-radius:16px;background:rgba(255,250,244,.95);text-align:center;line-height:1.45}
-.caption p{margin:0}
-.controls{display:flex;align-items:center;gap:8px;padding:4px 2px}
-.btn{min-width:84px;padding:8px 10px;border-radius:999px;background:#fff}
-.btn:disabled{opacity:.4}
-.btn-primary{background:var(--pink);color:#fff}
-.dots{flex:1;display:flex;justify-content:center;gap:5px}
-.dot{width:7px;height:7px;border-radius:50%;background:rgba(80,50,30,.2)}
-.dot.is-on{background:var(--pink)}
-.hint{margin:2px 0 4px;text-align:center;font-size:.72rem;opacity:.55}
-[data-hot]{cursor:pointer}
-[data-hot].gone{opacity:.15;pointer-events:none}
-[data-hot].ok{filter:drop-shadow(0 0 6px #43a047)}
-.toast{position:absolute;left:50%;bottom:10%;transform:translateX(-50%);background:#fff;border-radius:999px;padding:6px 14px;font-size:.95rem;box-shadow:0 4px 0 rgba(180,120,80,.15);opacity:0;pointer-events:none;z-index:20;transition:opacity .2s}
-.toast.show{opacity:1}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: #6a9fc0;
+  color: var(--ink);
+  font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+button { font: inherit; color: inherit; border: none; background: none; padding: 0; cursor: pointer; -webkit-appearance: none; appearance: none; }
+
+.app {
+  height: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: linear-gradient(180deg, #7eb8d8 0%, #a8d4ec 100%);
+}
+
+.topbar {
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  padding: 0.7rem 1rem 0.35rem; z-index: 5; color: rgba(40, 50, 60, 0.88); font-size: 0.85rem;
+}
+.brand { font-weight: 700; font-size: 1.05rem; letter-spacing: 0.06em; color: #4a3828; }
+.book-nav { display: flex; gap: 6px; align-items: center; }
+.home-link {
+  flex-shrink: 0; text-decoration: none; color: inherit; font-size: 0.72rem;
+  padding: 4px 8px; border-radius: 999px; border: 1px solid currentColor; opacity: 0.85;
+}
+.page-indicator { font-size: 0.8rem; opacity: 0.7; flex-shrink: 0; }
+
+.stage {
+  flex: 1; position: relative; overflow: hidden; margin: 0 0.65rem;
+  border-radius: 1.25rem; box-shadow: 0 12px 36px rgba(60, 80, 100, 0.28); background: #fff;
+}
+.fx-layer { position: absolute; inset: 0; pointer-events: none; z-index: 40; overflow: hidden; }
+
+.page {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  opacity: 0; visibility: hidden; transform: translateX(18%); pointer-events: none;
+  transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.page.is-active { opacity: 1; visibility: visible; transform: translateX(0); pointer-events: auto; z-index: 2; }
+.page.is-exit-left, .page.is-exit-right { visibility: visible; }
+.page.is-exit-left { opacity: 0; transform: translateX(-18%); }
+.page.is-exit-right { opacity: 0; transform: translateX(18%); }
+
+/* 天空：渐变铺满，画面 SVG 底部对齐，地面向两侧延伸 */
+.sky { flex: 1; position: relative; overflow: hidden; min-height: 0; }
+.sky::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: linear-gradient(180deg, #14224a 0%, #2c3f73 60%, #3d5288 100%);
+  opacity: 0; transition: opacity 0.9s ease;
+}
+.sky.is-dim::before { opacity: 0.5; }
+.sky.is-night::before { opacity: 1; }
+.sky-morn { background: linear-gradient(180deg, #7ec8f0 0%, #c5e8f8 50%, #e8f6d0 100%); }
+.sky-day { background: linear-gradient(180deg, #4fb3ec 0%, #a9dcf6 55%, #e3f4d0 100%); }
+.sky-yard { background: linear-gradient(180deg, #9fd6f2 0%, #e8f6ff 45%, #d8eec0 100%); }
+.sky-rain { background: linear-gradient(180deg, #8fa3b3 0%, #b8c8d4 55%, #d0dcd0 100%); }
+.sky-snow { background: linear-gradient(180deg, #b8d4ea 0%, #e1eef8 60%, #f5fbff 100%); }
+.sky-dusk { background: linear-gradient(180deg, #f3a683 0%, #f7d2a8 50%, #e8e0c0 100%); }
+.sky-sunset { background: linear-gradient(180deg, #ef7a5a 0%, #f6b26b 45%, #fde2b0 100%); }
+.sky-dawn { background: linear-gradient(180deg, #ffc9a8 0%, #ffe4b8 40%, #c8e8f6 100%); }
+.sky-night { background: linear-gradient(180deg, #14224a 0%, #2c3f73 60%, #3d5288 100%); }
+.sky-ice { background: linear-gradient(180deg, #8fd0f2 0%, #d2edfb 60%, #f2fafe 100%); }
+.sky-autumn { background: linear-gradient(180deg, #f9d9a8 0%, #fcebd0 55%, #f2e6c8 100%); }
+.sky-indoor { background: linear-gradient(180deg, #fff3e0 0%, #fbe9d0 100%); }
+.sky-indoor-blue { background: linear-gradient(180deg, #e9f6fb 0%, #f4fbfe 100%); }
+
+.vignette {
+  position: absolute; inset: 0; pointer-events: none; z-index: 6;
+  background: radial-gradient(ellipse at 50% 40%, transparent 50%, rgba(40, 50, 30, 0.1) 100%);
+}
+
+.scene { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; z-index: 1; }
+.night-shade { opacity: 0; pointer-events: none; transition: opacity 0.9s ease; }
+.sky.is-dim .night-shade { opacity: 0.28; }
+.sky.is-night .night-shade { opacity: 0.38; }
+.night-only { opacity: 0; transition: opacity 0.9s ease; }
+.sky.is-night .night-only { opacity: 1; }
+.sky.is-night .day-only { opacity: 0; pointer-events: none; }
+
+/* 画面内可点物体（SVG g） */
+.hot {
+  cursor: pointer;
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease, filter 0.3s ease;
+}
+.hot:focus { outline: none; }
+.is-pulse { animation: pulseScale 0.6s ease; }
+.is-pet { animation: petWiggle 0.55s ease; }
+.is-hop { animation: hopUp 0.55s ease; }
+.is-no { animation: shakeX 0.42s ease; }
+.is-sway { animation: sway 1s ease; }
+.is-spin { animation: spin 0.9s ease; transform-origin: 50% 50%; }
+.is-honk { animation: honk 0.6s ease; }
+.is-tilt { animation: tilt 1s ease; transform-origin: 30% 80%; }
+.is-look { animation: look 1.4s ease; }
+.is-swing { animation: swing 2s ease; transform-origin: 50% 0; }
+.is-picked { filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 10px #ffd54f); }
+.is-gone { opacity: 0; pointer-events: none; transition: transform 0.6s ease, opacity 0.45s ease 0.3s; }
+.is-blow { transform: translate(-260px, -160px) rotate(-200deg); opacity: 0; transition: transform 1.4s ease, opacity 1.2s ease 0.3s; pointer-events: none; }
+.is-drop { transform: translateY(200px); transition: transform 0.9s cubic-bezier(0.5, 0, 0.8, 0.6); }
+.is-cross { transform: translateY(-168px) scale(0.72); transition: transform 2.4s ease-in-out; }
+.is-slide { transform: translate(200px, 186px) rotate(14deg); transition: transform 1.4s cubic-bezier(0.45, 0, 0.6, 1); }
+.is-slidedown { transform: translate(122px, 108px); transition: transform 1.3s cubic-bezier(0.45, 0, 0.6, 1); }
+.is-rise { transform: translateY(-200px); transition: transform 1.8s ease; }
+.is-sink { transform: translateY(150px); opacity: 0.6; transition: transform 2s ease, opacity 2s ease; }
+.is-to-flower { transform: translate(-112px, -14px); transition: transform 1.6s ease; }
+.is-shade { transform: translateX(-60px); transition: transform 1.2s ease; }
+.dim { opacity: 0.3; }
+.dim.is-counted { opacity: 1; filter: drop-shadow(0 0 6px #ffe08a); }
+.reveal { opacity: 0; pointer-events: none; transition: opacity 0.6s ease; }
+.reveal.show { opacity: 1; }
+.fish.show { animation: fishJump 1.4s ease forwards; }
+.float { animation: floatY 3.6s ease-in-out infinite; transform-box: fill-box; }
+.sway { animation: swayLoop 3s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 100%; }
+.drive { animation: drive 6s linear infinite; }
+
+@keyframes pulseScale { 0%, 100% { transform: scale(1); } 40% { transform: scale(1.12); } 70% { transform: scale(0.96); } }
+@keyframes petWiggle { 0%, 100% { transform: rotate(0); } 30% { transform: rotate(-6deg); } 60% { transform: rotate(5deg); } }
+@keyframes hopUp { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-18px); } }
+@keyframes shakeX { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+@keyframes sway { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-4deg); } 75% { transform: rotate(4deg); } }
+@keyframes swayLoop { 0%, 100% { transform: rotate(-1.5deg); } 50% { transform: rotate(1.5deg); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes honk { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-4px) scale(1.04); } 50% { transform: translateX(4px) scale(1.04); } }
+@keyframes tilt { 0%, 100% { transform: rotate(0); } 40%, 70% { transform: rotate(18deg); } }
+@keyframes look { 0%, 100% { transform: scaleX(1); } 30% { transform: scaleX(-1); } 65% { transform: scaleX(1); } }
+@keyframes swing { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(12deg); } 50% { transform: rotate(-10deg); } 75% { transform: rotate(6deg); } }
+@keyframes fishJump { 0% { transform: translateY(0); } 40% { transform: translateY(-110px) rotate(-20deg); } 100% { transform: translateY(-60px) rotate(10deg); } }
+@keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes drive { 0% { transform: translateX(-200px); } 100% { transform: translateX(520px); } }
+
+.caption {
+  position: relative; z-index: 8; margin: 0; padding: 0.85rem 1.1rem 1rem;
+  background: linear-gradient(180deg, rgba(255, 250, 242, 0.92), rgba(255, 248, 236, 0.98));
+  text-align: left; line-height: 1.55; font-size: 0.95rem; color: var(--ink);
+  border-top: 1px solid rgba(180, 140, 100, 0.15);
+}
+.caption-center { text-align: center; }
+.caption h1 { font-size: 1.45rem; margin-bottom: 0.35rem; color: #4a3428; letter-spacing: 0.08em; }
+.caption p { opacity: 0.92; }
+.end-mark { margin-top: 0.2rem; letter-spacing: 0.2em; opacity: 0.7; }
+
+.controls { display: flex; align-items: center; gap: 8px; padding: 0.55rem 1rem calc(0.55rem + var(--safe-bottom)); z-index: 5; }
+.btn {
+  min-width: 88px; padding: 0.55rem 0.9rem; border-radius: 999px; background: rgba(255, 255, 255, 0.85);
+  color: var(--ink); font-size: 0.9rem; box-shadow: 0 2px 0 rgba(80, 60, 40, 0.08);
+}
+.btn:disabled { opacity: 0.35; }
+.btn-primary { background: var(--accent); color: #fff; }
+.dots { flex: 1; display: flex; justify-content: center; gap: 5px; flex-wrap: wrap; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(60, 50, 40, 0.22); }
+.dot.is-on { background: var(--accent); transform: scale(1.15); }
+.hint { text-align: center; font-size: 0.72rem; opacity: 0.55; padding: 0 1rem 0.4rem; color: #3a3028; }
+
+/* 特效 */
+.fx-spark { position: absolute; width: 7px; height: 7px; border-radius: 50%; pointer-events: none; animation: sparkFly 0.75s ease-out forwards; }
+.fx-spark.star { width: 11px; height: 11px; border-radius: 0; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+@keyframes sparkFly { to { transform: translate(var(--tx), var(--ty)); opacity: 0; } }
+.fx-heart, .fx-glyph { position: absolute; font-size: 1rem; pointer-events: none; animation: heartUp 1s ease-out forwards; }
+@keyframes heartUp { to { transform: translateY(-40px); opacity: 0; } }
+.fx-drop { position: absolute; width: 9px; height: 13px; border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%; pointer-events: none; animation: dropFall 0.7s ease-in forwards; }
+@keyframes dropFall { to { transform: translate(var(--tx), var(--ty)) scale(0.4); opacity: 0; } }
+.fx-fall { position: absolute; pointer-events: none; animation: fall var(--dur, 1.2s) ease-in forwards; }
+.fx-fall.rain { width: 3px; height: 14px; border-radius: 2px; background: #64b5f6; }
+.fx-fall.snow { width: 9px; height: 9px; border-radius: 50%; background: #fff; box-shadow: 0 0 4px rgba(120, 170, 220, 0.8); }
+.fx-fall.petal { width: 10px; height: 7px; border-radius: 60% 0 60% 0; }
+.fx-fall.leaf { width: 13px; height: 8px; border-radius: 70% 0 70% 0; }
+@keyframes fall { to { transform: translate(var(--tx), var(--ty)) rotate(var(--rot, 0deg)); opacity: 0; } }
+.fx-bubble-ring { position: absolute; width: 14px; height: 14px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.95); background: rgba(179, 229, 252, 0.35); pointer-events: none; animation: rise 1.1s ease-out forwards; }
+@keyframes rise { to { transform: translate(var(--tx), -70px) scale(1.4); opacity: 0; } }
+.fx-bubble {
+  position: absolute; transform: translateX(-50%); background: rgba(255, 255, 255, 0.95);
+  padding: 0.35rem 0.7rem; border-radius: 999px; font-size: 0.85rem;
+  box-shadow: 0 4px 0 rgba(180, 120, 80, 0.12); pointer-events: none; animation: bubbleFade 1.7s ease forwards; white-space: nowrap;
+}
+@keyframes bubbleFade {
+  0% { opacity: 0; transform: translateX(-50%) translateY(6px); }
+  15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+}
+
+@media (max-width: 360px) {
+  .caption { font-size: 0.88rem; padding: 0.7rem 0.9rem; }
+  .brand { font-size: 0.92rem; }
+}
