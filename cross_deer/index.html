@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>小鹿过马路</title>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body data-mode="traffic">
+<div class="app">
+<header class="topbar">
+<nav class="book-nav">
+<a class="home-link" href="../index.html#cross_deer">返回首页</a>
+<a class="home-link" href="../rabbit_moon/index.html">下一本</a>
+</nav>
+<span class="brand">小鹿过马路</span>
+<span class="page-indicator" id="pageIndicator">1 / 6</span>
+</header>
+<main class="stage" id="stage"><div class="toast" id="toast"></div>
+<section class="page is-active" data-page="0">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#d7e6f5"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#c5d6b0"/>
+      <g id="deerBody">
+          <ellipse cx="180" cy="266" rx="36" ry="28" fill="#d7a15a"/>
+          <circle cx="188" cy="226" r="22" fill="#e2b56a"/>
+          <path d="M178 210 l-6 -16 m8 16 l4 -16" stroke="#8d6e63" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="194" cy="224" r="2" fill="#3a2820"/>
+          <ellipse cx="160" cy="290" rx="6" ry="10" fill="#c48a4a"/>
+          <ellipse cx="188" cy="290" rx="6" ry="10" fill="#c48a4a"/>
+        </g><ellipse cx="70" cy="80" rx="28" ry="16" fill="#fff" opacity=".8"/>
+    </svg></div>
+      <div class="caption"><p>小鹿过马路</p><p>遵守红灯停、绿灯行</p></div>
+    </section>
+<section class="page" data-page="1">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#d7e6f5"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#c5d6b0"/>
+      <g id="deerBody">
+          <ellipse cx="180" cy="266" rx="36" ry="28" fill="#d7a15a"/>
+          <circle cx="188" cy="226" r="22" fill="#e2b56a"/>
+          <path d="M178 210 l-6 -16 m8 16 l4 -16" stroke="#8d6e63" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="194" cy="224" r="2" fill="#3a2820"/>
+          <ellipse cx="160" cy="290" rx="6" ry="10" fill="#c48a4a"/>
+          <ellipse cx="188" cy="290" rx="6" ry="10" fill="#c48a4a"/>
+        </g>
+    </svg></div>
+      <div class="caption"><p>马路边上有红绿灯。</p><p>小鹿想去对面。</p></div>
+    </section>
+<section class="page" data-page="2">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#d7e6f5"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#c5d6b0"/>
+      <g id="deerBody">
+          <ellipse cx="180" cy="266" rx="36" ry="28" fill="#d7a15a"/>
+          <circle cx="188" cy="226" r="22" fill="#e2b56a"/>
+          <path d="M178 210 l-6 -16 m8 16 l4 -16" stroke="#8d6e63" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="194" cy="224" r="2" fill="#3a2820"/>
+          <ellipse cx="160" cy="290" rx="6" ry="10" fill="#c48a4a"/>
+          <ellipse cx="188" cy="290" rx="6" ry="10" fill="#c48a4a"/>
+        </g>
+    </svg></div>
+      <div class="caption"><p>红灯亮，脚要停住。</p><p>绿灯亮，再看一看，然后走。</p></div>
+    </section>
+<section class="page" data-page="3">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#d7e6f5"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#c5d6b0"/>
+      <g id="deerBody">
+          <ellipse cx="180" cy="266" rx="36" ry="28" fill="#d7a15a"/>
+          <circle cx="188" cy="226" r="22" fill="#e2b56a"/>
+          <path d="M178 210 l-6 -16 m8 16 l4 -16" stroke="#8d6e63" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="194" cy="224" r="2" fill="#3a2820"/>
+          <ellipse cx="160" cy="290" rx="6" ry="10" fill="#c48a4a"/>
+          <ellipse cx="188" cy="290" rx="6" ry="10" fill="#c48a4a"/>
+        </g>
+    </svg></div>
+      <div class="caption"><p>不闯灯，才安全。</p><p>小鹿平平安安过去了。</p></div>
+    </section>
+<section class="page" data-page="4">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#d7e6f5"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#c5d6b0"/>
+      <g id="light"><rect x="40" y="70" width="36" height="90" rx="8" fill="#333"/>
+          <circle id="redLamp" cx="58" cy="96" r="12" fill="#e23b3b"/>
+          <circle id="greenLamp" cx="58" cy="140" r="12" fill="#ccc"/></g><g id="deerBody">
+          <ellipse cx="180" cy="266" rx="36" ry="28" fill="#d7a15a"/>
+          <circle cx="188" cy="226" r="22" fill="#e2b56a"/>
+          <path d="M178 210 l-6 -16 m8 16 l4 -16" stroke="#8d6e63" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="194" cy="224" r="2" fill="#3a2820"/>
+          <ellipse cx="160" cy="290" rx="6" ry="10" fill="#c48a4a"/>
+          <ellipse cx="188" cy="290" rx="6" ry="10" fill="#c48a4a"/>
+        </g>
+    </svg><button class="hot ghost" id="light" style="left:8%;top:12%;width:18%;height:28%"></button><button class="hot ghost" id="deer" style="left:40%;top:40%;width:30%;height:30%"></button></div>
+      <div class="caption"><p>来玩一玩。</p><p>适合 4–6 岁 · 先点灯再点小鹿</p></div>
+    </section>
+<section class="page" data-page="5">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#d7e6f5"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#c5d6b0"/>
+      <g id="deerBody">
+          <ellipse cx="180" cy="266" rx="36" ry="28" fill="#d7a15a"/>
+          <circle cx="188" cy="226" r="22" fill="#e2b56a"/>
+          <path d="M178 210 l-6 -16 m8 16 l4 -16" stroke="#8d6e63" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="194" cy="224" r="2" fill="#3a2820"/>
+          <ellipse cx="160" cy="290" rx="6" ry="10" fill="#c48a4a"/>
+          <ellipse cx="188" cy="290" rx="6" ry="10" fill="#c48a4a"/>
+        </g>
+    </svg></div>
+      <div class="caption"><p>今天记住啦。</p><p>— 完 —</p></div>
+    </section></main>
+<nav class="controls">
+<button class="btn" id="btnPrev" type="button">上一页</button>
+<div class="dots" id="dots"></div>
+<button class="btn btn-primary" id="btnNext" type="button">下一页</button>
+</nav>
+<p class="hint">适合 4–6 岁 · 先点灯再点小鹿</p>
+</div>
+<script src="app.js"></script>
+</body></html>
