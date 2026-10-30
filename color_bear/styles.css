@@ -354,6 +354,15 @@ button {
   top: 12%;
 }
 
+/* 仰望页：气球单独占天空，避免与太阳抢位 */
+.balloon-wrap.balloon-hero {
+  top: 8%;
+  right: 18%;
+  left: auto;
+  width: min(26vw, 108px);
+  height: min(36vw, 150px);
+}
+
 .balloon-party {
   width: min(14vw, 58px);
   height: min(20vw, 84px);
