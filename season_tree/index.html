@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>树的四季</title>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body data-mode="seasons">
+<div class="app">
+<header class="topbar">
+<nav class="book-nav">
+<a class="home-link" href="../index.html#season_tree">返回首页</a>
+<a class="home-link" href="../rabbit_moon/index.html">下一本</a>
+</nav>
+<span class="brand">树的四季</span>
+<span class="page-indicator" id="pageIndicator">1 / 6</span>
+</header>
+<main class="stage" id="stage"><div class="toast" id="toast"></div>
+<section class="page is-active" data-page="0">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#e7f6ff"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#dcecc8"/>
+      <g>
+      <rect x="172" y="250" width="16" height="40" rx="4" fill="#8d6e63"/>
+      <circle id="leaf" cx="180" cy="230" r="28" fill="#43a047"/>
+      <circle id="bloom" cx="190" cy="214" r="8" fill="#ff8fab"/>
+    </g><ellipse cx="70" cy="80" rx="28" ry="16" fill="#fff" opacity=".8"/>
+    </svg></div>
+      <div class="caption"><p>树的四季</p><p>认识春夏秋冬</p></div>
+    </section>
+<section class="page" data-page="1">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#e7f6ff"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#dcecc8"/>
+      <g>
+      <rect x="172" y="250" width="16" height="40" rx="4" fill="#8d6e63"/>
+      <circle id="leaf" cx="180" cy="230" r="28" fill="#43a047"/>
+      <circle id="bloom" cx="190" cy="214" r="8" fill="#ff8fab"/>
+    </g>
+    </svg></div>
+      <div class="caption"><p>春天，树上有花。</p><p>夏天，叶子很绿。</p></div>
+    </section>
+<section class="page" data-page="2">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#e7f6ff"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#dcecc8"/>
+      <g>
+      <rect x="172" y="250" width="16" height="40" rx="4" fill="#8d6e63"/>
+      <circle id="leaf" cx="180" cy="230" r="28" fill="#43a047"/>
+      <circle id="bloom" cx="190" cy="214" r="8" fill="#ff8fab"/>
+    </g>
+    </svg></div>
+      <div class="caption"><p>秋天，叶子变黄变红。</p><p>冬天，枝头铺着雪。</p></div>
+    </section>
+<section class="page" data-page="3">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#e7f6ff"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#dcecc8"/>
+      <g>
+      <rect x="172" y="250" width="16" height="40" rx="4" fill="#8d6e63"/>
+      <circle id="leaf" cx="180" cy="230" r="28" fill="#43a047"/>
+      <circle id="bloom" cx="190" cy="214" r="8" fill="#ff8fab"/>
+    </g>
+    </svg></div>
+      <div class="caption"><p>一年有四个季节。</p><p>树一直站在那里。</p></div>
+    </section>
+<section class="page" data-page="4">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#e7f6ff"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#dcecc8"/>
+      <rect id="seasonSky" width="360" height="280" fill="#b7e3f7"/><g>
+      <rect x="172" y="250" width="16" height="40" rx="4" fill="#8d6e63"/>
+      <circle id="leaf" cx="180" cy="230" r="28" fill="#43a047"/>
+      <circle id="bloom" cx="190" cy="214" r="8" fill="#ff8fab"/>
+    </g>
+    </svg>
+        <button class="hot" data-season="spring" data-label="春天开花" style="left:4%;top:8%;width:20%;height:10%">春</button>
+        <button class="hot" data-season="summer" data-label="夏天叶茂" style="left:28%;top:8%;width:20%;height:10%">夏</button>
+        <button class="hot" data-season="autumn" data-label="秋天叶红" style="left:52%;top:8%;width:20%;height:10%">秋</button>
+        <button class="hot" data-season="winter" data-label="冬天下雪" style="left:76%;top:8%;width:20%;height:10%">冬</button></div>
+      <div class="caption"><p>来玩一玩。</p><p>适合 3–6 岁 · 点季节</p></div>
+    </section>
+<section class="page" data-page="5">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#e7f6ff"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#dcecc8"/>
+      <g>
+      <rect x="172" y="250" width="16" height="40" rx="4" fill="#8d6e63"/>
+      <circle id="leaf" cx="180" cy="230" r="28" fill="#43a047"/>
+      <circle id="bloom" cx="190" cy="214" r="8" fill="#ff8fab"/>
+    </g>
+    </svg></div>
+      <div class="caption"><p>今天记住啦。</p><p>— 完 —</p></div>
+    </section></main>
+<nav class="controls">
+<button class="btn" id="btnPrev" type="button">上一页</button>
+<div class="dots" id="dots"></div>
+<button class="btn btn-primary" id="btnNext" type="button">下一页</button>
+</nav>
+<p class="hint">适合 3–6 岁 · 点季节</p>
+</div>
+<script src="app.js"></script>
+</body></html>
