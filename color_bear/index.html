@@ -1,98 +1,583 @@
 <!DOCTYPE html>
-<html lang="zh-CN"><head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
-<title>小熊的彩色早晨</title><link rel="stylesheet" href="styles.css"/></head>
-<body data-book="color_bear">
-<div class="app">
-<header class="topbar">
-<nav class="book-nav">
-<a class="home-link" href="../index.html#color_bear">返回首页</a>
-<a class="home-link" href="../count_birds/index.html">下一本</a>
-</nav>
-<span class="brand">小熊的彩色早晨</span>
-<span class="page-indicator" id="pageIndicator">1 / 6</span>
-</header>
-<main class="stage" id="stage"><div class="toast" id="toast"></div>
-<section class="page is-active" data-page="0"><div class="sky"><svg class="scene" viewBox="0 0 360 460">
-      <defs><radialGradient id="bg" cx="50%" cy="30%"><stop offset="0%" stop-color="#fff8d0"/><stop offset="100%" stop-color="#d8efb8"/></radialGradient></defs>
-      <rect width="360" height="460" fill="url(#bg)"/>
-      <ellipse cx="180" cy="420" rx="220" ry="70" fill="#9ccc65"/>
-      <g data-hot="bear">
-        <ellipse cx="120" cy="290" rx="58" ry="46" fill="#e8a05a"/>
-        <ellipse cx="120" cy="298" rx="32" ry="24" fill="#f6d7a8"/>
-        <circle cx="120" cy="220" r="40" fill="#e8a05a"/>
-        <circle cx="94" cy="192" r="13" fill="#e8a05a"/><circle cx="146" cy="192" r="13" fill="#e8a05a"/>
-        <circle cx="94" cy="192" r="6" fill="#f6c9a0"/><circle cx="146" cy="192" r="6" fill="#f6c9a0"/>
-        <ellipse cx="120" cy="226" rx="15" ry="11" fill="#f6d7a8"/>
-        <circle cx="108" cy="214" r="3"/><circle cx="132" cy="214" r="3"/>
-        <ellipse cx="78" cy="320" rx="12" ry="7" fill="#c4843c"/><ellipse cx="162" cy="320" rx="12" ry="7" fill="#c4843c"/>
-      </g>
-      <g data-hot="balloon">
-        <ellipse id="ball" cx="250" cy="180" rx="34" ry="42" fill="#f4f4f4" stroke="#ddd"/>
-        <path d="M250 222 q6 18 0 34" fill="none" stroke="#bbb" stroke-width="2"/>
-        <ellipse cx="238" cy="164" rx="8" ry="5" fill="#fff" opacity=".55"/>
-      </g>
-      <g data-hot="pot-red" data-color="#e23b3b" data-say="红色">
-        <rect x="48" y="360" width="36" height="40" rx="4" fill="#e23b3b"/>
-        <ellipse cx="66" cy="360" rx="20" ry="7" fill="#ff6b5a"/>
-        <ellipse cx="58" cy="372" rx="6" ry="3" fill="#fff" opacity=".35"/>
-      </g>
-      <g data-hot="pot-yellow" data-color="#f0c14a" data-say="黄色">
-        <rect x="108" y="360" width="36" height="40" rx="4" fill="#f0c14a"/>
-        <ellipse cx="126" cy="360" rx="20" ry="7" fill="#ffe08a"/>
-      </g>
-      <g data-hot="pot-blue" data-color="#5eb7e6" data-say="蓝色">
-        <rect x="168" y="360" width="36" height="40" rx="4" fill="#5eb7e6"/>
-        <ellipse cx="186" cy="360" rx="20" ry="7" fill="#9fd6f2"/>
-      </g>
-    </svg></div><div class="caption"><p>白白的气球。</p><p>点颜料罐，气球会变色。</p></div></section><section class="page" data-page="1"><div class="sky"><svg class="scene" viewBox="0 0 360 460">
-      <rect width="360" height="460" fill="#e7f4ff"/><ellipse cx="180" cy="430" rx="220" ry="70" fill="#c8e6a0"/>
-      <g data-hot="apple-r" data-color="#e23b3b" data-say="红苹果">
-        <ellipse cx="90" cy="220" rx="28" ry="26" fill="#e23b3b"/><ellipse cx="80" cy="208" rx="8" ry="5" fill="#fff" opacity=".4"/>
-        <path d="M90 194 q-4 -12 2 -18" stroke="#6b4423" stroke-width="2" fill="none"/><ellipse cx="100" cy="182" rx="8" ry="3" fill="#43a047"/>
-      </g>
-      <g data-hot="apple-y" data-color="#f0c14a" data-say="黄苹果">
-        <ellipse cx="180" cy="220" rx="28" ry="26" fill="#f0c14a"/><ellipse cx="170" cy="208" rx="8" ry="5" fill="#fff" opacity=".4"/>
-        <path d="M180 194 q-4 -12 2 -18" stroke="#6b4423" stroke-width="2" fill="none"/><ellipse cx="190" cy="182" rx="8" ry="3" fill="#43a047"/>
-      </g>
-      <g data-hot="apple-b" data-color="#5eb7e6" data-say="蓝气球果">
-        <ellipse cx="270" cy="220" rx="28" ry="26" fill="#5eb7e6"/><ellipse cx="260" cy="208" rx="8" ry="5" fill="#fff" opacity=".4"/>
-        <path d="M270 194 q-4 -12 2 -18" stroke="#6b4423" stroke-width="2" fill="none"/><ellipse cx="280" cy="182" rx="8" ry="3" fill="#43a047"/>
-      </g>
-      <ellipse id="basket" cx="180" cy="340" rx="70" ry="28" fill="#c48a4a"/><ellipse id="inBasket" cx="180" cy="330" rx="54" ry="16" fill="#a56b32"/>
-    </svg></div><div class="caption"><p>三种颜色的果子。</p><p>点一个，放进篮子。</p></div></section><section class="page" data-page="2"><div class="sky"><svg class="scene" viewBox="0 0 360 460">
-      <rect width="360" height="460" fill="#fff0f5"/><ellipse cx="180" cy="430" rx="220" ry="70" fill="#f6d7a8"/>
-      <g data-hot="mix-r" data-color="#e23b3b"><circle cx="100" cy="200" r="36" fill="#e23b3b"/><ellipse cx="88" cy="186" rx="8" ry="5" fill="#fff" opacity=".4"/></g>
-      <g data-hot="mix-y" data-color="#f0c14a"><circle cx="260" cy="200" r="36" fill="#f0c14a"/><ellipse cx="248" cy="186" rx="8" ry="5" fill="#fff" opacity=".4"/></g>
-      <g data-hot="mix-out"><ellipse id="mixOut" cx="180" cy="320" rx="50" ry="40" fill="#f4f4f4" stroke="#ddd" stroke-width="3"/><ellipse cx="164" cy="306" rx="10" ry="6" fill="#fff" opacity=".35"/></g>
-    </svg></div><div class="caption"><p>左边红，右边黄。</p><p>先点两色，再点大盘子。</p></div></section><section class="page" data-page="3"><div class="sky"><svg class="scene" viewBox="0 0 360 460">
-      <rect width="360" height="460" fill="#e8f5e9"/><ellipse cx="180" cy="430" rx="220" ry="70" fill="#aed581"/>
-      <g data-hot="find-red"><circle cx="80" cy="180" r="24" fill="#e23b3b"/><circle cx="70" cy="170" r="24" fill="#43a047"/><circle cx="100" cy="210" r="18" fill="#f0c14a"/></g>
-      <g data-hot="find-blue"><rect x="200" y="150" width="90" height="90" rx="12" fill="#fff" stroke="#ccc"/><circle cx="230" cy="180" r="16" fill="#f0c14a"/><circle cx="260" cy="210" r="16" fill="#5eb7e6"/><circle cx="245" cy="195" r="12" fill="#e23b3b"/></g>
-    </svg></div><div class="caption"><p>找一找。</p><p>左边找红色，右边找蓝色。</p></div></section><section class="page" data-page="4"><div class="sky"><svg class="scene" viewBox="0 0 360 460">
-      <rect width="360" height="460" fill="#fff8e1"/><ellipse cx="180" cy="430" rx="220" ry="70" fill="#c8e6a0"/>
-      <g data-hot="party">
-        <ellipse cx="90" cy="160" rx="22" ry="28" fill="#e23b3b"/><ellipse cx="180" cy="140" rx="22" ry="28" fill="#f0c14a"/><ellipse cx="270" cy="160" rx="22" ry="28" fill="#5eb7e6"/>
-        <path d="M90 188 q4 20 0 36 M180 168 q4 20 0 36 M270 188 q4 20 0 36" stroke="#999" fill="none"/>
-        <ellipse cx="180" cy="300" rx="70" ry="40" fill="#e8a05a"/><circle cx="180" cy="240" r="36" fill="#e8a05a"/>
-        <circle cx="168" cy="232" r="3"/><circle cx="192" cy="232" r="3"/>
-      </g>
-    </svg></div><div class="caption"><p>彩色派对。</p><p>点气球，一起跳一跳。</p></div></section><section class="page" data-page="5"><div class="sky"><svg class="scene" viewBox="0 0 360 460">
-      <rect width="360" height="460" fill="#fff8e1"/><ellipse cx="180" cy="430" rx="220" ry="70" fill="#c8e6a0"/>
-      <g data-hot="party">
-        <ellipse cx="90" cy="160" rx="22" ry="28" fill="#e23b3b"/><ellipse cx="180" cy="140" rx="22" ry="28" fill="#f0c14a"/><ellipse cx="270" cy="160" rx="22" ry="28" fill="#5eb7e6"/>
-        <path d="M90 188 q4 20 0 36 M180 168 q4 20 0 36 M270 188 q4 20 0 36" stroke="#999" fill="none"/>
-        <ellipse cx="180" cy="300" rx="70" ry="40" fill="#e8a05a"/><circle cx="180" cy="240" r="36" fill="#e8a05a"/>
-        <circle cx="168" cy="232" r="3"/><circle cx="192" cy="232" r="3"/>
-      </g>
-    </svg></div><div class="caption"><p>今天玩得开心。</p><p>— 完 —</p></div></section>
-</main>
-<nav class="controls">
-<button class="btn" id="btnPrev" type="button">上一页</button>
-<div class="dots" id="dots"></div>
-<button class="btn btn-primary" id="btnNext" type="button">下一页</button>
-</nav>
-<p class="hint">适合 2–4 岁 · 点图画</p>
-</div>
-<script src="app.js"></script>
-</body></html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#7eb8d8" />
+  <title>小熊的彩色早晨</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- SVG 角色库：统一毛色/五官，只改姿势 -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <radialGradient id="sunGrad" cx="38%" cy="35%" r="65%">
+        <stop offset="0%" stop-color="#fff8d0"/>
+        <stop offset="55%" stop-color="#ffe08a"/>
+        <stop offset="100%" stop-color="#f0b429"/>
+      </radialGradient>
+      <radialGradient id="bearFur" cx="40%" cy="30%" r="70%">
+        <stop offset="0%" stop-color="#f0b878"/>
+        <stop offset="100%" stop-color="#d4893f"/>
+      </radialGradient>
+      <linearGradient id="potShine" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#fff" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#000" stop-opacity="0.08"/>
+      </linearGradient>
+
+      <!--
+        小熊统一造型：
+        毛 #e4a05c / 肚 #f8e0bc / 耳内 #e8a090
+        眼 3×3.6 @ (±10,0) / 腮红 / 亮鼻 + 微笑
+        头 28×26 @ (50,50)；耳圆 12 @ (±22,18)；身 32×30 @ (50,95)
+      -->
+      <symbol id="sym-bear-sit" viewBox="0 -8 100 160">
+        <ellipse cx="28" cy="128" rx="14" ry="8" fill="#c98440"/>
+        <ellipse cx="72" cy="128" rx="14" ry="8" fill="#c98440"/>
+        <ellipse cx="50" cy="98" rx="32" ry="30" fill="url(#bearFur)"/>
+        <ellipse cx="50" cy="104" rx="18" ry="14" fill="#f8e0bc"/>
+        <ellipse cx="34" cy="112" rx="8" ry="11" fill="#e8b878"/>
+        <ellipse cx="66" cy="112" rx="8" ry="11" fill="#e8b878"/>
+        <circle cx="28" cy="18" r="12" fill="#e4a05c"/>
+        <circle cx="72" cy="18" r="12" fill="#e4a05c"/>
+        <circle cx="28" cy="18" r="6" fill="#e8a090"/>
+        <circle cx="72" cy="18" r="6" fill="#e8a090"/>
+        <ellipse cx="50" cy="50" rx="28" ry="26" fill="#e4a05c"/>
+        <ellipse cx="50" cy="56" rx="14" ry="11" fill="#f8e0bc"/>
+        <ellipse cx="40" cy="48" rx="3" ry="3.6" fill="#3a3228"/>
+        <ellipse cx="60" cy="48" rx="3" ry="3.6" fill="#3a3228"/>
+        <circle cx="41.2" cy="46.8" r="1" fill="#fff"/>
+        <circle cx="61.2" cy="46.8" r="1" fill="#fff"/>
+        <ellipse cx="50" cy="62" rx="5.5" ry="4" fill="#f3c2b4"/>
+        <ellipse cx="50" cy="59.2" rx="2.6" ry="2" fill="#6b4540"/>
+        <circle cx="49.2" cy="58.5" r="0.7" fill="#fff" opacity="0.55"/>
+        <path d="M44 68 Q50 74 56 68" fill="none" stroke="#6b4540" stroke-width="1.6" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="6" ry="4" fill="#f5b8a8" opacity="0.5"/>
+        <ellipse cx="68" cy="58" rx="6" ry="4" fill="#f5b8a8" opacity="0.5"/>
+      </symbol>
+
+      <symbol id="sym-bear-look" viewBox="0 -8 100 160">
+        <ellipse cx="28" cy="128" rx="14" ry="8" fill="#c98440"/>
+        <ellipse cx="72" cy="128" rx="14" ry="8" fill="#c98440"/>
+        <ellipse cx="50" cy="98" rx="32" ry="30" fill="url(#bearFur)"/>
+        <ellipse cx="50" cy="104" rx="18" ry="14" fill="#f8e0bc"/>
+        <ellipse cx="34" cy="112" rx="8" ry="11" fill="#e8b878"/>
+        <ellipse cx="66" cy="112" rx="8" ry="11" fill="#e8b878"/>
+        <g transform="translate(50,52) rotate(-12)">
+          <circle cx="-22" cy="-32" r="12" fill="#e4a05c"/>
+          <circle cx="22" cy="-32" r="12" fill="#e4a05c"/>
+          <circle cx="-22" cy="-32" r="6" fill="#e8a090"/>
+          <circle cx="22" cy="-32" r="6" fill="#e8a090"/>
+          <ellipse cx="0" cy="0" rx="28" ry="26" fill="#e4a05c"/>
+          <ellipse cx="0" cy="6" rx="14" ry="11" fill="#f8e0bc"/>
+          <ellipse cx="-10" cy="-2" rx="3" ry="3.6" fill="#3a3228"/>
+          <ellipse cx="10" cy="-2" rx="3" ry="3.6" fill="#3a3228"/>
+          <circle cx="-8.8" cy="-3.2" r="1" fill="#fff"/>
+          <circle cx="11.2" cy="-3.2" r="1" fill="#fff"/>
+          <ellipse cx="0" cy="12" rx="5.5" ry="4" fill="#f3c2b4"/>
+          <ellipse cx="0" cy="9.2" rx="2.6" ry="2" fill="#6b4540"/>
+          <circle cx="-0.8" cy="8.5" r="0.7" fill="#fff" opacity="0.55"/>
+          <path d="M-6 18 Q0 24 6 18" fill="none" stroke="#6b4540" stroke-width="1.6" stroke-linecap="round"/>
+          <ellipse cx="-18" cy="8" rx="6" ry="4" fill="#f5b8a8" opacity="0.5"/>
+          <ellipse cx="18" cy="8" rx="6" ry="4" fill="#f5b8a8" opacity="0.5"/>
+        </g>
+      </symbol>
+
+      <symbol id="sym-bear-paint" viewBox="0 -8 120 160">
+        <ellipse cx="28" cy="128" rx="14" ry="8" fill="#c98440"/>
+        <ellipse cx="72" cy="128" rx="14" ry="8" fill="#c98440"/>
+        <ellipse cx="50" cy="98" rx="32" ry="30" fill="url(#bearFur)"/>
+        <ellipse cx="50" cy="104" rx="18" ry="14" fill="#f8e0bc"/>
+        <ellipse cx="34" cy="112" rx="8" ry="11" fill="#e8b878"/>
+        <!-- 右臂抬起拿刷 -->
+        <g transform="translate(78,78) rotate(-28)">
+          <ellipse cx="0" cy="0" rx="7" ry="16" fill="#e8b878"/>
+          <rect x="-3" y="-36" width="6" height="28" rx="2" fill="#8d6e63"/>
+          <ellipse cx="0" cy="-38" rx="8" ry="6" fill="#e23b3b"/>
+          <path d="M-6 -40 L-4 -48 M0 -42 L0 -50 M6 -40 L4 -48" stroke="#e23b3b" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <circle cx="28" cy="18" r="12" fill="#e4a05c"/>
+        <circle cx="72" cy="18" r="12" fill="#e4a05c"/>
+        <circle cx="28" cy="18" r="6" fill="#e8a090"/>
+        <circle cx="72" cy="18" r="6" fill="#e8a090"/>
+        <ellipse cx="50" cy="50" rx="28" ry="26" fill="#e4a05c"/>
+        <ellipse cx="50" cy="56" rx="14" ry="11" fill="#f8e0bc"/>
+        <ellipse cx="40" cy="48" rx="3" ry="3.6" fill="#3a3228"/>
+        <ellipse cx="60" cy="48" rx="3" ry="3.6" fill="#3a3228"/>
+        <circle cx="41.2" cy="46.8" r="1" fill="#fff"/>
+        <circle cx="61.2" cy="46.8" r="1" fill="#fff"/>
+        <ellipse cx="50" cy="62" rx="5.5" ry="4" fill="#f3c2b4"/>
+        <ellipse cx="50" cy="59.2" rx="2.6" ry="2" fill="#6b4540"/>
+        <circle cx="49.2" cy="58.5" r="0.7" fill="#fff" opacity="0.55"/>
+        <path d="M44 68 Q50 74 56 68" fill="none" stroke="#6b4540" stroke-width="1.6" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="6" ry="4" fill="#f5b8a8" opacity="0.5"/>
+        <ellipse cx="68" cy="58" rx="6" ry="4" fill="#f5b8a8" opacity="0.5"/>
+      </symbol>
+
+      <symbol id="sym-bear-reach" viewBox="0 -8 110 160">
+        <ellipse cx="28" cy="128" rx="14" ry="8" fill="#c98440"/>
+        <ellipse cx="72" cy="128" rx="14" ry="8" fill="#c98440"/>
+        <ellipse cx="50" cy="98" rx="32" ry="30" fill="url(#bearFur)"/>
+        <ellipse cx="50" cy="104" rx="18" ry="14" fill="#f8e0bc"/>
+        <ellipse cx="34" cy="112" rx="8" ry="11" fill="#e8b878"/>
+        <g transform="translate(78,70) rotate(-18)">
+          <ellipse cx="0" cy="0" rx="7" ry="18" fill="#e8b878"/>
+          <ellipse cx="0" cy="-16" rx="8" ry="7" fill="#f0c9a0"/>
+        </g>
+        <circle cx="28" cy="18" r="12" fill="#e4a05c"/>
+        <circle cx="72" cy="18" r="12" fill="#e4a05c"/>
+        <circle cx="28" cy="18" r="6" fill="#e8a090"/>
+        <circle cx="72" cy="18" r="6" fill="#e8a090"/>
+        <ellipse cx="50" cy="48" rx="28" ry="26" fill="#e4a05c"/>
+        <ellipse cx="50" cy="54" rx="14" ry="11" fill="#f8e0bc"/>
+        <ellipse cx="40" cy="46" rx="3" ry="3.6" fill="#3a3228"/>
+        <ellipse cx="60" cy="46" rx="3" ry="3.6" fill="#3a3228"/>
+        <circle cx="41.2" cy="44.8" r="1" fill="#fff"/>
+        <circle cx="61.2" cy="44.8" r="1" fill="#fff"/>
+        <ellipse cx="50" cy="60" rx="5.5" ry="4" fill="#f3c2b4"/>
+        <ellipse cx="50" cy="57.2" rx="2.6" ry="2" fill="#6b4540"/>
+        <circle cx="49.2" cy="56.5" r="0.7" fill="#fff" opacity="0.55"/>
+        <path d="M44 66 Q50 72 56 66" fill="none" stroke="#6b4540" stroke-width="1.6" stroke-linecap="round"/>
+        <ellipse cx="32" cy="56" rx="6" ry="4" fill="#f5b8a8" opacity="0.5"/>
+        <ellipse cx="68" cy="56" rx="6" ry="4" fill="#f5b8a8" opacity="0.5"/>
+      </symbol>
+
+      <symbol id="sym-bear-happy" viewBox="0 -8 100 160">
+        <ellipse cx="28" cy="128" rx="14" ry="8" fill="#c98440"/>
+        <ellipse cx="72" cy="128" rx="14" ry="8" fill="#c98440"/>
+        <ellipse cx="50" cy="98" rx="32" ry="30" fill="url(#bearFur)"/>
+        <ellipse cx="50" cy="104" rx="18" ry="14" fill="#f8e0bc"/>
+        <ellipse cx="34" cy="112" rx="8" ry="11" fill="#e8b878"/>
+        <ellipse cx="66" cy="112" rx="8" ry="11" fill="#e8b878"/>
+        <circle cx="28" cy="18" r="12" fill="#e4a05c"/>
+        <circle cx="72" cy="18" r="12" fill="#e4a05c"/>
+        <circle cx="28" cy="18" r="6" fill="#e8a090"/>
+        <circle cx="72" cy="18" r="6" fill="#e8a090"/>
+        <ellipse cx="50" cy="50" rx="28" ry="26" fill="#e4a05c"/>
+        <ellipse cx="50" cy="56" rx="14" ry="11" fill="#f8e0bc"/>
+        <path d="M34 48 Q40 42 46 48" fill="none" stroke="#3a3228" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M54 48 Q60 42 66 48" fill="none" stroke="#3a3228" stroke-width="2.4" stroke-linecap="round"/>
+        <ellipse cx="50" cy="62" rx="5.5" ry="4" fill="#f3c2b4"/>
+        <ellipse cx="50" cy="59.2" rx="2.6" ry="2" fill="#6b4540"/>
+        <circle cx="49.2" cy="58.5" r="0.7" fill="#fff" opacity="0.55"/>
+        <path d="M42 68 Q50 78 58 68" fill="none" stroke="#6b4540" stroke-width="1.8" stroke-linecap="round"/>
+        <ellipse cx="32" cy="58" rx="6" ry="4" fill="#f5b8a8" opacity="0.55"/>
+        <ellipse cx="68" cy="58" rx="6" ry="4" fill="#f5b8a8" opacity="0.55"/>
+      </symbol>
+
+      <symbol id="sym-sun" viewBox="0 0 120 120">
+        <g stroke="#f0c14a" stroke-width="4" stroke-linecap="round">
+          <path d="M60 8 v14 M60 98 v14 M8 60 h14 M98 60 h14"/>
+          <path d="M22 22 l10 10 M88 88 l10 10 M98 22 l-10 10 M22 98 l10 -10"/>
+        </g>
+        <circle cx="60" cy="60" r="32" fill="url(#sunGrad)"/>
+        <ellipse cx="48" cy="54" rx="6" ry="4" fill="#fff" opacity="0.45"/>
+      </symbol>
+
+      <symbol id="sym-balloon" viewBox="0 0 80 110">
+        <ellipse class="balloon-body" cx="40" cy="42" rx="28" ry="36" fill="#f4f4f4"/>
+        <ellipse cx="30" cy="30" rx="8" ry="5" fill="#fff" opacity="0.5"/>
+        <path d="M40 78 q6 12 0 28" fill="none" stroke="#b0a090" stroke-width="2"/>
+        <path d="M34 78 l12 0 l-6 8 z" fill="#d0c4b0"/>
+      </symbol>
+
+      <symbol id="sym-pot-red" viewBox="0 0 60 70">
+        <ellipse cx="30" cy="18" rx="22" ry="8" fill="#ff6b5a"/>
+        <path d="M10 20 h40 l-4 40 h-32 z" fill="#e23b3b"/>
+        <path d="M10 20 h40 l-4 40 h-32 z" fill="url(#potShine)"/>
+        <ellipse cx="22" cy="36" rx="6" ry="3" fill="#fff" opacity="0.3"/>
+      </symbol>
+      <symbol id="sym-pot-yellow" viewBox="0 0 60 70">
+        <ellipse cx="30" cy="18" rx="22" ry="8" fill="#ffe08a"/>
+        <path d="M10 20 h40 l-4 40 h-32 z" fill="#f0c14a"/>
+        <path d="M10 20 h40 l-4 40 h-32 z" fill="url(#potShine)"/>
+        <ellipse cx="22" cy="36" rx="6" ry="3" fill="#fff" opacity="0.3"/>
+      </symbol>
+      <symbol id="sym-pot-blue" viewBox="0 0 60 70">
+        <ellipse cx="30" cy="18" rx="22" ry="8" fill="#9fd6f2"/>
+        <path d="M10 20 h40 l-4 40 h-32 z" fill="#5eb7e6"/>
+        <path d="M10 20 h40 l-4 40 h-32 z" fill="url(#potShine)"/>
+        <ellipse cx="22" cy="36" rx="6" ry="3" fill="#fff" opacity="0.3"/>
+      </symbol>
+
+      <symbol id="sym-apple-red" viewBox="0 0 60 60">
+        <ellipse cx="30" cy="34" rx="20" ry="18" fill="#e23b3b"/>
+        <ellipse cx="22" cy="28" rx="6" ry="4" fill="#fff" opacity="0.35"/>
+        <path d="M30 16 q-4 -10 2 -14" stroke="#6b4423" stroke-width="2" fill="none"/>
+        <ellipse cx="38" cy="10" rx="8" ry="3.5" fill="#43a047"/>
+      </symbol>
+      <symbol id="sym-apple-yellow" viewBox="0 0 60 60">
+        <ellipse cx="30" cy="34" rx="20" ry="18" fill="#f0c14a"/>
+        <ellipse cx="22" cy="28" rx="6" ry="4" fill="#fff" opacity="0.35"/>
+        <path d="M30 16 q-4 -10 2 -14" stroke="#6b4423" stroke-width="2" fill="none"/>
+        <ellipse cx="38" cy="10" rx="8" ry="3.5" fill="#43a047"/>
+      </symbol>
+      <symbol id="sym-apple-green" viewBox="0 0 60 60">
+        <ellipse cx="30" cy="34" rx="20" ry="18" fill="#66bb6a"/>
+        <ellipse cx="22" cy="28" rx="6" ry="4" fill="#fff" opacity="0.35"/>
+        <path d="M30 16 q-4 -10 2 -14" stroke="#6b4423" stroke-width="2" fill="none"/>
+        <ellipse cx="38" cy="10" rx="8" ry="3.5" fill="#2e7d32"/>
+      </symbol>
+
+      <symbol id="sym-tree" viewBox="0 0 120 140">
+        <rect x="52" y="90" width="16" height="42" rx="4" fill="#6b4a32"/>
+        <circle cx="60" cy="70" r="38" fill="#3f7a4e"/>
+        <circle cx="40" cy="78" r="26" fill="#4a8a58"/>
+        <circle cx="80" cy="74" r="28" fill="#458554"/>
+        <circle cx="60" cy="48" r="24" fill="#529660"/>
+        <circle cx="52" cy="62" r="12" fill="#6aaa70" opacity="0.4"/>
+      </symbol>
+
+      <symbol id="sym-basket" viewBox="0 0 100 60">
+        <ellipse cx="50" cy="42" rx="40" ry="14" fill="#c48a4a"/>
+        <ellipse cx="50" cy="34" rx="34" ry="12" fill="#a56b32"/>
+        <path d="M20 34 Q18 10 50 8 Q82 10 80 34" fill="none" stroke="#8d6e63" stroke-width="4" stroke-linecap="round"/>
+        <g id="basketFruit" opacity="0">
+          <ellipse cx="40" cy="30" rx="10" ry="8" fill="#e23b3b"/>
+          <ellipse cx="55" cy="28" rx="9" ry="7" fill="#e23b3b"/>
+          <ellipse cx="48" cy="34" rx="8" ry="6" fill="#c62828"/>
+        </g>
+      </symbol>
+
+      <symbol id="sym-drop-red" viewBox="0 0 60 70">
+        <path d="M30 8 Q48 32 48 42 A18 18 0 1 1 12 42 Q12 32 30 8 Z" fill="#e23b3b"/>
+        <ellipse cx="24" cy="36" rx="5" ry="3" fill="#fff" opacity="0.35"/>
+      </symbol>
+      <symbol id="sym-drop-yellow" viewBox="0 0 60 70">
+        <path d="M30 8 Q48 32 48 42 A18 18 0 1 1 12 42 Q12 32 30 8 Z" fill="#f0c14a"/>
+        <ellipse cx="24" cy="36" rx="5" ry="3" fill="#fff" opacity="0.35"/>
+      </symbol>
+
+      <symbol id="sym-palette" viewBox="0 0 120 90">
+        <ellipse cx="60" cy="48" rx="50" ry="36" fill="#f5e6d0" stroke="#d4b896" stroke-width="3"/>
+        <circle cx="38" cy="40" r="12" fill="#e23b3b"/>
+        <circle cx="62" cy="32" r="12" fill="#f0c14a"/>
+        <circle cx="84" cy="42" r="12" fill="#5eb7e6"/>
+        <circle class="mix-well" cx="60" cy="58" r="14" fill="#f4f4f4" stroke="#ccc" stroke-width="2"/>
+        <circle cx="28" cy="58" r="8" fill="#eee" opacity="0.5"/>
+      </symbol>
+
+      <symbol id="sym-flower-orange" viewBox="0 0 80 80">
+        <circle cx="40" cy="28" r="12" fill="#ff9800"/>
+        <circle cx="28" cy="40" r="12" fill="#ffb74d"/>
+        <circle cx="52" cy="40" r="12" fill="#ffb74d"/>
+        <circle cx="34" cy="54" r="12" fill="#ffa726"/>
+        <circle cx="46" cy="54" r="12" fill="#ffa726"/>
+        <circle cx="40" cy="42" r="10" fill="#ffe08a"/>
+        <rect x="37" y="52" width="6" height="22" rx="2" fill="#66bb6a"/>
+      </symbol>
+
+      <symbol id="sym-flower-pink" viewBox="0 0 80 80">
+        <circle cx="40" cy="28" r="11" fill="#ff8fab"/>
+        <circle cx="28" cy="40" r="11" fill="#ffb3c6"/>
+        <circle cx="52" cy="40" r="11" fill="#ffb3c6"/>
+        <circle cx="34" cy="52" r="11" fill="#f48fb1"/>
+        <circle cx="46" cy="52" r="11" fill="#f48fb1"/>
+        <circle cx="40" cy="42" r="9" fill="#fff59d"/>
+        <rect x="37" y="50" width="6" height="22" rx="2" fill="#81c784"/>
+      </symbol>
+
+      <symbol id="sym-flower-blue" viewBox="0 0 80 80">
+        <circle cx="40" cy="28" r="11" fill="#5eb7e6"/>
+        <circle cx="28" cy="40" r="11" fill="#90caf9"/>
+        <circle cx="52" cy="40" r="11" fill="#90caf9"/>
+        <circle cx="34" cy="52" r="11" fill="#64b5f6"/>
+        <circle cx="46" cy="52" r="11" fill="#64b5f6"/>
+        <circle cx="40" cy="42" r="9" fill="#fff"/>
+        <rect x="37" y="50" width="6" height="22" rx="2" fill="#81c784"/>
+      </symbol>
+
+      <symbol id="sym-bird" viewBox="0 0 80 60">
+        <ellipse cx="18" cy="28" rx="16" ry="7" fill="#7eb0c8" transform="rotate(-25 18 28)"/>
+        <ellipse cx="58" cy="26" rx="16" ry="7" fill="#6aa0ba" transform="rotate(30 58 26)"/>
+        <ellipse cx="40" cy="32" rx="18" ry="14" fill="#5eb7e6"/>
+        <ellipse cx="42" cy="36" rx="10" ry="8" fill="#c8e4f0" opacity="0.8"/>
+        <circle cx="52" cy="20" r="12" fill="#7ec8f0"/>
+        <circle cx="56" cy="18" r="2.2" fill="#2a3038"/>
+        <circle cx="56.8" cy="17.2" r="0.7" fill="#fff"/>
+        <path d="M62 20 L72 22 L62 25 Z" fill="#f0a060"/>
+        <path d="M22 32 Q8 28 10 40 Q18 36 24 38 Z" fill="#4a90b0"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="app" id="app">
+    <header class="topbar">
+      <nav class="book-nav">
+        <a class="home-link" href="../index.html#color_bear">返回首页</a>
+        <a class="home-link" href="../count_birds/index.html">下一本</a>
+      </nav>
+      <span class="brand">小熊的彩色早晨</span>
+      <span class="page-indicator" id="pageIndicator">1 / 9</span>
+    </header>
+
+    <main class="stage" id="stage" aria-live="polite">
+      <div class="fx-layer" id="fxLayer" aria-hidden="true"></div>
+
+      <!-- 0 封面 -->
+      <section class="page is-active" data-page="0">
+        <div class="sky sky-dawn">
+          <div class="vignette"></div>
+          <div class="sparkles" aria-hidden="true"></div>
+          <div class="cloud c1"></div>
+          <div class="cloud c2"></div>
+          <button type="button" class="art sun-wrap glow float interact" data-interact="sun" aria-label="点太阳">
+            <svg class="art-svg" viewBox="0 0 120 120"><use href="#sym-sun"/></svg>
+            <span class="tap-hint">☀</span>
+          </button>
+          <button type="button" class="art balloon-wrap side-left float interact" data-interact="balloon" aria-label="点气球">
+            <svg class="art-svg" viewBox="0 0 80 110"><use href="#sym-balloon"/></svg>
+          </button>
+          <div class="hill hill-back"></div>
+          <div class="hill hill-front"></div>
+          <button type="button" class="flowers-deco f-left interact" data-interact="flower" aria-label="点小花"></button>
+          <button type="button" class="art bear-wrap interact" data-interact="bear" aria-label="摸摸小熊">
+            <span class="ground-shadow"></span>
+            <svg class="art-svg" viewBox="0 -8 100 160"><use href="#sym-bear-sit"/></svg>
+            <span class="tap-hint">♡</span>
+          </button>
+        </div>
+        <div class="caption caption-center">
+          <h1>小熊的彩色早晨</h1>
+          <p>点图画会有惊喜 · 点下一页开始</p>
+        </div>
+      </section>
+
+      <!-- 1 仰望白气球 -->
+      <section class="page" data-page="1">
+        <div class="sky sky-morn">
+          <div class="vignette"></div>
+          <div class="sparkles" aria-hidden="true"></div>
+          <div class="cloud c1"></div>
+          <div class="cloud c3"></div>
+          <button type="button" class="art sun-wrap glow interact" data-interact="sun" aria-label="点太阳">
+            <svg class="art-svg" viewBox="0 0 120 120"><use href="#sym-sun"/></svg>
+          </button>
+          <button type="button" class="art balloon-wrap float interact" data-interact="balloon" aria-label="点气球">
+            <svg class="art-svg" viewBox="0 0 80 110"><use href="#sym-balloon"/></svg>
+            <span class="tap-hint">✨</span>
+          </button>
+          <div class="hill hill-mid"></div>
+          <button type="button" class="art bear-wrap leftish interact" data-interact="bear" aria-label="摸摸小熊">
+            <span class="ground-shadow"></span>
+            <svg class="art-svg" viewBox="0 -8 100 160"><use href="#sym-bear-look"/></svg>
+          </button>
+        </div>
+        <div class="caption">
+          <p>清晨，小熊看见一只白白的气球。<br />它想：要是涂上颜色，一定更漂亮。</p>
+        </div>
+      </section>
+
+      <!-- 2 颜料罐上色 -->
+      <section class="page" data-page="2">
+        <div class="sky sky-paint">
+          <div class="vignette"></div>
+          <button type="button" class="art balloon-wrap float interact" data-interact="balloon" id="paintBalloon" aria-label="点气球">
+            <svg class="art-svg" viewBox="0 0 80 110"><use href="#sym-balloon"/></svg>
+          </button>
+          <div class="hill hill-front"></div>
+          <button type="button" class="art bear-wrap leftish small interact" data-interact="bear" aria-label="摸摸小熊">
+            <span class="ground-shadow"></span>
+            <svg class="art-svg" viewBox="0 -8 120 160"><use href="#sym-bear-paint"/></svg>
+          </button>
+          <div class="pot-row">
+            <button type="button" class="art pot interact" data-interact="pot" data-color="#e23b3b" data-name="红" aria-label="红颜料">
+              <svg class="art-svg" viewBox="0 0 60 70"><use href="#sym-pot-red"/></svg>
+            </button>
+            <button type="button" class="art pot interact" data-interact="pot" data-color="#f0c14a" data-name="黄" aria-label="黄颜料">
+              <svg class="art-svg" viewBox="0 0 60 70"><use href="#sym-pot-yellow"/></svg>
+            </button>
+            <button type="button" class="art pot interact" data-interact="pot" data-color="#5eb7e6" data-name="蓝" aria-label="蓝颜料">
+              <svg class="art-svg" viewBox="0 0 60 70"><use href="#sym-pot-blue"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="caption">
+          <p>桌上摆着三罐颜料。<br />点颜料罐，气球就会换上颜色。</p>
+        </div>
+      </section>
+
+      <!-- 3 给太阳涂黄 -->
+      <section class="page" data-page="3">
+        <div class="sky sky-morn">
+          <div class="vignette"></div>
+          <div class="cloud c2"></div>
+          <button type="button" class="art sun-wrap glow interact" data-interact="sun-paint" id="sunTarget" aria-label="点太阳上色">
+            <svg class="art-svg" viewBox="0 0 120 120"><use href="#sym-sun"/></svg>
+            <span class="tap-hint">☀</span>
+          </button>
+          <div class="hill hill-mid"></div>
+          <button type="button" class="art bear-wrap leftish interact" data-interact="bear" aria-label="摸摸小熊">
+            <span class="ground-shadow"></span>
+            <svg class="art-svg" viewBox="0 -8 120 160"><use href="#sym-bear-paint"/></svg>
+          </button>
+          <div class="pot-row">
+            <button type="button" class="art pot interact" data-interact="pot-pick" data-color="#e23b3b" data-name="红" aria-label="红颜料">
+              <svg class="art-svg" viewBox="0 0 60 70"><use href="#sym-pot-red"/></svg>
+            </button>
+            <button type="button" class="art pot interact" data-interact="pot-pick" data-color="#f0c14a" data-name="黄" aria-label="黄颜料">
+              <svg class="art-svg" viewBox="0 0 60 70"><use href="#sym-pot-yellow"/></svg>
+            </button>
+            <button type="button" class="art pot interact" data-interact="pot-pick" data-color="#5eb7e6" data-name="蓝" aria-label="蓝颜料">
+              <svg class="art-svg" viewBox="0 0 60 70"><use href="#sym-pot-blue"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="caption">
+          <p>太阳想要暖暖的黄色。<br />先点黄颜料罐，再点太阳。</p>
+        </div>
+      </section>
+
+      <!-- 4 摘苹果 -->
+      <section class="page" data-page="4">
+        <div class="sky sky-yard">
+          <div class="vignette"></div>
+          <button type="button" class="art tree-wrap interact" data-interact="tree" aria-label="摇一摇树">
+            <svg class="art-svg" viewBox="0 0 120 140"><use href="#sym-tree"/></svg>
+          </button>
+          <button type="button" class="art apple-wrap a1 interact" data-interact="apple" aria-label="红苹果">
+            <svg class="art-svg" viewBox="0 0 60 60"><use href="#sym-apple-red"/></svg>
+          </button>
+          <button type="button" class="art apple-wrap a2 interact" data-interact="apple" aria-label="红苹果">
+            <svg class="art-svg" viewBox="0 0 60 60"><use href="#sym-apple-red"/></svg>
+          </button>
+          <button type="button" class="art apple-wrap a3 interact" data-interact="apple" aria-label="红苹果">
+            <svg class="art-svg" viewBox="0 0 60 60"><use href="#sym-apple-red"/></svg>
+          </button>
+          <button type="button" class="art basket-wrap interact" data-interact="basket" aria-label="篮子">
+            <svg class="art-svg" viewBox="0 0 100 60"><use href="#sym-basket"/></svg>
+          </button>
+          <button type="button" class="art bear-wrap rightish small interact" data-interact="bear" aria-label="摸摸小熊">
+            <span class="ground-shadow"></span>
+            <svg class="art-svg" viewBox="0 -8 110 160"><use href="#sym-bear-reach"/></svg>
+          </button>
+        </div>
+        <div class="caption">
+          <p>树上结了红红的苹果。<br />点苹果，放进篮子里。</p>
+        </div>
+      </section>
+
+      <!-- 5 混合变橙 -->
+      <section class="page" data-page="5">
+        <div class="sky sky-mix">
+          <div class="vignette"></div>
+          <button type="button" class="art mix-drop d-red interact" data-interact="mix" data-tone="red" aria-label="红颜料滴">
+            <svg class="art-svg" viewBox="0 0 60 70"><use href="#sym-drop-red"/></svg>
+          </button>
+          <button type="button" class="art mix-drop d-yel interact" data-interact="mix" data-tone="yellow" aria-label="黄颜料滴">
+            <svg class="art-svg" viewBox="0 0 60 70"><use href="#sym-drop-yellow"/></svg>
+          </button>
+          <button type="button" class="art palette-wrap interact" data-interact="palette" aria-label="调色盘">
+            <svg class="art-svg" viewBox="0 0 120 90"><use href="#sym-palette"/></svg>
+          </button>
+          <button type="button" class="art flower-bloom interact" data-interact="flower" id="orangeFlower" aria-label="橙色小花">
+            <svg class="art-svg" viewBox="0 0 80 80"><use href="#sym-flower-orange"/></svg>
+          </button>
+          <div class="hill hill-front"></div>
+          <button type="button" class="art bear-wrap leftish small interact" data-interact="bear" aria-label="摸摸小熊">
+            <span class="ground-shadow"></span>
+            <svg class="art-svg" viewBox="0 -8 100 160"><use href="#sym-bear-sit"/></svg>
+          </button>
+        </div>
+        <div class="caption">
+          <p>红和黄会变成什么呢？<br />先点两滴颜料，再点调色盘。</p>
+        </div>
+      </section>
+
+      <!-- 6 蓝天小鸟 -->
+      <section class="page" data-page="6">
+        <div class="sky sky-blue">
+          <div class="vignette"></div>
+          <button type="button" class="cloud c1 interact" data-interact="cloud" aria-label="点云朵"></button>
+          <button type="button" class="cloud c2 interact" data-interact="cloud" aria-label="点云朵"></button>
+          <button type="button" class="cloud c3 interact" data-interact="cloud" aria-label="点云朵"></button>
+          <button type="button" class="art bird-wrap interact" data-interact="bird" id="blueBird" aria-label="点小鸟">
+            <svg class="art-svg" viewBox="0 0 80 60"><use href="#sym-bird"/></svg>
+          </button>
+          <div class="hill hill-mid"></div>
+          <button type="button" class="art bear-wrap leftish interact" data-interact="bear" aria-label="摸摸小熊">
+            <span class="ground-shadow"></span>
+            <svg class="art-svg" viewBox="0 -8 100 160"><use href="#sym-bear-look"/></svg>
+          </button>
+          <div class="pot-row">
+            <button type="button" class="art pot interact" data-interact="sky-pot" data-color="#5eb7e6" aria-label="蓝颜料">
+              <svg class="art-svg" viewBox="0 0 60 70"><use href="#sym-pot-blue"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="caption">
+          <p>点蓝颜料，云朵变成蓝蓝的。<br />小鸟也会飞过来玩。</p>
+        </div>
+      </section>
+
+      <!-- 7 找红色 -->
+      <section class="page" data-page="7">
+        <div class="sky sky-hunt">
+          <div class="vignette"></div>
+          <button type="button" class="art hunt-item h1 interact" data-interact="hunt" data-ok="0" aria-label="绿苹果">
+            <svg class="art-svg" viewBox="0 0 60 60"><use href="#sym-apple-green"/></svg>
+          </button>
+          <button type="button" class="art hunt-item h2 interact" data-interact="hunt" data-ok="1" aria-label="红苹果">
+            <svg class="art-svg" viewBox="0 0 60 60"><use href="#sym-apple-red"/></svg>
+          </button>
+          <button type="button" class="art hunt-item h3 interact" data-interact="hunt" data-ok="0" aria-label="黄苹果">
+            <svg class="art-svg" viewBox="0 0 60 60"><use href="#sym-apple-yellow"/></svg>
+          </button>
+          <button type="button" class="art hunt-item h4 interact" data-interact="hunt" data-ok="0" aria-label="粉花">
+            <svg class="art-svg" viewBox="0 0 80 80"><use href="#sym-flower-pink"/></svg>
+          </button>
+          <button type="button" class="art hunt-item h5 interact" data-interact="hunt" data-ok="0" aria-label="蓝花">
+            <svg class="art-svg" viewBox="0 0 80 80"><use href="#sym-flower-blue"/></svg>
+          </button>
+          <div class="hill hill-front"></div>
+          <button type="button" class="art bear-wrap leftish small interact" data-interact="bear" aria-label="摸摸小熊">
+            <span class="ground-shadow"></span>
+            <svg class="art-svg" viewBox="0 -8 100 160"><use href="#sym-bear-sit"/></svg>
+          </button>
+        </div>
+        <div class="caption">
+          <p>找一找：哪一个是红色的？<br />点对了，小熊会开心。</p>
+        </div>
+      </section>
+
+      <!-- 8 彩色派对 -->
+      <section class="page" data-page="8">
+        <div class="sky sky-party">
+          <div class="vignette"></div>
+          <div class="rainbow" aria-hidden="true"></div>
+          <div class="sparkles" aria-hidden="true"></div>
+          <button type="button" class="art balloon-party b1 float interact" data-interact="party-balloon" data-color="#e23b3b" aria-label="红气球">
+            <svg class="art-svg" viewBox="0 0 80 110"><use href="#sym-balloon"/></svg>
+          </button>
+          <button type="button" class="art balloon-party b2 float interact" data-interact="party-balloon" data-color="#f0c14a" aria-label="黄气球">
+            <svg class="art-svg" viewBox="0 0 80 110"><use href="#sym-balloon"/></svg>
+          </button>
+          <button type="button" class="art balloon-party b3 float interact" data-interact="party-balloon" data-color="#5eb7e6" aria-label="蓝气球">
+            <svg class="art-svg" viewBox="0 0 80 110"><use href="#sym-balloon"/></svg>
+          </button>
+          <div class="hill hill-front"></div>
+          <button type="button" class="flowers-deco f-left interact" data-interact="flower" aria-label="点小花"></button>
+          <button type="button" class="flowers-deco f-right interact" data-interact="flower" aria-label="点小花"></button>
+          <button type="button" class="art bear-wrap interact" data-interact="bear" aria-label="摸摸小熊">
+            <span class="ground-shadow"></span>
+            <svg class="art-svg" viewBox="0 -8 100 160"><use href="#sym-bear-happy"/></svg>
+            <span class="tap-hint">♡</span>
+          </button>
+        </div>
+        <div class="caption caption-center">
+          <p>彩色的早晨真开心！<br />点气球、点小熊，再玩一会儿。<br />— 完 —</p>
+        </div>
+      </section>
+    </main>
+
+    <nav class="controls">
+      <button class="btn" id="btnPrev" type="button">上一页</button>
+      <div class="dots" id="dots"></div>
+      <button class="btn btn-primary" id="btnNext" type="button">下一页</button>
+    </nav>
+    <p class="hint" id="hint">适合 2–4 岁 · 点图画认识红黄蓝</p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

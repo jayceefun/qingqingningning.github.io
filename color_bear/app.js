@@ -1,180 +1,451 @@
-
 (() => {
-  const pages = [...document.querySelectorAll(".page")];
+  const pages = Array.from(document.querySelectorAll(".page"));
   const total = pages.length;
-  const btnPrev = document.getElementById("btnPrev");
-  const btnNext = document.getElementById("btnNext");
   const indicator = document.getElementById("pageIndicator");
   const dotsEl = document.getElementById("dots");
+  const btnPrev = document.getElementById("btnPrev");
+  const btnNext = document.getElementById("btnNext");
   const stage = document.getElementById("stage");
-  const toast = document.getElementById("toast");
-  let index = 0, x0 = 0, y0 = 0;
-  for (let i = 0; i < total; i++) {
+  const hint = document.getElementById("hint");
+  const fxLayer = document.getElementById("fxLayer");
+
+  let index = 0;
+  let locking = false;
+  const state = {
+    brush: null,
+    mix: new Set(),
+    apples: 0,
+    skyPainted: false,
+    huntDone: false,
+  };
+
+  pages.forEach((_, i) => {
     const d = document.createElement("span");
     d.className = "dot" + (i === 0 ? " is-on" : "");
     dotsEl.appendChild(d);
+  });
+
+  // 派对气球预上色
+  document.querySelectorAll('[data-interact="party-balloon"]').forEach((el) => {
+    const body = el.querySelector(".balloon-body") || el.querySelector("ellipse");
+    // use 内部要找 shadow DOM 不行；改用 setAttribute 在 use 外层不行
+    // 派对页气球用 CSS filter 着色
+    const c = el.dataset.color;
+    if (c) el.style.setProperty("--balloon", c);
+    el.querySelector(".art-svg")?.style.setProperty("filter", `drop-shadow(0 4px 10px rgba(60,40,20,.18))`);
+    // 直接改 fill：clone 一份或对 use 无效。改用 inline SVG 路径——派对气球在 click 时上色
+    paintBalloonEl(el, c);
+  });
+
+  function paintBalloonEl(wrap, color) {
+    if (!wrap || !color) return;
+    // <use> 无法直接改内部 fill，换成给 svg 加 style 并用 CSS 变量；
+    // 更稳妥：在 wrap 上叠一层半透明 tint
+    let tint = wrap.querySelector(".balloon-tint");
+    if (!tint) {
+      tint = document.createElement("span");
+      tint.className = "balloon-tint";
+      tint.style.cssText =
+        "position:absolute;left:12%;top:2%;width:76%;height:58%;border-radius:50%;pointer-events:none;mix-blend-mode:multiply;opacity:.85;transition:background .35s";
+      wrap.appendChild(tint);
+    }
+    tint.style.background = color;
   }
-  const dots = [...dotsEl.children];
-  function show(i) {
-    index = Math.max(0, Math.min(total - 1, i));
-    pages.forEach((p, n) => p.classList.toggle("is-active", n === index));
-    dots.forEach((d, n) => d.classList.toggle("is-on", n === index));
+
+  function updateUI() {
     indicator.textContent = `${index + 1} / ${total}`;
     btnPrev.disabled = index === 0;
     btnNext.textContent = index === total - 1 ? "再看一遍" : "下一页";
+    dotsEl.querySelectorAll(".dot").forEach((d, i) => {
+      d.classList.toggle("is-on", i === index);
+    });
   }
-  function next() { show(index >= total - 1 ? 0 : index + 1); }
-  function prev() { if (index > 0) show(index - 1); }
-  btnPrev.onclick = prev; btnNext.onclick = next;
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") next();
-    if (e.key === "ArrowLeft") prev();
-  });
-  stage.addEventListener("touchstart", (e) => { x0 = e.changedTouches[0].clientX; y0 = e.changedTouches[0].clientY; }, {passive:true});
-  stage.addEventListener("touchend", (e) => {
-    const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
-    if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy)) return;
-    dx < 0 ? next() : prev();
-  }, {passive:true});
-  function say(t) {
-    if (!toast) return;
-    toast.textContent = t;
-    toast.classList.add("show");
-    clearTimeout(say._t);
-    say._t = setTimeout(() => toast.classList.remove("show"), 900);
+
+  function goTo(nextPage, dir) {
+    if (locking || nextPage === index || nextPage < 0 || nextPage >= total) return;
+    locking = true;
+    const current = pages[index];
+    const target = pages[nextPage];
+    const exitClass = dir === "next" ? "is-exit-left" : "is-exit-right";
+
+    current.classList.remove("is-active");
+    current.classList.add(exitClass);
+    target.style.transform = dir === "next" ? "translateX(18%)" : "translateX(-18%)";
+    target.style.opacity = "0";
+    void target.offsetWidth;
+    target.classList.add("is-active");
+    target.style.transform = "";
+    target.style.opacity = "";
+
+    window.setTimeout(() => {
+      current.classList.remove(exitClass);
+      locking = false;
+    }, 460);
+
+    index = nextPage;
+    updateUI();
+    if (hint && index > 0) {
+      hint.style.opacity = "0.55";
+    }
   }
+
+  function next() {
+    if (index === total - 1) {
+      goTo(0, "prev");
+      return;
+    }
+    goTo(index + 1, "next");
+  }
+
+  function prev() {
+    goTo(index - 1, "prev");
+  }
+
+  btnNext.addEventListener("click", next);
+  btnPrev.addEventListener("click", prev);
+
+  function stagePoint(clientX, clientY) {
+    const rect = stage.getBoundingClientRect();
+    return { x: clientX - rect.left, y: clientY - rect.top };
+  }
+
+  function elCenter(el) {
+    const s = stage.getBoundingClientRect();
+    const r = el.getBoundingClientRect();
+    return {
+      x: r.left + r.width / 2 - s.left,
+      y: r.top + r.height / 2 - s.top,
+    };
+  }
+
+  function spawn(node, life) {
+    fxLayer.appendChild(node);
+    window.setTimeout(() => node.remove(), life);
+  }
+
+  function burstSparks(x, y, n = 10, colors) {
+    const cols = colors || ["#ffe08a", "#ffffff", "#ff8fab", "#5eb7e6", "#f0c14a"];
+    for (let i = 0; i < n; i++) {
+      const p = document.createElement("span");
+      p.className = "fx-spark";
+      const ang = (Math.PI * 2 * i) / n + Math.random() * 0.35;
+      const dist = 26 + Math.random() * 48;
+      p.style.left = x + "px";
+      p.style.top = y + "px";
+      p.style.setProperty("--tx", Math.cos(ang) * dist + "px");
+      p.style.setProperty("--ty", Math.sin(ang) * dist + "px");
+      p.style.background = cols[i % cols.length];
+      spawn(p, 800);
+    }
+  }
+
+  function hearts(x, y, n = 4) {
+    const glyphs = ["♡", "♥", "💕", "✨"];
+    for (let i = 0; i < n; i++) {
+      const h = document.createElement("span");
+      h.className = "fx-heart";
+      h.textContent = glyphs[i % glyphs.length];
+      h.style.left = x + (Math.random() * 24 - 12) + "px";
+      h.style.top = y - 8 + "px";
+      h.style.animationDelay = i * 0.08 + "s";
+      spawn(h, 1000);
+    }
+  }
+
+  function paintDrops(x, y, color, n = 6) {
+    for (let i = 0; i < n; i++) {
+      const d = document.createElement("span");
+      d.className = "fx-drop";
+      d.style.background = color;
+      d.style.left = x + "px";
+      d.style.top = y + "px";
+      d.style.setProperty("--tx", Math.random() * 40 - 20 + "px");
+      d.style.setProperty("--ty", 30 + Math.random() * 40 + "px");
+      spawn(d, 700);
+    }
+  }
+
+  function bubble(x, y, text) {
+    const b = document.createElement("div");
+    b.className = "fx-bubble";
+    b.textContent = text;
+    b.style.left = x + "px";
+    b.style.top = y - 36 + "px";
+    spawn(b, 1600);
+  }
+
+  function flashClass(el, cls, ms) {
+    el.classList.remove(cls);
+    void el.offsetWidth;
+    el.classList.add(cls);
+    window.setTimeout(() => el.classList.remove(cls), ms);
+  }
+
   function speak(t) {
     if (!window.speechSynthesis) return;
     const u = new SpeechSynthesisUtterance(t);
-    u.lang = "zh-CN"; u.rate = 0.95;
-    speechSynthesis.cancel(); speechSynthesis.speak(u);
+    u.lang = "zh-CN";
+    u.rate = 0.95;
+    speechSynthesis.cancel();
+    speechSynthesis.speak(u);
   }
-  const state = { count: 0, mix: [], grow: 0, green: false, pick: null, wash: 0, night: false };
-  stage.addEventListener("click", (e) => {
-    const hot = e.target.closest("[data-hot]");
-    if (!hot || !stage.contains(hot)) return;
-    e.stopPropagation();
-    const page = hot.closest(".page");
-    if (!page || !page.classList.contains("is-active")) return;
-    const book = document.body.dataset.book;
-    const name = hot.dataset.hot;
 
-    if (book === "color_bear") {
-      if (name.startsWith("pot-")) {
-        const ball = page.querySelector("#ball");
-        if (ball) { ball.setAttribute("fill", hot.dataset.color); say(hot.dataset.say); }
-      } else if (name.startsWith("apple-")) {
-        hot.classList.add("gone"); say(hot.dataset.say || "放进篮子");
-      } else if (name === "mix-r" || name === "mix-y") {
-        state.mix.push(hot.dataset.color);
-        say(state.mix.length === 1 ? "再点另一种颜色" : "点大盘子混合");
-        if (state.mix.length > 2) state.mix = state.mix.slice(-2);
-      } else if (name === "mix-out") {
-        const out = page.querySelector("#mixOut");
-        if (state.mix.length >= 2 && out) { out.setAttribute("fill", "#ff9800"); say("变成橙色啦"); state.mix = []; }
-        else say("先点红和黄");
-      } else if (name === "find-red") { say("找到红色了"); hot.classList.add("ok"); }
-      else if (name === "find-blue") { say("找到蓝色了"); hot.classList.add("ok"); }
-      else if (name === "party" || name === "balloon" || name === "bear") { say("跳一跳"); hot.classList.add("ok"); setTimeout(()=>hot.classList.remove("ok"),400); }
-      return;
-    }
-    if (book === "count_birds" && name === "bird") {
-      const n = Number(hot.dataset.n);
-      if (n !== state.count + 1) { say("先点 " + (state.count + 1)); return; }
-      hot.classList.add("ok"); state.count = n; say(String(n));
-      if (n === 5) { say("五只，数完啦"); state.count = 0; }
-      return;
-    }
-    if (book === "mood_cat") {
-      const mouth = page.querySelector("#catMouth");
-      if (name === "face-sad") { if (mouth) mouth.setAttribute("d", "M172 268 q8 -8 16 0"); say("难过"); }
-      else if (name === "face-happy") { if (mouth) mouth.setAttribute("d", "M172 262 q8 8 16 0"); say("开心"); }
-      else if (name === "raindrops" || name === "cloud") say("滴答滴答");
-      else if (name === "sun") say("暖暖的");
-      else if (name === "cat") say("喵");
-      return;
-    }
-    if (book === "hello_puppy") {
-      if (name === "say-hi") { say("你好"); speak("你好"); }
-      else if (name === "say-thanks") { say("谢谢"); speak("谢谢"); }
-      else if (name === "say-bye") { say("再见"); speak("再见"); }
-      else if (name === "pup") { say("汪汪"); const paw = page.querySelector("#pawWave"); if (paw) { paw.setAttribute("transform", "rotate(-20 120 280)"); setTimeout(()=>paw.removeAttribute("transform"),300);} }
-      return;
-    }
-    if (book === "day_penguin") {
-      const bg = page.querySelector("#bgDN");
-      const skyStars = page.querySelector("#skyStars");
-      if (name === "sun") { state.night = false; if (bg) bg.setAttribute("fill", "#b7e3f7"); if (skyStars) skyStars.setAttribute("opacity", "0"); say("白天"); }
-      else if (name === "moon") { state.night = true; if (bg) bg.setAttribute("fill", "#1a2744"); if (skyStars) skyStars.setAttribute("opacity", "1"); say("黑夜"); }
-      else if (name === "stars") { if (skyStars) skyStars.setAttribute("opacity", "1"); say("一闪一闪"); }
-      else if (name === "igloo") say("回家睡觉");
-      else if (name === "penguin") say(state.night ? "嘘，睡觉" : "去玩啦");
-      return;
-    }
-    if (book === "grow_seed") {
-      if (name === "can") {
-        state.grow = Math.min(3, state.grow + 1);
-        const plant = page.querySelector("#plant");
-        const scales = [0.25, 0.45, 0.7, 1];
-        if (plant) plant.setAttribute("transform", `translate(180 340) scale(${scales[state.grow]}) translate(-180 -340)`);
-        say(state.grow === 3 ? "开花啦" : "咕嘟");
-      } else if (name === "sun") say("晒太阳");
-      else if (name === "seed") say("小种子");
-      return;
-    }
-    if (book === "cross_deer") {
-      if (name === "light") {
-        state.green = !state.green;
-        page.querySelector("#lampR").setAttribute("fill", state.green ? "#ccc" : "#e23b3b");
-        page.querySelector("#lampG").setAttribute("fill", state.green ? "#43a047" : "#ccc");
-        say(state.green ? "绿灯" : "红灯");
-      } else if (name === "deer") {
-        if (!state.green) { say("红灯，停"); return; }
-        hot.setAttribute("transform", "translate(160 0)"); say("安全通过");
-      } else if (name === "car") say("嘀嘀，停下");
-      return;
-    }
-    if (book === "sort_raccoon") {
-      if (name === "paper" || name === "peel" || name === "bottle") { state.pick = name; say("放到哪一桶"); return; }
-      if (name.startsWith("bin-")) {
-        const need = name.slice(4);
-        if (!state.pick) { say("先点垃圾"); return; }
-        if (state.pick === need) {
-          const item = page.querySelector(`[data-hot="${state.pick}"]`);
-          if (item) item.classList.add("gone");
-          say("放对啦"); state.pick = null;
-        } else say("换个桶");
-        return;
+  function handleInteract(el, clientX, clientY) {
+    const type = el.dataset.interact;
+    const c = elCenter(el);
+    const p = stagePoint(clientX, clientY);
+    const page = el.closest(".page");
+
+    switch (type) {
+      case "sun":
+        flashClass(el, "is-pulse", 700);
+        burstSparks(c.x, c.y, 12, ["#ffe08a", "#fff", "#f0c14a"]);
+        bubble(c.x, c.y - 16, "暖暖的");
+        break;
+
+      case "sun-paint": {
+        if (state.brush !== "#f0c14a") {
+          bubble(c.x, c.y - 16, "先点黄颜料");
+          flashClass(el, "is-pulse", 400);
+          break;
+        }
+        flashClass(el, "is-pulse", 700);
+        paintDrops(c.x, c.y, "#f0c14a", 8);
+        burstSparks(c.x, c.y, 14, ["#ffe08a", "#f0c14a", "#fff"]);
+        bubble(c.x, c.y - 20, "黄色太阳");
+        speak("黄色");
+        el.classList.add("glow");
+        break;
       }
-      if (name === "raccoon") say("棒棒的");
+
+      case "balloon": {
+        flashClass(el, "is-pulse", 600);
+        burstSparks(c.x, c.y, 8);
+        break;
+      }
+
+      case "pot": {
+        const color = el.dataset.color;
+        const name = el.dataset.name || "";
+        paintDrops(c.x, c.y, color, 7);
+        flashClass(el, "is-pulse", 400);
+        const balloon = page.querySelector('[data-interact="balloon"]');
+        if (balloon) {
+          paintBalloonEl(balloon, color);
+          const bc = elCenter(balloon);
+          burstSparks(bc.x, bc.y, 10, [color, "#fff"]);
+          bubble(bc.x, bc.y - 20, name + "色气球");
+          speak(name + "色");
+        }
+        break;
+      }
+
+      case "pot-pick": {
+        state.brush = el.dataset.color;
+        page.querySelectorAll('[data-interact="pot-pick"]').forEach((x) => x.classList.remove("is-pick"));
+        el.classList.add("is-pick");
+        paintDrops(c.x, c.y, state.brush, 5);
+        bubble(c.x, c.y - 16, "选好了");
+        break;
+      }
+
+      case "apple": {
+        if (el.classList.contains("gone")) return;
+        el.classList.add("gone");
+        state.apples += 1;
+        burstSparks(c.x, c.y, 8, ["#e23b3b", "#ff8fab", "#fff"]);
+        const basket = page.querySelector('[data-interact="basket"]');
+        if (basket) {
+          const bc = elCenter(basket);
+          paintDrops(bc.x, bc.y - 10, "#e23b3b", 4);
+          // 显示篮中果
+          const fruit = basket.querySelector("#basketFruit");
+          // use 内 id 不可见；用 tint 提示
+          let pile = basket.querySelector(".fruit-pile");
+          if (!pile) {
+            pile = document.createElement("span");
+            pile.className = "fruit-pile";
+            pile.style.cssText =
+              "position:absolute;left:28%;top:18%;width:44%;height:36%;border-radius:50%;background:#e23b3b;box-shadow:10px 4px 0 #c62828,-8px 6px 0 #ef5350;opacity:0;transition:opacity .35s";
+            basket.appendChild(pile);
+          }
+          pile.style.opacity = String(Math.min(1, state.apples / 3));
+        }
+        if (state.apples >= 3) {
+          bubble(c.x, c.y - 20, "摘完啦");
+          speak("红色");
+        }
+        break;
+      }
+
+      case "basket":
+        flashClass(el, "is-pulse", 500);
+        bubble(c.x, c.y - 16, state.apples ? "满满的" : "空篮子");
+        break;
+
+      case "tree":
+        flashClass(el, "is-shake", 550);
+        burstSparks(c.x, c.y - 20, 8, ["#66bb6a", "#43a047", "#a5d6a7"]);
+        break;
+
+      case "mix": {
+        const tone = el.dataset.tone;
+        state.mix.add(tone);
+        paintDrops(c.x, c.y, tone === "red" ? "#e23b3b" : "#f0c14a", 6);
+        flashClass(el, "is-pulse", 400);
+        bubble(c.x, c.y - 16, state.mix.size === 1 ? "再点另一滴" : "点调色盘");
+        break;
+      }
+
+      case "palette": {
+        const well = el.querySelector(".mix-well");
+        if (state.mix.has("red") && state.mix.has("yellow")) {
+          // use 内改不了，叠橙色层
+          let tint = el.querySelector(".mix-tint");
+          if (!tint) {
+            tint = document.createElement("span");
+            tint.className = "mix-tint";
+            tint.style.cssText =
+              "position:absolute;left:38%;top:48%;width:24%;height:30%;border-radius:50%;background:#ff9800;pointer-events:none;box-shadow:0 0 12px #ff9800";
+            el.appendChild(tint);
+          }
+          burstSparks(c.x, c.y, 14, ["#ff9800", "#f0c14a", "#e23b3b"]);
+          bubble(c.x, c.y - 20, "橙色！");
+          speak("橙色");
+          const flower = page.querySelector("#orangeFlower");
+          if (flower) flower.classList.add("is-on");
+          state.mix.clear();
+        } else {
+          bubble(c.x, c.y - 16, "先点红和黄");
+          flashClass(el, "is-pulse", 400);
+        }
+        void well;
+        break;
+      }
+
+      case "sky-pot": {
+        state.skyPainted = true;
+        paintDrops(c.x, c.y, "#5eb7e6", 8);
+        page.querySelectorAll(".cloud").forEach((cloud) => cloud.classList.add("is-blue"));
+        const bird = page.querySelector("#blueBird");
+        if (bird) bird.classList.add("is-on");
+        burstSparks(c.x, c.y, 10, ["#5eb7e6", "#fff", "#90caf9"]);
+        bubble(c.x, c.y - 16, "蓝色");
+        speak("蓝色");
+        break;
+      }
+
+      case "cloud":
+        if (!state.skyPainted) {
+          bubble(c.x, c.y - 12, "先点蓝颜料");
+          break;
+        }
+        el.classList.add("is-blue");
+        burstSparks(c.x, c.y, 6, ["#5eb7e6", "#fff"]);
+        break;
+
+      case "bird":
+        if (!el.classList.contains("is-on")) return;
+        flashClass(el, "is-dash", 800);
+        burstSparks(c.x, c.y, 8, ["#5eb7e6", "#fff"]);
+        bubble(c.x, c.y - 16, "啾啾");
+        break;
+
+      case "hunt": {
+        const ok = el.dataset.ok === "1";
+        if (ok) {
+          el.classList.add("is-ok");
+          state.huntDone = true;
+          flashClass(el, "is-pulse", 600);
+          burstSparks(c.x, c.y, 12, ["#e23b3b", "#ff8fab", "#fff"]);
+          hearts(c.x, c.y - 10, 5);
+          bubble(c.x, c.y - 20, "找到红色了");
+          speak("红色");
+          const bear = page.querySelector('[data-interact="bear"]');
+          if (bear) flashClass(bear, "is-hop", 550);
+        } else {
+          el.classList.add("is-wrong");
+          window.setTimeout(() => el.classList.remove("is-wrong"), 400);
+          bubble(c.x, c.y - 16, "再找找");
+        }
+        break;
+      }
+
+      case "party-balloon": {
+        paintBalloonEl(el, el.dataset.color);
+        flashClass(el, "is-pulse", 600);
+        burstSparks(c.x, c.y, 12, [el.dataset.color, "#fff", "#ffe08a"]);
+        hearts(c.x, c.y - 8, 3);
+        break;
+      }
+
+      case "bear":
+        flashClass(el, "is-pet", 550);
+        hearts(c.x, c.y - 10, 5);
+        break;
+
+      case "flower":
+        flashClass(el, "is-pulse", 500);
+        burstSparks(c.x, c.y, 7, ["#ff8fab", "#ffb3c6", "#ffe08a"]);
+        hearts(c.x, c.y, 2);
+        break;
+
+      default:
+        burstSparks(p.x, p.y, 6);
+    }
+  }
+
+  stage.addEventListener("click", (e) => {
+    if (e.target.closest("button.btn") || e.target.closest(".controls")) return;
+    const hit = e.target.closest("[data-interact]");
+    if (hit) {
+      e.stopPropagation();
+      handleInteract(hit, e.clientX, e.clientY);
       return;
     }
-    if (book === "wash_monkey") {
-      if (name === "step1" || name === "soap") { if (state.wash !== 0) { say("先点肥皂"); return; } state.wash = 1; say("抹肥皂"); hot.classList.add("ok"); }
-      else if (name === "step2" || name === "hands") { if (state.wash !== 1) { say("再搓一搓"); return; } state.wash = 2; say("搓一搓"); hot.classList.add("ok"); }
-      else if (name === "step3" || name === "water" || name === "sink") { if (state.wash !== 2) { say("最后冲水"); return; } state.wash = 3; say("冲干净"); const w = page.querySelector("#waterStream"); if (w) w.setAttribute("opacity", "1"); hot.classList.add("ok"); }
-      else if (name === "monkey") say(state.wash === 3 ? "干净啦" : "先洗手");
-      return;
-    }
-    if (book === "season_tree") {
-      const leaf = page.querySelector("#sLeaf");
-      const bloom = page.querySelector("#sBloom");
-      const sky = page.querySelector("#sSky");
-      const map = {
-        spring: ["#b7e3f7", "#81c784", "#ff8fab", "春天"],
-        summer: ["#4fc3f7", "#2e7d32", "#43a047", "夏天"],
-        autumn: ["#ffe0b2", "#ef6c00", "#e53935", "秋天"],
-        winter: ["#cfd8dc", "#b0bec5", "#fff", "冬天"]
-      };
-      if (map[name]) {
-        const m = map[name];
-        if (sky) sky.setAttribute("fill", m[0]);
-        if (leaf) leaf.setAttribute("fill", m[1]);
-        if (bloom) bloom.setAttribute("fill", m[2]);
-        say(m[3]);
-      } else if (name === "tree") say("沙沙沙");
-      return;
+    if (e.target.closest(".caption")) return;
+    const p = stagePoint(e.clientX, e.clientY);
+    burstSparks(p.x, p.y, 5, ["#ffe08a", "#fff", "#ff8fab"]);
+  });
+
+  let startX = 0;
+  let startY = 0;
+  let tracking = false;
+
+  stage.addEventListener(
+    "touchstart",
+    (e) => {
+      const t = e.changedTouches[0];
+      startX = t.clientX;
+      startY = t.clientY;
+      tracking = true;
+    },
+    { passive: true }
+  );
+
+  stage.addEventListener(
+    "touchend",
+    (e) => {
+      if (!tracking) return;
+      tracking = false;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - startX;
+      const dy = t.clientY - startY;
+      if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy)) return;
+      if (dx < 0) next();
+      else prev();
+    },
+    { passive: true }
+  );
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight" || e.key === " ") {
+      e.preventDefault();
+      next();
+    } else if (e.key === "ArrowLeft") {
+      prev();
     }
   });
-  show(0);
+
+  updateUI();
 })();
