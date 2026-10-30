@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>浣熊分垃圾</title>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body data-mode="sort">
+<div class="app">
+<header class="topbar">
+<nav class="book-nav">
+<a class="home-link" href="../index.html#sort_raccoon">返回首页</a>
+<a class="home-link" href="../rabbit_moon/index.html">下一本</a>
+</nav>
+<span class="brand">浣熊分垃圾</span>
+<span class="page-indicator" id="pageIndicator">1 / 6</span>
+</header>
+<main class="stage" id="stage"><div class="toast" id="toast"></div>
+<section class="page is-active" data-page="0">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#fff6ea"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#d7e6c8"/>
+      <g>
+          <ellipse cx="180" cy="266" rx="46" ry="32" fill="#8d8f93"/>
+          <circle cx="180" cy="222" r="32" fill="#b0b3b8"/>
+          <ellipse cx="168" cy="222" rx="10" ry="8" fill="#3a3a3a"/>
+          <ellipse cx="192" cy="222" rx="10" ry="8" fill="#3a3a3a"/>
+          <circle cx="168" cy="222" r="2" fill="#fff"/>
+          <circle cx="192" cy="222" r="2" fill="#fff"/>
+          <ellipse cx="180" cy="236" rx="8" ry="5" fill="#fff"/>
+        </g><ellipse cx="70" cy="80" rx="28" ry="16" fill="#fff" opacity=".8"/>
+    </svg></div>
+      <div class="caption"><p>浣熊分垃圾</p><p>区分可回收和厨余</p></div>
+    </section>
+<section class="page" data-page="1">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#fff6ea"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#d7e6c8"/>
+      <g>
+          <ellipse cx="180" cy="266" rx="46" ry="32" fill="#8d8f93"/>
+          <circle cx="180" cy="222" r="32" fill="#b0b3b8"/>
+          <ellipse cx="168" cy="222" rx="10" ry="8" fill="#3a3a3a"/>
+          <ellipse cx="192" cy="222" rx="10" ry="8" fill="#3a3a3a"/>
+          <circle cx="168" cy="222" r="2" fill="#fff"/>
+          <circle cx="192" cy="222" r="2" fill="#fff"/>
+          <ellipse cx="180" cy="236" rx="8" ry="5" fill="#fff"/>
+        </g>
+    </svg></div>
+      <div class="caption"><p>地上有纸团和果皮。</p><p>它们不是一家。</p></div>
+    </section>
+<section class="page" data-page="2">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#fff6ea"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#d7e6c8"/>
+      <g>
+          <ellipse cx="180" cy="266" rx="46" ry="32" fill="#8d8f93"/>
+          <circle cx="180" cy="222" r="32" fill="#b0b3b8"/>
+          <ellipse cx="168" cy="222" rx="10" ry="8" fill="#3a3a3a"/>
+          <ellipse cx="192" cy="222" rx="10" ry="8" fill="#3a3a3a"/>
+          <circle cx="168" cy="222" r="2" fill="#fff"/>
+          <circle cx="192" cy="222" r="2" fill="#fff"/>
+          <ellipse cx="180" cy="236" rx="8" ry="5" fill="#fff"/>
+        </g>
+    </svg></div>
+      <div class="caption"><p>纸可以回收。</p><p>果皮是厨余。</p></div>
+    </section>
+<section class="page" data-page="3">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#fff6ea"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#d7e6c8"/>
+      <g>
+          <ellipse cx="180" cy="266" rx="46" ry="32" fill="#8d8f93"/>
+          <circle cx="180" cy="222" r="32" fill="#b0b3b8"/>
+          <ellipse cx="168" cy="222" rx="10" ry="8" fill="#3a3a3a"/>
+          <ellipse cx="192" cy="222" rx="10" ry="8" fill="#3a3a3a"/>
+          <circle cx="168" cy="222" r="2" fill="#fff"/>
+          <circle cx="192" cy="222" r="2" fill="#fff"/>
+          <ellipse cx="180" cy="236" rx="8" ry="5" fill="#fff"/>
+        </g>
+    </svg></div>
+      <div class="caption"><p>放进对的桶，房间就干净。</p><p>分类是帮地球的忙。</p></div>
+    </section>
+<section class="page" data-page="4">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#fff6ea"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#d7e6c8"/>
+      <g>
+          <ellipse cx="180" cy="266" rx="46" ry="32" fill="#8d8f93"/>
+          <circle cx="180" cy="222" r="32" fill="#b0b3b8"/>
+          <ellipse cx="168" cy="222" rx="10" ry="8" fill="#3a3a3a"/>
+          <ellipse cx="192" cy="222" rx="10" ry="8" fill="#3a3a3a"/>
+          <circle cx="168" cy="222" r="2" fill="#fff"/>
+          <circle cx="192" cy="222" r="2" fill="#fff"/>
+          <ellipse cx="180" cy="236" rx="8" ry="5" fill="#fff"/>
+        </g>
+    </svg>
+        <button class="hot" data-item="paper" style="left:10%;top:18%;width:22%;height:12%">纸</button>
+        <button class="hot" data-item="peel" style="left:10%;top:34%;width:22%;height:12%">果皮</button>
+        <button class="hot" data-bin="paper" style="right:8%;top:18%;width:28%;height:14%">回收</button>
+        <button class="hot" data-bin="peel" style="right:8%;top:36%;width:28%;height:14%">厨余</button></div>
+      <div class="caption"><p>来玩一玩。</p><p>适合 4–6 岁 · 点垃圾再点桶</p></div>
+    </section>
+<section class="page" data-page="5">
+      <div class="sky"><svg class="scene" viewBox="0 0 360 460">
+      <rect width="360" height="460" fill="#fff6ea"/>
+      <ellipse cx="180" cy="430" rx="220" ry="80" fill="#d7e6c8"/>
+      <g>
+          <ellipse cx="180" cy="266" rx="46" ry="32" fill="#8d8f93"/>
+          <circle cx="180" cy="222" r="32" fill="#b0b3b8"/>
+          <ellipse cx="168" cy="222" rx="10" ry="8" fill="#3a3a3a"/>
+          <ellipse cx="192" cy="222" rx="10" ry="8" fill="#3a3a3a"/>
+          <circle cx="168" cy="222" r="2" fill="#fff"/>
+          <circle cx="192" cy="222" r="2" fill="#fff"/>
+          <ellipse cx="180" cy="236" rx="8" ry="5" fill="#fff"/>
+        </g>
+    </svg></div>
+      <div class="caption"><p>今天记住啦。</p><p>— 完 —</p></div>
+    </section></main>
+<nav class="controls">
+<button class="btn" id="btnPrev" type="button">上一页</button>
+<div class="dots" id="dots"></div>
+<button class="btn btn-primary" id="btnNext" type="button">下一页</button>
+</nav>
+<p class="hint">适合 4–6 岁 · 点垃圾再点桶</p>
+</div>
+<script src="app.js"></script>
+</body></html>
