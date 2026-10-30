@@ -417,3 +417,21 @@ button {
 @keyframes float-up {
   to { transform: translateY(-36px); opacity: 0; }
 }
+
+/* 顶栏放三个导航按钮：书名可收缩并省略，窄屏缩小按钮 */
+.topbar .page-indicator { white-space: nowrap; flex-shrink: 0; }
+.topbar .brand {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 420px) {
+  .topbar { padding-left: 0.6rem; padding-right: 0.6rem; gap: 6px; }
+  .topbar .book-nav { gap: 4px; }
+  .topbar .home-link { padding: 3px 6px; font-size: 0.66rem; }
+  .topbar .brand { font-size: 0.9rem; letter-spacing: 0.02em; }
+}
