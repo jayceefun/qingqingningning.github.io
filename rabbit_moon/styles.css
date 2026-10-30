@@ -59,6 +59,23 @@ body {
   letter-spacing: 0.12em;
 }
 
+.book-nav {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.home-link {
+  flex-shrink: 0;
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.78rem;
+  letter-spacing: 0;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+}
+
 .stage {
   flex: 1;
   position: relative;

@@ -50,7 +50,8 @@
       gap: 14px;
     }
 
-    a.book {
+    a.book,
+    .book {
       display: flex;
       gap: 14px;
       align-items: center;
@@ -60,6 +61,21 @@
       border-radius: 22px;
       padding: 14px;
       box-shadow: 0 8px 0 rgba(180, 120, 80, 0.12), 0 12px 24px rgba(80, 50, 30, 0.06);
+    }
+
+    .book.is-current {
+      outline: 3px solid #e86b8a;
+      outline-offset: 2px;
+    }
+
+    .book-link {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      min-width: 0;
+      flex: 1;
+      text-decoration: none;
+      color: inherit;
     }
 
     .thumb {
@@ -113,33 +129,47 @@
     <p>点一本，开始读。不用安装，打开就能看。</p>
   </header>
   <main class="shelf">
-    <a class="book moon" href="rabbit_moon/index.html">
-      <img class="thumb" src="previews/rabbit_moon.png" alt="小兔子的月亮首页" />
-      <div class="meta">
-        <span class="mark">月亮</span>
-        <h2>小兔子的月亮</h2>
-        <p>小兔子想把月亮带回家，最后学会月亮可以留在心里。</p>
-        <span class="age">适合 3–6 岁 · 点月亮、池塘和小兔子</span>
-      </div>
-    </a>
-    <a class="book share" href="share_cookies/index.html">
-      <img class="thumb" src="previews/share_cookies.png" alt="清清和宁宁分饼干首页" />
-      <div class="meta">
-        <span class="mark">分享</span>
-        <h2>清清和宁宁分饼干</h2>
-        <p>姐姐清清和妹妹宁宁把四块饼干分成一人两块。</p>
-        <span class="age">适合 2–6 岁 · 点角色和饼干</span>
-      </div>
-    </a>
-    <a class="book letters" href="english_letters/index.html">
-      <img class="thumb" src="previews/english_letters.png" alt="清清和宁宁学字母首页" />
-      <div class="meta">
-        <span class="mark">A–Z</span>
-        <h2>清清和宁宁学字母</h2>
-        <p>26 个字母，每个字母一个单词和一张图。点字母就能听读音。</p>
-        <span class="age">适合 2–6 岁 · 点字母听一听</span>
-      </div>
-    </a>
+    <article class="book moon" id="rabbit_moon">
+      <a class="book-link" href="rabbit_moon/index.html">
+        <img class="thumb" src="previews/rabbit_moon.png" alt="小兔子的月亮首页" />
+        <div class="meta">
+          <span class="mark">月亮</span>
+          <h2>小兔子的月亮</h2>
+          <p>小兔子想把月亮带回家，最后学会月亮可以留在心里。</p>
+          <span class="age">适合 3–6 岁 · 点月亮、池塘和小兔子</span>
+        </div>
+      </a>
+    </article>
+    <article class="book share" id="share_cookies">
+      <a class="book-link" href="share_cookies/index.html">
+        <img class="thumb" src="previews/share_cookies.png" alt="清清和宁宁分饼干首页" />
+        <div class="meta">
+          <span class="mark">分享</span>
+          <h2>清清和宁宁分饼干</h2>
+          <p>姐姐清清和妹妹宁宁把四块饼干分成一人两块。</p>
+          <span class="age">适合 2–6 岁 · 点角色和饼干</span>
+        </div>
+      </a>
+    </article>
+    <article class="book letters" id="english_letters">
+      <a class="book-link" href="english_letters/index.html">
+        <img class="thumb" src="previews/english_letters.png" alt="清清和宁宁学字母首页" />
+        <div class="meta">
+          <span class="mark">A–Z</span>
+          <h2>清清和宁宁学字母</h2>
+          <p>26 个字母，每个字母一个单词和一张图。点字母就能听读音。</p>
+          <span class="age">适合 2–6 岁 · 点字母听一听</span>
+        </div>
+      </a>
+    </article>
   </main>
+  <script>
+    const id = decodeURIComponent(location.hash.replace(/^#/, ""));
+    document.querySelectorAll(".book").forEach((card) => {
+      card.classList.toggle("is-current", card.id === id);
+    });
+    const card = id && document.getElementById(id);
+    if (card) card.scrollIntoView({ block: "center" });
+  </script>
 </body>
 </html>
