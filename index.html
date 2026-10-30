@@ -120,11 +120,9 @@
 
     .tabs {
       display: flex;
+      flex-wrap: wrap;
       gap: 8px;
       margin-top: 10px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
     }
     .tabs::-webkit-scrollbar { display: none; }
     .tab {
@@ -163,6 +161,8 @@
     .tab[data-cat="learn"] .tab-icon { color: #2f9c86; }
     .tab[data-cat="habit"] .tab-icon { color: #e88a2e; }
     .tab[data-cat="nature"] .tab-icon { color: #5aa442; }
+    .tab[data-cat="emotion"] .tab-icon { color: #8e6bd1; }
+    .tab[data-cat="safety"] .tab-icon { color: #e0533f; }
     .tab[data-cat="all"] .tab-icon { color: #b08a74; }
     .tab.is-on .tab-icon { color: #fff; }
 
@@ -183,6 +183,8 @@
     .cat-tag.cat-learn { background: #d9f3ea; color: #1f7a68; }
     .cat-tag.cat-habit { background: #ffe8cf; color: #b8641c; }
     .cat-tag.cat-nature { background: #e2f3d6; color: #3f7f2c; }
+    .cat-tag.cat-emotion { background: #ece4fa; color: #6a48b0; }
+    .cat-tag.cat-safety { background: #ffe3dd; color: #c23e2b; }
 
     .intro {
       margin: 14px 0 16px;
@@ -300,7 +302,7 @@
         </svg>
         <span>清宁儿童互动绘本</span>
       </a>
-      <span class="count" id="count" aria-live="polite">共 13 本</span>
+      <span class="count" id="count" aria-live="polite">共 60 本</span>
     </div>
     <label class="search">
       <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -330,6 +332,14 @@
       <button type="button" class="tab" data-cat="nature">
         <svg class="tab-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 14 C2 6 7 2 14.5 1.5 C14.5 9 10 14 2 14 Z"/><path d="M3 13 L10 6" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></svg>
         <span>自然天气</span><span class="tab-num"></span>
+      </button>
+      <button type="button" class="tab" data-cat="emotion">
+        <svg class="tab-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7"/><circle cx="5.6" cy="6.4" r="1" fill="#fff"/><circle cx="10.4" cy="6.4" r="1" fill="#fff"/><path d="M4.8 9.6 Q8 12.6 11.2 9.6" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span>情绪社交</span><span class="tab-num"></span>
+      </button>
+      <button type="button" class="tab" data-cat="safety">
+        <svg class="tab-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1 L14 3.4 V7.6 Q14 12.4 8 15 Q2 12.4 2 7.6 V3.4 Z"/><path d="M5.2 8 L7.2 10 L10.8 6" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>安全自护</span><span class="tab-num"></span>
       </button>
     </nav>
   </header>
@@ -445,7 +455,7 @@
       </a>
     </article>
   
-    <article class="book" id="cross_deer" data-cat="habit" data-kw="小鹿 鹿 红绿灯 斑马线 过马路 交通 安全 deer">
+    <article class="book" id="cross_deer" data-cat="safety" data-kw="小鹿 鹿 红绿灯 斑马线 过马路 交通 安全 deer">
       <a class="book-link" href="cross_deer/index.html">
         <img class="thumb" src="previews/cross_deer.png" alt="小鹿过马路首页" />
         <div class="meta">
@@ -492,6 +502,523 @@
         </div>
       </a>
     </article>
+    <article class="book" id="honest_fox" data-cat="story" data-kw="狐狸 小狐狸 花瓶 诚实 说实话 对不起 fox">
+      <a class="book-link" href="honest_fox/index.html">
+        <img class="thumb" src="previews/honest_fox.png" alt="小狐狸说实话首页" />
+        <div class="meta">
+          <span class="mark">诚实</span>
+          <h2>小狐狸说实话</h2>
+          <p>打碎了花瓶怎么办？小狐狸鼓起勇气说实话，和妈妈一起把花瓶粘好。</p>
+          <span class="age">适合 3–6 岁 · 选一选、拖碎片、按住拥抱</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="bridge_elephant" data-cat="story" data-kw="大象 象 搭桥 小河 帮助 互助 果子 elephant">
+      <a class="book-link" href="bridge_elephant/index.html">
+        <img class="thumb" src="previews/bridge_elephant.png" alt="大象搭桥首页" />
+        <div class="meta">
+          <span class="mark">互助</span>
+          <h2>大象搭桥</h2>
+          <p>小河拦住了朋友们，大象搬来大木头搭成小桥，大家一起过河摘果子。</p>
+          <span class="age">适合 3–6 岁 · 拖木头、按顺序过桥</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="climb_turtle" data-cat="story" data-kw="乌龟 小乌龟 爬山 日出 坚持 不放弃 turtle">
+      <a class="book-link" href="climb_turtle/index.html">
+        <img class="thumb" src="previews/climb_turtle.png" alt="小乌龟去看日出首页" />
+        <div class="meta">
+          <span class="mark">坚持</span>
+          <h2>小乌龟去看日出</h2>
+          <p>山路很长，小乌龟一步一步往上爬，终于在山顶看到了日出。</p>
+          <span class="age">适合 3–6 岁 · 按住爬山、拖开石头</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="ants_melon" data-cat="story" data-kw="蚂蚁 西瓜 合作 团结 朋友 ant">
+      <a class="book-link" href="ants_melon/index.html">
+        <img class="thumb" src="previews/ants_melon.png" alt="蚂蚁搬西瓜首页" />
+        <div class="meta">
+          <span class="mark">合作</span>
+          <h2>蚂蚁搬西瓜</h2>
+          <p>一只蚂蚁搬不动大西瓜，叫来好朋友一起搬，一起分着吃。</p>
+          <span class="age">适合 2–5 岁 · 按住、数一数、拖西瓜</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="hen_eggs" data-cat="story" data-kw="母鸡 鸡蛋 小鸡 孵蛋 耐心 等待 hen chick">
+      <a class="book-link" href="hen_eggs/index.html">
+        <img class="thumb" src="previews/hen_eggs.png" alt="母鸡孵蛋首页" />
+        <div class="meta">
+          <span class="mark">耐心</span>
+          <h2>母鸡孵蛋</h2>
+          <p>母鸡妈妈坐在窝里耐心等待，三只小鸡一只只破壳而出。</p>
+          <span class="age">适合 2–5 岁 · 数蛋、按住孵蛋、点蛋破壳</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="promise_duck" data-cat="story" data-kw="小鸭 鸭子 青蛙 约定 守信 下雨 雨伞 雨靴 duck frog">
+      <a class="book-link" href="promise_duck/index.html">
+        <img class="thumb" src="previews/promise_duck.png" alt="小鸭守约定首页" />
+        <div class="meta">
+          <span class="mark">守约</span>
+          <h2>小鸭守约定</h2>
+          <p>下雨了，小鸭还是撑着伞、穿上雨靴去赴约，小青蛙早就在等它。</p>
+          <span class="age">适合 3–6 岁 · 撑伞、拖雨靴、数泡泡</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="key_mole" data-cat="story" data-kw="鼹鼠 钥匙 小兔 诚实 归还 拾金不昧 mole key">
+      <a class="book-link" href="key_mole/index.html">
+        <img class="thumb" src="previews/key_mole.png" alt="小鼹鼠捡钥匙首页" />
+        <div class="meta">
+          <span class="mark">拾金不昧</span>
+          <h2>小鼹鼠捡钥匙</h2>
+          <p>小鼹鼠捡到一把钥匙，跟着脚印找到主人小兔，把钥匙还给了她。</p>
+          <span class="age">适合 3–6 岁 · 按顺序点脚印、拖钥匙</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="twins_garden" data-cat="story" data-kw="清清 宁宁 姐妹 菜园 种菜 劳动 勤劳 胡萝卜 白菜">
+      <a class="book-link" href="twins_garden/index.html">
+        <img class="thumb" src="previews/twins_garden.png" alt="清清宁宁的小菜园首页" />
+        <div class="meta">
+          <span class="mark">勤劳</span>
+          <h2>清清宁宁的小菜园</h2>
+          <p>清清和宁宁松土、播种、拔草、收菜，还把菜送给兔奶奶。</p>
+          <span class="age">适合 3–6 岁 · 擦一擦拔草、拖菜进篮子</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="shape_giraffe" data-cat="learn" data-kw="长颈鹿 形状 圆形 正方形 三角形 星星 积木 giraffe shape">
+      <a class="book-link" href="shape_giraffe/index.html">
+        <img class="thumb" src="previews/shape_giraffe.png" alt="长颈鹿找形状首页" />
+        <div class="meta">
+          <span class="mark">形状</span>
+          <h2>长颈鹿找形状</h2>
+          <p>圆形、正方形、三角形，和长颈鹿一起找形状、放积木、翻形状卡。</p>
+          <span class="age">适合 2–5 岁 · 选一选、拖积木、翻牌</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="size_pigs" data-cat="learn" data-kw="小猪 猪 大小 高矮 长短 比较 pig">
+      <a class="book-link" href="size_pigs/index.html">
+        <img class="thumb" src="previews/size_pigs.png" alt="三只小猪比大小首页" />
+        <div class="meta">
+          <span class="mark">大小</span>
+          <h2>三只小猪比大小</h2>
+          <p>大和小、高和矮、长和短，帮三只小猪分碗、选床、排排队。</p>
+          <span class="age">适合 2–5 岁 · 选一选、按顺序、拖碗</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="twins_fruit" data-cat="learn" data-kw="清清 宁宁 姐妹 水果 苹果 香蕉 葡萄 颜色 fruit">
+      <a class="book-link" href="twins_fruit/index.html">
+        <img class="thumb" src="previews/twins_fruit.png" alt="清清宁宁逛水果店首页" />
+        <div class="meta">
+          <span class="mark">水果</span>
+          <h2>清清宁宁逛水果店</h2>
+          <p>认识苹果、香蕉、葡萄、橘子和梨，按颜色把水果放进篮子。</p>
+          <span class="age">适合 2–5 岁 · 点水果、按颜色拖、翻牌</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="farm_sounds" data-cat="learn" data-kw="农场 牛 猪 羊 鸭 鸡 叫声 动物 farm">
+      <a class="book-link" href="farm_sounds/index.html">
+        <img class="thumb" src="previews/farm_sounds.png" alt="农场叫声首页" />
+        <div class="meta">
+          <span class="mark">动物</span>
+          <h2>农场叫声</h2>
+          <p>哞哞、哼哼、咩咩、嘎嘎、咯咯哒，听声音找出是谁在叫。</p>
+          <span class="age">适合 2–4 岁 · 点动物、听声音选、翻牌</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="where_bunny" data-cat="learn" data-kw="小兔 兔子 方位 上下 里外 前后 位置 bunny">
+      <a class="book-link" href="where_bunny/index.html">
+        <img class="thumb" src="previews/where_bunny.png" alt="小兔在哪里首页" />
+        <div class="meta">
+          <span class="mark">方位</span>
+          <h2>小兔在哪里</h2>
+          <p>上面、下面、里面、外面、前面、后面，跟着小兔学方位。</p>
+          <span class="age">适合 2–5 岁 · 选一选、拖小兔和皮球</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="ten_apples" data-cat="learn" data-kw="刺猬 苹果 数数 六 七 八 九 十 hedgehog count">
+      <a class="book-link" href="ten_apples/index.html">
+        <img class="thumb" src="previews/ten_apples.png" alt="刺猬数苹果首页" />
+        <div class="meta">
+          <span class="mark">数数</span>
+          <h2>刺猬数苹果</h2>
+          <p>从六数到十：树上的、篮子里的、背在刺上的苹果，一个个数清楚。</p>
+          <span class="age">适合 3–5 岁 · 点着数、连点十下、翻牌</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="twins_body" data-cat="learn" data-kw="清清 宁宁 姐妹 身体 眼睛 鼻子 嘴巴 耳朵 手 脚 body">
+      <a class="book-link" href="twins_body/index.html">
+        <img class="thumb" src="previews/twins_body.png" alt="清清宁宁认识身体首页" />
+        <div class="meta">
+          <span class="mark">身体</span>
+          <h2>清清宁宁认识身体</h2>
+          <p>点一点头、眼睛、鼻子、嘴巴、耳朵、小手和小脚，认识自己的身体。</p>
+          <span class="age">适合 2–4 岁 · 点身体部位、按住跳一跳</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="tidy_hamster" data-cat="habit" data-kw="仓鼠 小仓鼠 收玩具 整理 房间 积木 hamster tidy">
+      <a class="book-link" href="tidy_hamster/index.html">
+        <img class="thumb" src="previews/tidy_hamster.png" alt="小仓鼠收玩具首页" />
+        <div class="meta">
+          <span class="mark">整理</span>
+          <h2>小仓鼠收玩具</h2>
+          <p>积木回玩具箱、书本回书架、擦干净地板，小仓鼠学会自己收拾房间。</p>
+          <span class="age">适合 2–5 岁 · 拖玩具、擦地板、选一选</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="veggie_lamb" data-cat="habit" data-kw="小羊 羊 蔬菜 不挑食 吃饭 胡萝卜 西兰花 lamb">
+      <a class="book-link" href="veggie_lamb/index.html">
+        <img class="thumb" src="previews/veggie_lamb.png" alt="小羊不挑食首页" />
+        <div class="meta">
+          <span class="mark">吃饭</span>
+          <h2>小羊不挑食</h2>
+          <p>胡萝卜、青菜、西兰花都要吃，小羊不挑食，长得高高的。</p>
+          <span class="age">适合 2–5 岁 · 拖蔬菜、连点、按住长高</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="teeth_hippo" data-cat="habit" data-kw="河马 刷牙 牙齿 蛀牙 牙膏 hippo teeth">
+      <a class="book-link" href="teeth_hippo/index.html">
+        <img class="thumb" src="previews/teeth_hippo.png" alt="河马刷牙首页" />
+        <div class="meta">
+          <span class="mark">刷牙</span>
+          <h2>河马刷牙</h2>
+          <p>蛀牙虫来了！挤牙膏、来回刷、漱漱口，河马的牙齿又白又亮。</p>
+          <span class="age">适合 2–5 岁 · 擦一擦刷牙、按顺序点</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="sleep_koala" data-cat="habit" data-kw="考拉 睡觉 早睡 睡衣 月亮 故事 koala sleep">
+      <a class="book-link" href="sleep_koala/index.html">
+        <img class="thumb" src="previews/sleep_koala.png" alt="考拉早早睡首页" />
+        <div class="meta">
+          <span class="mark">睡觉</span>
+          <h2>考拉早早睡</h2>
+          <p>看月亮、换睡衣、关灯、盖被子、听故事，考拉早早进入梦乡。</p>
+          <span class="age">适合 2–5 岁 · 拖睡衣和被子、数小羊</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="dress_mouse" data-cat="habit" data-kw="老鼠 小老鼠 穿衣服 扣扣子 鞋子 外套 mouse dress">
+      <a class="book-link" href="dress_mouse/index.html">
+        <img class="thumb" src="previews/dress_mouse.png" alt="小老鼠自己穿衣服首页" />
+        <div class="meta">
+          <span class="mark">穿衣</span>
+          <h2>小老鼠自己穿衣服</h2>
+          <p>上衣、裤子、鞋子一件件穿好，扣扣子从下往上，下雪天穿厚外套。</p>
+          <span class="age">适合 2–5 岁 · 拖衣服、按顺序扣扣子</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="twins_bag" data-cat="habit" data-kw="清清 宁宁 姐妹 书包 幼儿园 整理 上学 bag">
+      <a class="book-link" href="twins_bag/index.html">
+        <img class="thumb" src="previews/twins_bag.png" alt="清清宁宁整理书包首页" />
+        <div class="meta">
+          <span class="mark">上学</span>
+          <h2>清清宁宁整理书包</h2>
+          <p>清清和宁宁把水杯、图画书、手帕装进书包，水彩笔放回笔盒，准备上幼儿园。</p>
+          <span class="age">适合 3–6 岁 · 拖物品、选一选、数笔</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="tadpole_frog" data-cat="nature" data-kw="青蛙 蝌蚪 池塘 荷叶 成长 生命 frog tadpole">
+      <a class="book-link" href="tadpole_frog/index.html">
+        <img class="thumb" src="previews/tadpole_frog.png" alt="小蝌蚪变青蛙首页" />
+        <div class="meta">
+          <span class="mark">成长</span>
+          <h2>小蝌蚪变青蛙</h2>
+          <p>从一团卵到小蝌蚪，再长出腿、跳上荷叶，看青蛙怎么长大。</p>
+          <span class="age">适合 3–6 岁 · 数蝌蚪、按住长大、按顺序排</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="caterpillar" data-cat="nature" data-kw="毛毛虫 蝴蝶 蛹 叶子 成长 butterfly">
+      <a class="book-link" href="caterpillar/index.html">
+        <img class="thumb" src="previews/caterpillar.png" alt="毛毛虫变蝴蝶首页" />
+        <div class="meta">
+          <span class="mark">成长</span>
+          <h2>毛毛虫变蝴蝶</h2>
+          <p>小卵变毛毛虫，吃叶子、结成蛹，最后变成美丽的蝴蝶。</p>
+          <span class="age">适合 3–6 岁 · 连点吃叶、擦蛹、拖蝴蝶、翻牌</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="water_drop" data-cat="nature" data-kw="水滴 水 云 雨 雪 大海 水循环 water">
+      <a class="book-link" href="water_drop/index.html">
+        <img class="thumb" src="previews/water_drop.png" alt="小水滴旅行首页" />
+        <div class="meta">
+          <span class="mark">水循环</span>
+          <h2>小水滴旅行</h2>
+          <p>大海、白云、乌云、高山、小河，跟着小水滴走一圈。</p>
+          <span class="age">适合 4–6 岁 · 按住太阳、拖水滴、按顺序点</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="sea_friends" data-cat="nature" data-kw="海洋 大海 鲸鱼 鱼 章鱼 螃蟹 海马 海星 sea">
+      <a class="book-link" href="sea_friends/index.html">
+        <img class="thumb" src="previews/sea_friends.png" alt="海底朋友首页" />
+        <div class="meta">
+          <span class="mark">海洋</span>
+          <h2>海底朋友</h2>
+          <p>鲸鱼、小鱼、章鱼、螃蟹、海马，认识海底朋友，还要一起清理海洋垃圾。</p>
+          <span class="age">适合 2–5 岁 · 数鱼、拖螃蟹、擦沙子</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="twins_kite" data-cat="nature" data-kw="清清 宁宁 姐妹 风 风筝 风车 旗子 kite wind">
+      <a class="book-link" href="twins_kite/index.html">
+        <img class="thumb" src="previews/twins_kite.png" alt="清清宁宁放风筝首页" />
+        <div class="meta">
+          <span class="mark">风</span>
+          <h2>清清宁宁放风筝</h2>
+          <p>树叶响、旗子飘、风车转、风筝飞，清清和宁宁一起认识看不见的风。</p>
+          <span class="age">适合 3–6 岁 · 按住风车、拖风筝、连点</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="bug_garden" data-cat="nature" data-kw="昆虫 小虫子 瓢虫 蜜蜂 蜗牛 蚱蜢 萤火虫 bug insect">
+      <a class="book-link" href="bug_garden/index.html">
+        <img class="thumb" src="previews/bug_garden.png" alt="草丛里的小虫子首页" />
+        <div class="meta">
+          <span class="mark">昆虫</span>
+          <h2>草丛里的小虫子</h2>
+          <p>瓢虫、蜜蜂、蜗牛、蚱蜢、萤火虫，小兔拿着放大镜去草丛里找小虫子。</p>
+          <span class="age">适合 3–6 岁 · 数黑点、拖蜜蜂、按住蜗牛、擦叶子</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="space_redpanda" data-cat="nature" data-kw="小熊猫 太空 火箭 地球 月亮 土星 星球 宇航员 space rocket">
+      <a class="book-link" href="space_redpanda/index.html">
+        <img class="thumb" src="previews/space_redpanda.png" alt="小熊猫去太空首页" />
+        <div class="meta">
+          <span class="mark">太空</span>
+          <h2>小熊猫去太空</h2>
+          <p>戴上头盔、按下发射按钮，小熊猫坐火箭去看地球、月亮和土星。</p>
+          <span class="age">适合 4–6 岁 · 拖头盔、按住发射、数月坑、翻牌</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="angry_lion" data-cat="emotion" data-kw="狮子 生气 发脾气 情绪 深呼吸 lion angry">
+      <a class="book-link" href="angry_lion/index.html">
+        <img class="thumb" src="previews/angry_lion.png" alt="小狮子生气了首页" />
+        <div class="meta">
+          <span class="mark">情绪</span>
+          <h2>小狮子生气了</h2>
+          <p>积木塔倒了，小狮子好生气。深呼吸、数到五、说出来，学会管住脾气。</p>
+          <span class="age">适合 3–6 岁 · 按住深呼吸、数星星、拖抱抱</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="dark_owl" data-cat="emotion" data-kw="猫头鹰 怕黑 晚上 害怕 夜灯 owl dark">
+      <a class="book-link" href="dark_owl/index.html">
+        <img class="thumb" src="previews/dark_owl.png" alt="小猫头鹰不怕黑首页" />
+        <div class="meta">
+          <span class="mark">勇气</span>
+          <h2>小猫头鹰不怕黑</h2>
+          <p>小夜灯、黑影、星星和月亮，陪小猫头鹰慢慢不再怕黑。</p>
+          <span class="age">适合 3–6 岁 · 擦黑影、点星星、拖小熊</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="balloon_tiger" data-cat="emotion" data-kw="老虎 伤心 难过 哭 气球 安慰 tiger sad">
+      <a class="book-link" href="balloon_tiger/index.html">
+        <img class="thumb" src="previews/balloon_tiger.png" alt="小老虎的气球飞走了首页" />
+        <div class="meta">
+          <span class="mark">伤心</span>
+          <h2>小老虎的气球飞走了</h2>
+          <p>气球飞走了，小老虎好伤心。哭一哭，找朋友说说，心情会慢慢变好。</p>
+          <span class="age">适合 3–6 岁 · 擦眼泪、拆礼物、按住风车</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="shy_panda" data-cat="emotion" data-kw="熊猫 害羞 胆小 打招呼 勇敢 幼儿园 panda shy">
+      <a class="book-link" href="shy_panda/index.html">
+        <img class="thumb" src="previews/shy_panda.png" alt="害羞的小熊猫首页" />
+        <div class="meta">
+          <span class="mark">勇敢</span>
+          <h2>害羞的小熊猫</h2>
+          <p>见到新老师不敢说话？笑一笑、挥挥手，小熊猫迈出勇敢的第一步。</p>
+          <span class="age">适合 3–6 岁 · 按住给勇气、选表情、拖小红花</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="new_friend_zebra" data-cat="emotion" data-kw="斑马 交朋友 朋友 社交 山羊 zebra friend">
+      <a class="book-link" href="new_friend_zebra/index.html">
+        <img class="thumb" src="previews/new_friend_zebra.png" alt="小斑马交朋友首页" />
+        <div class="meta">
+          <span class="mark">社交</span>
+          <h2>小斑马交朋友</h2>
+          <p>走过去、说你好、一起玩，搬了新家的小斑马交到了新朋友。</p>
+          <span class="age">适合 3–6 岁 · 按顺序点、传球、翻牌</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="turns_goat" data-cat="emotion" data-kw="排队 轮流 等待 滑梯 秋千 山羊 规则 goat">
+      <a class="book-link" href="turns_goat/index.html">
+        <img class="thumb" src="previews/turns_goat.png" alt="排队轮流玩首页" />
+        <div class="meta">
+          <span class="mark">规则</span>
+          <h2>排队轮流玩</h2>
+          <p>滑梯和秋千要排队轮流，小山羊学会了等一等、让一让。</p>
+          <span class="age">适合 3–6 岁 · 拖去排队、按顺序滑、点沙漏</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="kinder_kangaroo" data-cat="emotion" data-kw="袋鼠 幼儿园 入园 分离 妈妈 上学 kangaroo school">
+      <a class="book-link" href="kinder_kangaroo/index.html">
+        <img class="thumb" src="previews/kinder_kangaroo.png" alt="小袋鼠上幼儿园首页" />
+        <div class="meta">
+          <span class="mark">入园</span>
+          <h2>小袋鼠上幼儿园</h2>
+          <p>第一天上幼儿园，舍不得妈妈怎么办？妈妈说话算话，放学就来接。</p>
+          <span class="age">适合 2–4 岁 · 说再见、数饺子、拖回妈妈身边</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="sister_otter" data-cat="emotion" data-kw="水獭 姐姐 弟弟 妹妹 二胎 宝宝 家庭 otter sister">
+      <a class="book-link" href="sister_otter/index.html">
+        <img class="thumb" src="previews/sister_otter.png" alt="我当姐姐啦首页" />
+        <div class="meta">
+          <span class="mark">家庭</span>
+          <h2>我当姐姐啦</h2>
+          <p>家里来了小宝宝，小水獭当上了姐姐。妈妈的爱一点也没有变少。</p>
+          <span class="age">适合 3–6 岁 · 按住摇篮、点爱心、递奶瓶</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="birthday_beaver" data-cat="emotion" data-kw="河狸 生日 蛋糕 蜡烛 礼物 分享 谢谢 礼貌 beaver birthday">
+      <a class="book-link" href="birthday_beaver/index.html">
+        <img class="thumb" src="previews/birthday_beaver.png" alt="小河狸的生日会首页" />
+        <div class="meta">
+          <span class="mark">礼貌</span>
+          <h2>小河狸的生日会</h2>
+          <p>插蜡烛、吹蜡烛、分蛋糕、拆礼物，学会分享和说谢谢。</p>
+          <span class="age">适合 3–6 岁 · 拖蜡烛、按住吹、擦包装纸</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="twins_quarrel" data-cat="emotion" data-kw="清清 宁宁 姐妹 吵架 和好 对不起 轮流 twins">
+      <a class="book-link" href="twins_quarrel/index.html">
+        <img class="thumb" src="previews/twins_quarrel.png" alt="清清宁宁吵架了首页" />
+        <div class="meta">
+          <span class="mark">和好</span>
+          <h2>清清宁宁吵架了</h2>
+          <p>两姐妹抢同一个玩偶吵架了。停一停、想办法、轮流玩、说对不起。</p>
+          <span class="age">适合 3–6 岁 · 按住深呼吸、选办法、拖玩偶</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="hot_kitchen" data-cat="safety" data-kw="厨房 烫 刀 热水 安全 小猪 kitchen safety">
+      <a class="book-link" href="hot_kitchen/index.html">
+        <img class="thumb" src="previews/hot_kitchen.png" alt="厨房里的小心首页" />
+        <div class="meta">
+          <span class="mark">居家</span>
+          <h2>厨房里的小心</h2>
+          <p>汤锅、热水壶、菜刀，小猪学会烫的不摸、刀不拿，请大人帮忙。</p>
+          <span class="age">适合 3–6 岁 · 找危险、按住后退、收玩具</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="stranger_bunny" data-cat="safety" data-kw="陌生人 防拐 糖果 警察 电话 小兔 stranger">
+      <a class="book-link" href="stranger_bunny/index.html">
+        <img class="thumb" src="previews/stranger_bunny.png" alt="不跟陌生人走首页" />
+        <div class="meta">
+          <span class="mark">防拐</span>
+          <h2>不跟陌生人走</h2>
+          <p>陌生人给糖、要带你走？大声说不，跑去找妈妈，记住电话找警察。</p>
+          <span class="age">适合 3–6 岁 · 选答案、按住说不、记电话</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="swim_duck" data-cat="safety" data-kw="游泳 玩水 溺水 救生衣 小鸭 swim water">
+      <a class="book-link" href="swim_duck/index.html">
+        <img class="thumb" src="previews/swim_duck.png" alt="玩水要安全首页" />
+        <div class="meta">
+          <span class="mark">防溺水</span>
+          <h2>玩水要安全</h2>
+          <p>热身、穿救生衣、大人在旁边、只去浅水区，小鸭安全玩水。</p>
+          <span class="age">适合 3–6 岁 · 拖救生衣、拖到浅水区</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="twins_fire" data-cat="safety" data-kw="清清 宁宁 姐妹 防火 着火 119 消防员 安全出口 fire">
+      <a class="book-link" href="twins_fire/index.html">
+        <img class="thumb" src="previews/twins_fire.png" alt="清清宁宁学防火首页" />
+        <div class="meta">
+          <span class="mark">防火</span>
+          <h2>清清宁宁学防火</h2>
+          <p>不玩火、捂口鼻、弯腰走、找安全出口，记住火警电话 119。</p>
+          <span class="age">适合 4–6 岁 · 按住警铃、拖毛巾、点 119</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="lost_chick" data-cat="safety" data-kw="走丢 走失 超市 妈妈 电话 小鸡 lost">
+      <a class="book-link" href="lost_chick/index.html">
+        <img class="thumb" src="previews/lost_chick.png" alt="小鸡走丢了首页" />
+        <div class="meta">
+          <span class="mark">走失</span>
+          <h2>小鸡走丢了</h2>
+          <p>在超市和妈妈走散了，站着不动、找工作人员、说出妈妈电话。</p>
+          <span class="age">适合 3–6 岁 · 按住不动、选求助、记电话</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="seat_belt" data-cat="safety" data-kw="坐车 汽车 安全带 安全座椅 红绿灯 小牛 car seat belt">
+      <a class="book-link" href="seat_belt/index.html">
+        <img class="thumb" src="previews/seat_belt.png" alt="坐车系好安全带首页" />
+        <div class="meta">
+          <span class="mark">乘车</span>
+          <h2>坐车系好安全带</h2>
+          <p>安全座椅、安全带、不伸出窗外、从人行道一侧下车。</p>
+          <span class="age">适合 2–5 岁 · 拖到座椅、点安全带、数车</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="medicine_elephant" data-cat="safety" data-kw="药 糖果 生病 发烧 医生 小象 medicine">
+      <a class="book-link" href="medicine_elephant/index.html">
+        <img class="thumb" src="previews/medicine_elephant.png" alt="药不是糖果首页" />
+        <div class="meta">
+          <span class="mark">用药</span>
+          <h2>药不是糖果</h2>
+          <p>彩色药片像糖果？小象学会分清药和糖，吃药要听医生和大人的。</p>
+          <span class="age">适合 3–6 岁 · 分类拖放、按住量体温</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="socket_squirrel" data-cat="safety" data-kw="插座 电 触电 电线 打雷 小松鼠 electric">
+      <a class="book-link" href="socket_squirrel/index.html">
+        <img class="thumb" src="previews/socket_squirrel.png" alt="插座会咬人首页" />
+        <div class="meta">
+          <span class="mark">用电</span>
+          <h2>插座会咬人</h2>
+          <p>不碰插座、盖保护盖、擦干湿手、破电线告诉大人，打雷关电视。</p>
+          <span class="age">适合 3–6 岁 · 拖保护盖、擦湿手</span>
+        </div>
+      </a>
+    </article>
+    <article class="book" id="helmet_pony" data-cat="safety" data-kw="自行车 骑车 头盔 刹车 小马 bike helmet">
+      <a class="book-link" href="helmet_pony/index.html">
+        <img class="thumb" src="previews/helmet_pony.png" alt="骑车戴头盔首页" />
+        <div class="meta">
+          <span class="mark">骑行</span>
+          <h2>骑车戴头盔</h2>
+          <p>戴头盔、扣带子、在公园骑、按铃提醒、下坡捏刹车。</p>
+          <span class="age">适合 3–6 岁 · 拖头盔、按住刹车、数自行车</span>
+        </div>
+      </a>
+    </article>
   </main>
   <script>
     (() => {
@@ -502,7 +1029,7 @@
       const countEl = document.getElementById("count");
       const empty = document.getElementById("empty");
       const nav = document.getElementById("top");
-      const CAT_NAMES = { story: "品格故事", learn: "认知启蒙", habit: "生活习惯", nature: "自然天气" };
+      const CAT_NAMES = { story: "品格故事", learn: "认知启蒙", habit: "生活习惯", nature: "自然天气", emotion: "情绪社交", safety: "安全自护" };
       let cat = "all";
 
       // 每张卡片的搜索文本与适合年龄范围
@@ -560,7 +1087,7 @@
         const q = input.value.trim().toLowerCase();
         const terms = q ? q.split(/\s+/) : [];
         let shown = 0;
-        const perCat = { all: 0, story: 0, learn: 0, habit: 0, nature: 0 };
+        const perCat = { all: 0, story: 0, learn: 0, habit: 0, nature: 0, emotion: 0, safety: 0 };
         index.forEach((item) => {
           const okCat = cat === "all" || item.card.dataset.cat === cat;
           // 每个词都要命中；纯数字或「3岁」按适合年龄范围判断

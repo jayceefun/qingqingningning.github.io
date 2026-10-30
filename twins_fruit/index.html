@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#fff59d" />
+  <title>清清宁宁逛水果店</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- SVG 角色与道具库：同一角色只换姿势，不改五官规格 -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <radialGradient id="gSun" cx="38%" cy="35%" r="65%"><stop offset="0%" stop-color="#fff8d0"/><stop offset="55%" stop-color="#ffe08a"/><stop offset="100%" stop-color="#f5b82e"/></radialGradient><radialGradient id="gMoon" cx="38%" cy="35%" r="65%"><stop offset="0%" stop-color="#fffdf2"/><stop offset="50%" stop-color="#ffe9a8"/><stop offset="100%" stop-color="#e8c070"/></radialGradient><linearGradient id="dressP" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#ffc8d6"/><stop offset="100%" stop-color="#ff7596"/></linearGradient><linearGradient id="dressM" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#b0eadc"/><stop offset="100%" stop-color="#3fad96"/></linearGradient><linearGradient id="hairP" x1="0.2" y1="0" x2="0.85" y2="1"><stop offset="0%" stop-color="#b07850"/><stop offset="55%" stop-color="#7a4a30"/><stop offset="100%" stop-color="#5a3424"/></linearGradient><linearGradient id="hairM" x1="0.2" y1="0" x2="0.85" y2="1"><stop offset="0%" stop-color="#c08658"/><stop offset="55%" stop-color="#855538"/><stop offset="100%" stop-color="#6a4030"/></linearGradient>
+      <symbol id="banana" viewBox="0 0 70 44"><path d="M6 12 Q20 40 62 30 Q66 26 62 24 Q28 30 12 8 Z" fill="#ffd54f"/><path d="M12 12 Q26 30 58 27" stroke="#fff59d" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M6 12 L4 6" stroke="#6d4c41" stroke-width="4" stroke-linecap="round"/><circle cx="63" cy="27" r="2" fill="#6d4c41"/></symbol>
+      <symbol id="basket-red" viewBox="0 0 100 60"><path d="M20 30 Q18 6 50 6 Q82 6 80 30" fill="none" stroke="#ef5350" stroke-width="5" stroke-linecap="round"/><path d="M6 28 H94 L84 58 H16 Z" fill="#ef5350"/><path d="M10 36 H90 M14 46 H86" stroke="#fff" stroke-width="2" opacity=".5"/></symbol>
+      <symbol id="basket-yellow" viewBox="0 0 100 60"><path d="M20 30 Q18 6 50 6 Q82 6 80 30" fill="none" stroke="#ffca28" stroke-width="5" stroke-linecap="round"/><path d="M6 28 H94 L84 58 H16 Z" fill="#ffca28"/><path d="M10 36 H90 M14 46 H86" stroke="#fff" stroke-width="2" opacity=".5"/></symbol>
+      <symbol id="fruit" viewBox="0 0 40 40"><ellipse cx="20" cy="23" rx="15" ry="14" fill="#e53935"/><ellipse cx="14" cy="18" rx="4.5" ry="3" fill="#fff" opacity=".45"/><path d="M20 10 Q18 4 22 2" stroke="#6b4423" stroke-width="2" fill="none"/><ellipse cx="27" cy="6" rx="6" ry="2.6" fill="#43a047"/></symbol>
+      <symbol id="fruit-stand" viewBox="0 0 300 160"><path d="M10 20 L290 20 L270 54 L30 54 Z" fill="#ef5350"/><path d="M30 20 L54 20 L50 54 L34 54 Z" fill="#fff"/><path d="M126 20 L150 20 L140 54 L124 54 Z" fill="#fff"/><path d="M222 20 L246 20 L230 54 L214 54 Z" fill="#fff"/><rect x="30" y="54" width="10" height="100" fill="#a1683a"/><rect x="260" y="54" width="10" height="100" fill="#a1683a"/><rect x="20" y="110" width="260" height="44" rx="6" fill="#c48a4a"/><rect x="20" y="110" width="260" height="10" rx="5" fill="#d9a066"/></symbol>
+      <symbol id="g-ning-happy" viewBox="-12 0 134 175">
+        
+        <ellipse cx="43" cy="157" rx="10.5" ry="4.8" fill="#2c947c"/>
+        <ellipse cx="67" cy="157" rx="10.5" ry="4.8" fill="#2c947c"/>
+        <ellipse cx="43" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <ellipse cx="67" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <path d="M35 86 C24 98 23 122 31 147 Q55 158 79 147 C87 122 86 98 75 86 Q55 97 35 86 Z"
+              fill="url(#dressM)" stroke="#2c947c" stroke-width="0.8" opacity="0.98"/>
+        <path d="M33 146 Q55 154 77 146" fill="none" stroke="#fff" stroke-width="2.2" opacity="0.35" stroke-linecap="round"/>
+        <ellipse cx="55" cy="84" rx="19" ry="14" fill="url(#dressM)"/>
+        <ellipse cx="36" cy="86" rx="7" ry="6" fill="url(#dressM)"/>
+        <ellipse cx="74" cy="86" rx="7" ry="6" fill="url(#dressM)"/>
+        <path d="M44 74 Q55 84 66 74 L64 84 Q55 88 46 84 Z" fill="#fff8f4"/>
+        <circle cx="55" cy="86" r="2.2" fill="#fff"/>
+        <circle cx="55" cy="86" r="1.1" fill="#2fa890"/>
+        <path d="M40 88 Q30 100 26 114" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M70 88 Q80 100 84 114" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(26,116) rotate(-8)">
+        <ellipse cx="-5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <g transform="translate(84,116) rotate(8)">
+        <ellipse cx="5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <!-- 侧发（略短，避免挡住嘴边饼干） -->
+        <path d="M30 48 C20 56 18 74 28 82 C34 72 35 58 33 52 Z" fill="url(#hairM)"/>
+        <path d="M80 48 C90 56 92 74 82 82 C76 72 75 58 77 52 Z" fill="url(#hairM)"/>
+        <!-- 脖子 / 耳 -->
+        <rect x="48" y="66" width="14" height="13" rx="5" fill="#f3c9b6"/>
+        <ellipse cx="30" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <ellipse cx="80" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <!-- 头 -->
+        <ellipse cx="55" cy="45" rx="26.5" ry="27.5" fill="#f3c9b6"/>
+        <!-- 顶发 -->
+        <path d="M28 45 C27 22 40 12 55 12 C70 12 83 22 82 45
+                 C76 30 66 24 55 24 C44 24 34 30 28 45 Z" fill="url(#hairM)"/>
+        <!-- 刘海 -->
+        <path d="M30 36 C36 47 42 38 46 34 C51 45 55 34 55 34
+                 C55 34 59 45 64 34 C68 38 74 47 80 36
+                 C72 22 62 18 55 18 C48 18 38 22 30 36 Z" fill="url(#hairM)"/>
+        <!-- 发丝高光 -->
+        <path d="M42 22 Q48 28 46 36" fill="none" stroke="#c48a62" stroke-width="1.6" opacity="0.45" stroke-linecap="round"/>
+        <path d="M58 20 Q64 26 66 34" fill="none" stroke="#c48a62" stroke-width="1.3" opacity="0.35" stroke-linecap="round"/>
+        <!-- 蝴蝶结 + 飘带 -->
+        <g transform="translate(55,11)">
+          <path d="M-6 4 Q-14 16 -8 18" fill="none" stroke="#6ec9b4" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M6 4 Q14 16 8 18" fill="none" stroke="#6ec9b4" stroke-width="2.4" stroke-linecap="round"/>
+          <ellipse cx="-9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#6ec9b4"/>
+          <ellipse cx="9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#6ec9b4"/>
+          <ellipse cx="-9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <ellipse cx="9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <circle cx="0" cy="0" r="4.2" fill="#2fa890"/>
+          <circle cx="0.8" cy="-0.8" r="1.3" fill="#fff" opacity="0.45"/>
+        </g>
+        <path d="M41 49 Q47 42.5 53 49" fill="none" stroke="#3a2820" stroke-width="2.3" stroke-linecap="round"/>
+        <path d="M57 49 Q63 42.5 69 49" fill="none" stroke="#3a2820" stroke-width="2.3" stroke-linecap="round"/>
+        <ellipse cx="34" cy="55" rx="5.2" ry="3" fill="#ff9aaa" opacity="0.52"/>
+        <ellipse cx="76" cy="55" rx="5.2" ry="3" fill="#ff9aaa" opacity="0.52"/>
+        <ellipse cx="55" cy="53" rx="1.5" ry="1.05" fill="#d99988"/>
+        <path d="M47 59 Q55 68 63 59" fill="none" stroke="#c07068" stroke-width="1.65" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="g-ning-normal" viewBox="-12 0 134 175">
+        
+        <ellipse cx="43" cy="157" rx="10.5" ry="4.8" fill="#2c947c"/>
+        <ellipse cx="67" cy="157" rx="10.5" ry="4.8" fill="#2c947c"/>
+        <ellipse cx="43" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <ellipse cx="67" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <path d="M35 86 C24 98 23 122 31 147 Q55 158 79 147 C87 122 86 98 75 86 Q55 97 35 86 Z"
+              fill="url(#dressM)" stroke="#2c947c" stroke-width="0.8" opacity="0.98"/>
+        <path d="M33 146 Q55 154 77 146" fill="none" stroke="#fff" stroke-width="2.2" opacity="0.35" stroke-linecap="round"/>
+        <ellipse cx="55" cy="84" rx="19" ry="14" fill="url(#dressM)"/>
+        <ellipse cx="36" cy="86" rx="7" ry="6" fill="url(#dressM)"/>
+        <ellipse cx="74" cy="86" rx="7" ry="6" fill="url(#dressM)"/>
+        <path d="M44 74 Q55 84 66 74 L64 84 Q55 88 46 84 Z" fill="#fff8f4"/>
+        <circle cx="55" cy="86" r="2.2" fill="#fff"/>
+        <circle cx="55" cy="86" r="1.1" fill="#2fa890"/>
+        <path d="M40 88 Q34 102 32 116" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M70 88 Q76 102 78 116" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(32,118) rotate(-2)">
+        <ellipse cx="5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <g transform="translate(78,118) rotate(2)">
+        <ellipse cx="-5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <!-- 侧发（略短，避免挡住嘴边饼干） -->
+        <path d="M30 48 C20 56 18 74 28 82 C34 72 35 58 33 52 Z" fill="url(#hairM)"/>
+        <path d="M80 48 C90 56 92 74 82 82 C76 72 75 58 77 52 Z" fill="url(#hairM)"/>
+        <!-- 脖子 / 耳 -->
+        <rect x="48" y="66" width="14" height="13" rx="5" fill="#f3c9b6"/>
+        <ellipse cx="30" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <ellipse cx="80" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <!-- 头 -->
+        <ellipse cx="55" cy="45" rx="26.5" ry="27.5" fill="#f3c9b6"/>
+        <!-- 顶发 -->
+        <path d="M28 45 C27 22 40 12 55 12 C70 12 83 22 82 45
+                 C76 30 66 24 55 24 C44 24 34 30 28 45 Z" fill="url(#hairM)"/>
+        <!-- 刘海 -->
+        <path d="M30 36 C36 47 42 38 46 34 C51 45 55 34 55 34
+                 C55 34 59 45 64 34 C68 38 74 47 80 36
+                 C72 22 62 18 55 18 C48 18 38 22 30 36 Z" fill="url(#hairM)"/>
+        <!-- 发丝高光 -->
+        <path d="M42 22 Q48 28 46 36" fill="none" stroke="#c48a62" stroke-width="1.6" opacity="0.45" stroke-linecap="round"/>
+        <path d="M58 20 Q64 26 66 34" fill="none" stroke="#c48a62" stroke-width="1.3" opacity="0.35" stroke-linecap="round"/>
+        <!-- 蝴蝶结 + 飘带 -->
+        <g transform="translate(55,11)">
+          <path d="M-6 4 Q-14 16 -8 18" fill="none" stroke="#6ec9b4" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M6 4 Q14 16 8 18" fill="none" stroke="#6ec9b4" stroke-width="2.4" stroke-linecap="round"/>
+          <ellipse cx="-9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#6ec9b4"/>
+          <ellipse cx="9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#6ec9b4"/>
+          <ellipse cx="-9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <ellipse cx="9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <circle cx="0" cy="0" r="4.2" fill="#2fa890"/>
+          <circle cx="0.8" cy="-0.8" r="1.3" fill="#fff" opacity="0.45"/>
+        </g>
+        <!-- 眼睛 -->
+        <ellipse cx="45" cy="49" rx="4.4" ry="5" fill="#fff"/>
+        <ellipse cx="65" cy="49" rx="4.4" ry="5" fill="#fff"/>
+        <ellipse cx="45.4" cy="49.6" rx="2.9" ry="3.4" fill="#6b4a38"/>
+        <ellipse cx="65.4" cy="49.6" rx="2.9" ry="3.4" fill="#6b4a38"/>
+        <ellipse cx="45.5" cy="50" rx="1.5" ry="1.85" fill="#2a1810"/>
+        <ellipse cx="65.5" cy="50" rx="1.5" ry="1.85" fill="#2a1810"/>
+        <circle cx="46.6" cy="48" r="1.15" fill="#fff"/>
+        <circle cx="66.6" cy="48" r="1.15" fill="#fff"/>
+        <circle cx="44.4" cy="51.2" r="0.55" fill="#fff" opacity="0.7"/>
+        <circle cx="64.4" cy="51.2" r="0.55" fill="#fff" opacity="0.7"/>
+        <!-- 睫毛 -->
+        <path d="M40.5 45.5 L39 43.8" stroke="#3a2820" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M42.2 44.6 L41.5 42.7" stroke="#3a2820" stroke-width="1.05" stroke-linecap="round"/>
+        <path d="M69.5 45.5 L71 43.8" stroke="#3a2820" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M67.8 44.6 L68.5 42.7" stroke="#3a2820" stroke-width="1.05" stroke-linecap="round"/>
+        <!-- 眉 -->
+        <path d="M39 42 Q45 39.8 50 42" fill="none" stroke="#6a4a3c" stroke-width="1.25" stroke-linecap="round"/>
+        <path d="M60 42 Q65 39.8 71 42" fill="none" stroke="#6a4a3c" stroke-width="1.25" stroke-linecap="round"/>
+        <!-- 腮红 / 鼻 / 笑 -->
+        <ellipse cx="34" cy="55" rx="5" ry="2.9" fill="#ff9aaa" opacity="0.48"/>
+        <ellipse cx="76" cy="55" rx="5" ry="2.9" fill="#ff9aaa" opacity="0.48"/>
+        <ellipse cx="55" cy="53" rx="1.45" ry="1.05" fill="#d99988"/>
+        <path d="M48 59 Q55 64.5 62 59" fill="none" stroke="#c07068" stroke-width="1.55" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="g-qing-happy" viewBox="-12 0 134 175">
+        
+        <ellipse cx="43" cy="157" rx="10.5" ry="4.8" fill="#d96584"/>
+        <ellipse cx="67" cy="157" rx="10.5" ry="4.8" fill="#d96584"/>
+        <ellipse cx="43" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <ellipse cx="67" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <path d="M35 86 C24 98 23 122 31 147 Q55 158 79 147 C87 122 86 98 75 86 Q55 97 35 86 Z"
+              fill="url(#dressP)" stroke="#d96584" stroke-width="0.8" opacity="0.98"/>
+        <path d="M33 146 Q55 154 77 146" fill="none" stroke="#fff" stroke-width="2.2" opacity="0.35" stroke-linecap="round"/>
+        <ellipse cx="55" cy="84" rx="19" ry="14" fill="url(#dressP)"/>
+        <ellipse cx="36" cy="86" rx="7" ry="6" fill="url(#dressP)"/>
+        <ellipse cx="74" cy="86" rx="7" ry="6" fill="url(#dressP)"/>
+        <path d="M44 74 Q55 84 66 74 L64 84 Q55 88 46 84 Z" fill="#fff8f4"/>
+        <circle cx="55" cy="86" r="2.2" fill="#fff"/>
+        <circle cx="55" cy="86" r="1.1" fill="#ff5f87"/>
+        <path d="M40 88 Q30 100 26 114" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M70 88 Q80 100 84 114" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(26,116) rotate(-8)">
+        <ellipse cx="-5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <g transform="translate(84,116) rotate(8)">
+        <ellipse cx="5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <!-- 侧发（略短，避免挡住嘴边饼干） -->
+        <path d="M30 48 C20 56 18 74 28 82 C34 72 35 58 33 52 Z" fill="url(#hairP)"/>
+        <path d="M80 48 C90 56 92 74 82 82 C76 72 75 58 77 52 Z" fill="url(#hairP)"/>
+        <!-- 脖子 / 耳 -->
+        <rect x="48" y="66" width="14" height="13" rx="5" fill="#f3c9b6"/>
+        <ellipse cx="30" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <ellipse cx="80" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <!-- 头 -->
+        <ellipse cx="55" cy="45" rx="26.5" ry="27.5" fill="#f3c9b6"/>
+        <!-- 顶发 -->
+        <path d="M28 45 C27 22 40 12 55 12 C70 12 83 22 82 45
+                 C76 30 66 24 55 24 C44 24 34 30 28 45 Z" fill="url(#hairP)"/>
+        <!-- 刘海 -->
+        <path d="M30 36 C36 47 42 38 46 34 C51 45 55 34 55 34
+                 C55 34 59 45 64 34 C68 38 74 47 80 36
+                 C72 22 62 18 55 18 C48 18 38 22 30 36 Z" fill="url(#hairP)"/>
+        <!-- 发丝高光 -->
+        <path d="M42 22 Q48 28 46 36" fill="none" stroke="#c48a62" stroke-width="1.6" opacity="0.45" stroke-linecap="round"/>
+        <path d="M58 20 Q64 26 66 34" fill="none" stroke="#c48a62" stroke-width="1.3" opacity="0.35" stroke-linecap="round"/>
+        <!-- 蝴蝶结 + 飘带 -->
+        <g transform="translate(55,11)">
+          <path d="M-6 4 Q-14 16 -8 18" fill="none" stroke="#ff8fab" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M6 4 Q14 16 8 18" fill="none" stroke="#ff8fab" stroke-width="2.4" stroke-linecap="round"/>
+          <ellipse cx="-9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#ff8fab"/>
+          <ellipse cx="9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#ff8fab"/>
+          <ellipse cx="-9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <ellipse cx="9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <circle cx="0" cy="0" r="4.2" fill="#ff5f87"/>
+          <circle cx="0.8" cy="-0.8" r="1.3" fill="#fff" opacity="0.45"/>
+        </g>
+        <path d="M41 49 Q47 42.5 53 49" fill="none" stroke="#3a2820" stroke-width="2.3" stroke-linecap="round"/>
+        <path d="M57 49 Q63 42.5 69 49" fill="none" stroke="#3a2820" stroke-width="2.3" stroke-linecap="round"/>
+        <ellipse cx="34" cy="55" rx="5.2" ry="3" fill="#ff9aaa" opacity="0.52"/>
+        <ellipse cx="76" cy="55" rx="5.2" ry="3" fill="#ff9aaa" opacity="0.52"/>
+        <ellipse cx="55" cy="53" rx="1.5" ry="1.05" fill="#d99988"/>
+        <path d="M47 59 Q55 68 63 59" fill="none" stroke="#c07068" stroke-width="1.65" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="g-qing-normal" viewBox="-12 0 134 175">
+        
+        <ellipse cx="43" cy="157" rx="10.5" ry="4.8" fill="#d96584"/>
+        <ellipse cx="67" cy="157" rx="10.5" ry="4.8" fill="#d96584"/>
+        <ellipse cx="43" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <ellipse cx="67" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <path d="M35 86 C24 98 23 122 31 147 Q55 158 79 147 C87 122 86 98 75 86 Q55 97 35 86 Z"
+              fill="url(#dressP)" stroke="#d96584" stroke-width="0.8" opacity="0.98"/>
+        <path d="M33 146 Q55 154 77 146" fill="none" stroke="#fff" stroke-width="2.2" opacity="0.35" stroke-linecap="round"/>
+        <ellipse cx="55" cy="84" rx="19" ry="14" fill="url(#dressP)"/>
+        <ellipse cx="36" cy="86" rx="7" ry="6" fill="url(#dressP)"/>
+        <ellipse cx="74" cy="86" rx="7" ry="6" fill="url(#dressP)"/>
+        <path d="M44 74 Q55 84 66 74 L64 84 Q55 88 46 84 Z" fill="#fff8f4"/>
+        <circle cx="55" cy="86" r="2.2" fill="#fff"/>
+        <circle cx="55" cy="86" r="1.1" fill="#ff5f87"/>
+        <path d="M40 88 Q34 102 32 116" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M70 88 Q76 102 78 116" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(32,118) rotate(-2)">
+        <ellipse cx="5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <g transform="translate(78,118) rotate(2)">
+        <ellipse cx="-5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <!-- 侧发（略短，避免挡住嘴边饼干） -->
+        <path d="M30 48 C20 56 18 74 28 82 C34 72 35 58 33 52 Z" fill="url(#hairP)"/>
+        <path d="M80 48 C90 56 92 74 82 82 C76 72 75 58 77 52 Z" fill="url(#hairP)"/>
+        <!-- 脖子 / 耳 -->
+        <rect x="48" y="66" width="14" height="13" rx="5" fill="#f3c9b6"/>
+        <ellipse cx="30" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <ellipse cx="80" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <!-- 头 -->
+        <ellipse cx="55" cy="45" rx="26.5" ry="27.5" fill="#f3c9b6"/>
+        <!-- 顶发 -->
+        <path d="M28 45 C27 22 40 12 55 12 C70 12 83 22 82 45
+                 C76 30 66 24 55 24 C44 24 34 30 28 45 Z" fill="url(#hairP)"/>
+        <!-- 刘海 -->
+        <path d="M30 36 C36 47 42 38 46 34 C51 45 55 34 55 34
+                 C55 34 59 45 64 34 C68 38 74 47 80 36
+                 C72 22 62 18 55 18 C48 18 38 22 30 36 Z" fill="url(#hairP)"/>
+        <!-- 发丝高光 -->
+        <path d="M42 22 Q48 28 46 36" fill="none" stroke="#c48a62" stroke-width="1.6" opacity="0.45" stroke-linecap="round"/>
+        <path d="M58 20 Q64 26 66 34" fill="none" stroke="#c48a62" stroke-width="1.3" opacity="0.35" stroke-linecap="round"/>
+        <!-- 蝴蝶结 + 飘带 -->
+        <g transform="translate(55,11)">
+          <path d="M-6 4 Q-14 16 -8 18" fill="none" stroke="#ff8fab" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M6 4 Q14 16 8 18" fill="none" stroke="#ff8fab" stroke-width="2.4" stroke-linecap="round"/>
+          <ellipse cx="-9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#ff8fab"/>
+          <ellipse cx="9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#ff8fab"/>
+          <ellipse cx="-9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <ellipse cx="9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <circle cx="0" cy="0" r="4.2" fill="#ff5f87"/>
+          <circle cx="0.8" cy="-0.8" r="1.3" fill="#fff" opacity="0.45"/>
+        </g>
+        <!-- 眼睛 -->
+        <ellipse cx="45" cy="49" rx="4.4" ry="5" fill="#fff"/>
+        <ellipse cx="65" cy="49" rx="4.4" ry="5" fill="#fff"/>
+        <ellipse cx="45.4" cy="49.6" rx="2.9" ry="3.4" fill="#6b4a38"/>
+        <ellipse cx="65.4" cy="49.6" rx="2.9" ry="3.4" fill="#6b4a38"/>
+        <ellipse cx="45.5" cy="50" rx="1.5" ry="1.85" fill="#2a1810"/>
+        <ellipse cx="65.5" cy="50" rx="1.5" ry="1.85" fill="#2a1810"/>
+        <circle cx="46.6" cy="48" r="1.15" fill="#fff"/>
+        <circle cx="66.6" cy="48" r="1.15" fill="#fff"/>
+        <circle cx="44.4" cy="51.2" r="0.55" fill="#fff" opacity="0.7"/>
+        <circle cx="64.4" cy="51.2" r="0.55" fill="#fff" opacity="0.7"/>
+        <!-- 睫毛 -->
+        <path d="M40.5 45.5 L39 43.8" stroke="#3a2820" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M42.2 44.6 L41.5 42.7" stroke="#3a2820" stroke-width="1.05" stroke-linecap="round"/>
+        <path d="M69.5 45.5 L71 43.8" stroke="#3a2820" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M67.8 44.6 L68.5 42.7" stroke="#3a2820" stroke-width="1.05" stroke-linecap="round"/>
+        <!-- 眉 -->
+        <path d="M39 42 Q45 39.8 50 42" fill="none" stroke="#6a4a3c" stroke-width="1.25" stroke-linecap="round"/>
+        <path d="M60 42 Q65 39.8 71 42" fill="none" stroke="#6a4a3c" stroke-width="1.25" stroke-linecap="round"/>
+        <!-- 腮红 / 鼻 / 笑 -->
+        <ellipse cx="34" cy="55" rx="5" ry="2.9" fill="#ff9aaa" opacity="0.48"/>
+        <ellipse cx="76" cy="55" rx="5" ry="2.9" fill="#ff9aaa" opacity="0.48"/>
+        <ellipse cx="55" cy="53" rx="1.45" ry="1.05" fill="#d99988"/>
+        <path d="M48 59 Q55 64.5 62 59" fill="none" stroke="#c07068" stroke-width="1.55" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="grapes" viewBox="0 0 50 60"><path d="M25 8 Q24 2 30 0" stroke="#6d4c41" stroke-width="2.4" fill="none"/><ellipse cx="34" cy="6" rx="7" ry="3" fill="#66bb6a"/><circle cx="14" cy="16" r="7" fill="#8e24aa"/><circle cx="12" cy="14" r="2" fill="#fff" opacity=".5"/><circle cx="26" cy="16" r="7" fill="#8e24aa"/><circle cx="24" cy="14" r="2" fill="#fff" opacity=".5"/><circle cx="38" cy="16" r="7" fill="#8e24aa"/><circle cx="36" cy="14" r="2" fill="#fff" opacity=".5"/><circle cx="20" cy="28" r="7" fill="#8e24aa"/><circle cx="18" cy="26" r="2" fill="#fff" opacity=".5"/><circle cx="32" cy="28" r="7" fill="#8e24aa"/><circle cx="30" cy="26" r="2" fill="#fff" opacity=".5"/><circle cx="26" cy="40" r="7" fill="#8e24aa"/><circle cx="24" cy="38" r="2" fill="#fff" opacity=".5"/><circle cx="14" cy="30" r="7" fill="#8e24aa"/><circle cx="12" cy="28" r="2" fill="#fff" opacity=".5"/><circle cx="38" cy="30" r="7" fill="#8e24aa"/><circle cx="36" cy="28" r="2" fill="#fff" opacity=".5"/><circle cx="26" cy="52" r="7" fill="#8e24aa"/><circle cx="24" cy="50" r="2" fill="#fff" opacity=".5"/></symbol>
+      <symbol id="orange" viewBox="0 0 44 44"><circle cx="22" cy="24" r="18" fill="#ffa726"/><circle cx="22" cy="24" r="18" fill="none" stroke="#fb8c00" stroke-width="1.5"/><ellipse cx="15" cy="17" rx="5" ry="3" fill="#fff" opacity=".45"/><path d="M22 6 l0 -4" stroke="#6d4c41" stroke-width="2"/><ellipse cx="28" cy="4" rx="6" ry="2.6" fill="#66bb6a"/></symbol>
+      <symbol id="pear" viewBox="0 0 40 54"><path d="M20 12 Q12 12 12 24 Q2 34 8 44 Q14 52 20 52 Q26 52 32 44 Q38 34 28 24 Q28 12 20 12 Z" fill="#d4e157"/><ellipse cx="14" cy="34" rx="3" ry="6" fill="#fff" opacity=".4"/><path d="M20 12 Q20 4 24 2" stroke="#6d4c41" stroke-width="2.4" fill="none"/></symbol>
+      <symbol id="plate-fruit" viewBox="0 0 120 50"><ellipse cx="60" cy="38" rx="56" ry="11" fill="#fff" stroke="#e0e0e0" stroke-width="2"/><path d="M28 32 q8 -14 16 0 Z" fill="#e53935"/><path d="M48 30 q10 -14 20 0 Z" fill="#ffa726"/><path d="M70 32 q8 -12 16 0 Z" fill="#d4e157"/><circle cx="90" cy="30" r="5" fill="#8e24aa"/><circle cx="36" cy="26" r="4" fill="#e53935"/></symbol>
+      <symbol id="strawberry" viewBox="0 0 40 46"><path d="M20 44 Q2 28 6 16 Q14 10 20 12 Q26 10 34 16 Q38 28 20 44 Z" fill="#e53935"/><path d="M8 14 L14 6 L20 12 L26 6 L32 14 Z" fill="#43a047"/><ellipse cx="14" cy="20" rx="1" ry="1.6" fill="#ffe082"/><ellipse cx="22" cy="22" rx="1" ry="1.6" fill="#ffe082"/><ellipse cx="28" cy="20" rx="1" ry="1.6" fill="#ffe082"/><ellipse cx="16" cy="30" rx="1" ry="1.6" fill="#ffe082"/><ellipse cx="24" cy="32" rx="1" ry="1.6" fill="#ffe082"/><ellipse cx="20" cy="38" rx="1" ry="1.6" fill="#ffe082"/></symbol>
+      <symbol id="table" viewBox="0 0 140 80"><rect x="4" y="8" width="132" height="12" rx="4" fill="#c48a4a"/><rect x="4" y="17" width="132" height="5" fill="#a56b32"/><rect x="16" y="22" width="9" height="56" rx="3" fill="#a56b32"/><rect x="115" y="22" width="9" height="56" rx="3" fill="#a56b32"/><path d="M14 12 H70" stroke="#e0b070" stroke-width="2" stroke-linecap="round" opacity=".8"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="app" id="app">
+    <header class="topbar">
+      <nav class="book-nav">
+        <a class="home-link" href="../index.html#twins_fruit">返回首页</a>
+        <a class="home-link" href="../size_pigs/index.html">上一本</a>
+        <a class="home-link" href="../farm_sounds/index.html">下一本</a>
+      </nav>
+      <span class="brand">清清宁宁逛水果店</span>
+      <span class="page-indicator" id="pageIndicator">1 / 9</span>
+    </header>
+
+    <main class="stage" id="stage" aria-live="polite">
+      <div class="fx-layer" id="fxLayer" aria-hidden="true"></div>
+      <section class="page is-active" data-page="0">
+        <div class="sky sky-indoor"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fffde7"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><use href="#fruit-stand" x="60.0" y="350.7" width="280.0" height="149.3"/><use href="#fruit" x="70.0" y="414.0" width="40.0" height="40.0"/><use href="#banana" x="114.0" y="418.8" width="56.0" height="35.2"/><use href="#grapes" x="173.0" y="403.6" width="42.0" height="50.4"/><use href="#orange" x="225.0" y="412.0" width="42.0" height="42.0"/><use href="#pear" x="279.0" y="402.7" width="38.0" height="51.3"/><ellipse cx="60.0" cy="526.0" rx="19.2" ry="3.5" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="pet" role="button" aria-label="清清" data-say="好多水果" data-fx="hearts"><use href="#g-qing-happy" x="23.1" y="438.9" width="73.7" height="96.3"/></g><ellipse cx="320.0" cy="526.0" rx="19.2" ry="3.5" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="pet" role="button" aria-label="宁宁" data-say="我们来买水果" data-fx="hearts"><use href="#g-ning-happy" x="283.1" y="438.9" width="73.7" height="96.3"/></g></svg><div class="vignette"></div></div>
+        <div class="caption caption-center"><h1>清清宁宁逛水果店</h1><p>点图画会有惊喜 · 点下一页开始</p></div>
+      </section>
+      <section class="page" data-page="1">
+        <div class="sky sky-indoor"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fffde7"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><use href="#fruit-stand" x="60.0" y="350.7" width="280.0" height="149.3"/><g class="hot " data-interact="tap" role="button" aria-label="苹果" data-say="苹果" data-group="fruit" data-fx="sparks"><use href="#fruit" x="70.0" y="414.0" width="40.0" height="40.0"/></g><g class="hot " data-interact="tap" role="button" aria-label="香蕉" data-say="香蕉" data-group="fruit" data-fx="sparks"><use href="#banana" x="114.0" y="418.8" width="56.0" height="35.2"/></g><g class="hot " data-interact="tap" role="button" aria-label="葡萄" data-say="葡萄" data-group="fruit" data-fx="sparks"><use href="#grapes" x="173.0" y="403.6" width="42.0" height="50.4"/></g><g class="hot " data-interact="tap" role="button" aria-label="橘子" data-say="橘子" data-group="fruit" data-fx="sparks"><use href="#orange" x="225.0" y="412.0" width="42.0" height="42.0"/></g><g class="hot " data-interact="tap" role="button" aria-label="梨" data-say="梨" data-group="fruit" data-fx="sparks"><use href="#pear" x="279.0" y="402.7" width="38.0" height="51.3"/></g><ellipse cx="40.0" cy="528.0" rx="15.8" ry="2.8" fill="#3c2a14" opacity=".16"/><use href="#g-qing-normal" x="9.8" y="457.1" width="60.3" height="78.8"/></svg><div class="vignette"></div></div>
+        <div class="caption"><p>清清和宁宁来到水果店。<br />点一点，认识每种水果。</p></div>
+      </section>
+      <section class="page" data-page="2">
+        <div class="sky sky-indoor"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fffde7"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><use href="#fruit-stand" x="60.0" y="350.7" width="280.0" height="149.3"/><g class="hot " data-interact="quiz" role="button" aria-label="苹果" data-ok="1" data-say="对，红红圆圆的是苹果"><use href="#fruit" x="103.0" y="420.0" width="34.0" height="34.0"/></g><g class="hot " data-interact="quiz" role="button" aria-label="橘子" data-ok="0" data-say="这是橘子"><use href="#orange" x="181.0" y="416.0" width="38.0" height="38.0"/></g><g class="hot " data-interact="quiz" role="button" aria-label="葡萄" data-ok="0" data-say="这是葡萄"><use href="#grapes" x="261.0" y="408.4" width="38.0" height="45.6"/></g><ellipse cx="40.0" cy="528.0" rx="15.8" ry="2.8" fill="#3c2a14" opacity=".16"/><use href="#g-qing-normal" x="9.8" y="457.1" width="60.3" height="78.8"/></svg><div class="vignette"></div></div>
+        <div class="caption"><p>清清想要红红的、圆圆的水果。<br />点苹果。</p></div>
+      </section>
+      <section class="page" data-page="3">
+        <div class="sky sky-indoor"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fffde7"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><use href="#fruit-stand" x="60.0" y="350.7" width="280.0" height="149.3"/><g class="hot " data-interact="quiz" role="button" aria-label="梨" data-ok="0" data-say="这是梨"><use href="#pear" x="104.0" y="410.8" width="32.0" height="43.2"/></g><g class="hot " data-interact="quiz" role="button" aria-label="香蕉" data-ok="1" data-say="对，弯弯的是香蕉"><use href="#banana" x="174.0" y="421.3" width="52.0" height="32.7"/></g><g class="hot " data-interact="quiz" role="button" aria-label="草莓" data-ok="0" data-say="这是草莓"><use href="#strawberry" x="264.0" y="417.2" width="32.0" height="36.8"/></g><ellipse cx="340.0" cy="528.0" rx="15.8" ry="2.8" fill="#3c2a14" opacity=".16"/><use href="#g-ning-normal" x="309.9" y="457.1" width="60.3" height="78.8"/></svg><div class="vignette"></div></div>
+        <div class="caption"><p>宁宁喜欢弯弯的、黄黄的水果。<br />点香蕉。</p></div>
+      </section>
+      <section class="page" data-page="4" data-done="分好啦">
+        <div class="sky sky-indoor"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fffde7"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><use href="#basket-red" x="45.0" y="434.0" width="110.0" height="66.0"/><use href="#basket-yellow" x="205.0" y="434.0" width="110.0" height="66.0"/><g class="drop " data-accept="red" data-multi="1" aria-label="红篮子"><g class="drop-hint"><rect x="50.0" y="450.0" width="100" height="40" rx="10" fill="#ffcdd2" fill-opacity=".45" stroke="#ff7fa3" stroke-width="3" stroke-dasharray="7 6"/></g></g><g class="drop " data-accept="yellow" data-multi="1" aria-label="黄篮子"><g class="drop-hint"><rect x="210.0" y="450.0" width="100" height="40" rx="10" fill="#fff9c4" fill-opacity=".45" stroke="#ff7fa3" stroke-width="3" stroke-dasharray="7 6"/></g></g><g class="hot " data-interact="drag" role="button" aria-label="苹果" data-drop=".drop" data-kind="red" data-say="红苹果放红篮子" data-wrong="颜色不对哦" data-hint="按住水果拖进篮子"><use href="#fruit" x="50.0" y="300.0" width="40.0" height="40.0"/></g><g class="hot " data-interact="drag" role="button" aria-label="香蕉" data-drop=".drop" data-kind="yellow" data-say="黄香蕉放黄篮子" data-wrong="颜色不对哦" data-hint="按住水果拖进篮子"><use href="#banana" x="122.0" y="294.8" width="56.0" height="35.2"/></g><g class="hot " data-interact="drag" role="button" aria-label="草莓" data-drop=".drop" data-kind="red" data-say="红草莓放红篮子" data-wrong="颜色不对哦" data-hint="按住水果拖进篮子"><use href="#strawberry" x="201.0" y="296.3" width="38.0" height="43.7"/></g><g class="hot " data-interact="drag" role="button" aria-label="梨" data-drop=".drop" data-kind="yellow" data-say="黄梨放黄篮子" data-wrong="颜色不对哦" data-hint="按住水果拖进篮子"><use href="#pear" x="282.0" y="291.4" width="36.0" height="48.6"/></g></svg><div class="vignette"></div></div>
+        <div class="caption"><p>按颜色把水果放进篮子：<br />红色的放红篮子，黄色的放黄篮子。</p></div>
+      </section>
+      <section class="page" data-page="5" data-done="六颗葡萄">
+        <div class="sky sky-indoor"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fffde7"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><g class="hot" data-interact="count" role="button" aria-label="葡萄"><circle cx="150" cy="260" r="17" fill="#8e24aa"/><circle cx="145" cy="255" r="5" fill="#fff" opacity=".5"/></g><g class="hot" data-interact="count" role="button" aria-label="葡萄"><circle cx="190" cy="260" r="17" fill="#8e24aa"/><circle cx="185" cy="255" r="5" fill="#fff" opacity=".5"/></g><g class="hot" data-interact="count" role="button" aria-label="葡萄"><circle cx="230" cy="260" r="17" fill="#8e24aa"/><circle cx="225" cy="255" r="5" fill="#fff" opacity=".5"/></g><g class="hot" data-interact="count" role="button" aria-label="葡萄"><circle cx="170" cy="296" r="17" fill="#8e24aa"/><circle cx="165" cy="291" r="5" fill="#fff" opacity=".5"/></g><g class="hot" data-interact="count" role="button" aria-label="葡萄"><circle cx="210" cy="296" r="17" fill="#8e24aa"/><circle cx="205" cy="291" r="5" fill="#fff" opacity=".5"/></g><g class="hot" data-interact="count" role="button" aria-label="葡萄"><circle cx="190" cy="332" r="17" fill="#8e24aa"/><circle cx="185" cy="327" r="5" fill="#fff" opacity=".5"/></g><path d="M190 242 Q188 220 200 214" stroke="#6d4c41" stroke-width="5" fill="none"/><ellipse cx="212" cy="214" rx="14" ry="6" fill="#66bb6a"/><ellipse cx="300.0" cy="526.0" rx="17.5" ry="3.1" fill="#3c2a14" opacity=".16"/><use href="#g-ning-happy" x="266.5" y="447.0" width="67.0" height="87.5"/></svg><div class="vignette"></div></div>
+        <div class="caption"><p>一串葡萄有好多颗。<br />点葡萄，一颗一颗数一数。</p></div>
+      </section>
+      <section class="page" data-page="6" data-done="全部配对成功">
+        <div class="sky sky-indoor"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fffde7"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><g class="hot card" data-interact="flip" data-pair="fruit" data-say="两个苹果" role="button" aria-label="翻牌"><g class="face-back"><rect x="45.0" y="257.0" width="70" height="86" rx="12" fill="#ff8fab"/><rect x="50.0" y="262.0" width="60" height="76" rx="9" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="4 4"/><circle cx="80" cy="300" r="13" fill="#fff" opacity=".9"/><path d="M75 297 q0 -7 6 -6 q6 1 4 7 q-2 3 -4 4 v3" stroke="#ff8fab" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="81" cy="308" r="1.8" fill="#ff8fab"/></g><g class="face-front"><rect x="45.0" y="257.0" width="70" height="86" rx="12" fill="#fffdf6" stroke="#ffd54f" stroke-width="3"/><use href="#fruit" x="54.1" y="274.1" width="51.8" height="51.8"/></g></g><g class="hot card" data-interact="flip" data-pair="banana" data-say="两根香蕉" role="button" aria-label="翻牌"><g class="face-back"><rect x="145.0" y="257.0" width="70" height="86" rx="12" fill="#ff8fab"/><rect x="150.0" y="262.0" width="60" height="76" rx="9" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="4 4"/><circle cx="180" cy="300" r="13" fill="#fff" opacity=".9"/><path d="M175 297 q0 -7 6 -6 q6 1 4 7 q-2 3 -4 4 v3" stroke="#ff8fab" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="181" cy="308" r="1.8" fill="#ff8fab"/></g><g class="face-front"><rect x="145.0" y="257.0" width="70" height="86" rx="12" fill="#fffdf6" stroke="#ffd54f" stroke-width="3"/><use href="#banana" x="154.1" y="283.7" width="51.8" height="32.6"/></g></g><g class="hot card" data-interact="flip" data-pair="grapes" data-say="两串葡萄" role="button" aria-label="翻牌"><g class="face-back"><rect x="245.0" y="257.0" width="70" height="86" rx="12" fill="#ff8fab"/><rect x="250.0" y="262.0" width="60" height="76" rx="9" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="4 4"/><circle cx="280" cy="300" r="13" fill="#fff" opacity=".9"/><path d="M275 297 q0 -7 6 -6 q6 1 4 7 q-2 3 -4 4 v3" stroke="#ff8fab" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="281" cy="308" r="1.8" fill="#ff8fab"/></g><g class="face-front"><rect x="245.0" y="257.0" width="70" height="86" rx="12" fill="#fffdf6" stroke="#ffd54f" stroke-width="3"/><use href="#grapes" x="254.1" y="268.9" width="51.8" height="62.2"/></g></g><g class="hot card" data-interact="flip" data-pair="grapes" data-say="两串葡萄" role="button" aria-label="翻牌"><g class="face-back"><rect x="45.0" y="367.0" width="70" height="86" rx="12" fill="#ff8fab"/><rect x="50.0" y="372.0" width="60" height="76" rx="9" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="4 4"/><circle cx="80" cy="410" r="13" fill="#fff" opacity=".9"/><path d="M75 407 q0 -7 6 -6 q6 1 4 7 q-2 3 -4 4 v3" stroke="#ff8fab" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="81" cy="418" r="1.8" fill="#ff8fab"/></g><g class="face-front"><rect x="45.0" y="367.0" width="70" height="86" rx="12" fill="#fffdf6" stroke="#ffd54f" stroke-width="3"/><use href="#grapes" x="54.1" y="378.9" width="51.8" height="62.2"/></g></g><g class="hot card" data-interact="flip" data-pair="fruit" data-say="两个苹果" role="button" aria-label="翻牌"><g class="face-back"><rect x="145.0" y="367.0" width="70" height="86" rx="12" fill="#ff8fab"/><rect x="150.0" y="372.0" width="60" height="76" rx="9" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="4 4"/><circle cx="180" cy="410" r="13" fill="#fff" opacity=".9"/><path d="M175 407 q0 -7 6 -6 q6 1 4 7 q-2 3 -4 4 v3" stroke="#ff8fab" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="181" cy="418" r="1.8" fill="#ff8fab"/></g><g class="face-front"><rect x="145.0" y="367.0" width="70" height="86" rx="12" fill="#fffdf6" stroke="#ffd54f" stroke-width="3"/><use href="#fruit" x="154.1" y="384.1" width="51.8" height="51.8"/></g></g><g class="hot card" data-interact="flip" data-pair="banana" data-say="两根香蕉" role="button" aria-label="翻牌"><g class="face-back"><rect x="245.0" y="367.0" width="70" height="86" rx="12" fill="#ff8fab"/><rect x="250.0" y="372.0" width="60" height="76" rx="9" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="4 4"/><circle cx="280" cy="410" r="13" fill="#fff" opacity=".9"/><path d="M275 407 q0 -7 6 -6 q6 1 4 7 q-2 3 -4 4 v3" stroke="#ff8fab" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="281" cy="418" r="1.8" fill="#ff8fab"/></g><g class="face-front"><rect x="245.0" y="367.0" width="70" height="86" rx="12" fill="#fffdf6" stroke="#ffd54f" stroke-width="3"/><use href="#banana" x="254.1" y="393.7" width="51.8" height="32.6"/></g></g></svg><div class="vignette"></div></div>
+        <div class="caption"><p>翻一翻，找出两张一样的水果卡。</p></div>
+      </section>
+      <section class="page" data-page="7">
+        <div class="sky sky-indoor"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff3e0"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><use href="#table" x="95.0" y="396.9" width="170.0" height="97.1"/><g class="hot " data-interact="tap" role="button" aria-label="一盘水果" data-say="洗干净，一起吃" data-fx="hearts"><use href="#plate-fruit" x="115.0" y="375.8" width="130.0" height="54.2"/></g><ellipse cx="60.0" cy="526.0" rx="18.2" ry="3.3" fill="#3c2a14" opacity=".16"/><use href="#g-qing-happy" x="25.2" y="443.8" width="69.7" height="91.0"/><ellipse cx="310.0" cy="526.0" rx="18.2" ry="3.3" fill="#3c2a14" opacity=".16"/><use href="#g-ning-happy" x="275.2" y="443.8" width="69.7" height="91.0"/></svg><div class="vignette"></div></div>
+        <div class="caption"><p>回到家，把水果洗干净，切成小块。<br />点盘子里的水果，一起吃吧。</p></div>
+      </section>
+      <section class="page" data-page="8">
+        <div class="sky sky-indoor"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fffde7"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><use href="#fruit-stand" x="60.0" y="350.7" width="280.0" height="149.3"/><use href="#fruit" x="70.0" y="414.0" width="40.0" height="40.0"/><use href="#banana" x="114.0" y="418.8" width="56.0" height="35.2"/><use href="#grapes" x="173.0" y="403.6" width="42.0" height="50.4"/><use href="#orange" x="225.0" y="412.0" width="42.0" height="42.0"/><use href="#pear" x="279.0" y="402.7" width="38.0" height="51.3"/><ellipse cx="80.0" cy="526.0" rx="20.3" ry="3.7" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="pet" role="button" aria-label="清清" data-say="多吃水果" data-fx="hearts"><use href="#g-qing-happy" x="41.1" y="434.0" width="77.7" height="101.5"/></g><ellipse cx="300.0" cy="526.0" rx="20.3" ry="3.7" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="pet" role="button" aria-label="宁宁" data-say="身体棒棒" data-fx="hearts"><use href="#g-ning-happy" x="261.1" y="434.0" width="77.7" height="101.5"/></g></svg><div class="vignette"></div></div>
+        <div class="caption caption-center"><p>多吃水果，<br />身体棒棒！</p><p class="end-mark">— 完 —</p></div>
+      </section>
+    </main>
+
+    <nav class="controls">
+      <button class="btn" id="btnPrev" type="button">上一页</button>
+      <div class="dots" id="dots"></div>
+      <button class="btn btn-primary" id="btnNext" type="button">下一页</button>
+    </nav>
+    <p class="hint" id="hint">适合 2–5 岁 · 点水果、按颜色拖、翻牌</p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

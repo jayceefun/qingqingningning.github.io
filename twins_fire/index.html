@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffccbc" />
+  <title>清清宁宁学防火</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- SVG 角色与道具库：同一角色只换姿势，不改五官规格 -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <radialGradient id="gSun" cx="38%" cy="35%" r="65%"><stop offset="0%" stop-color="#fff8d0"/><stop offset="55%" stop-color="#ffe08a"/><stop offset="100%" stop-color="#f5b82e"/></radialGradient><radialGradient id="gMoon" cx="38%" cy="35%" r="65%"><stop offset="0%" stop-color="#fffdf2"/><stop offset="50%" stop-color="#ffe9a8"/><stop offset="100%" stop-color="#e8c070"/></radialGradient><linearGradient id="dressP" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#ffc8d6"/><stop offset="100%" stop-color="#ff7596"/></linearGradient><linearGradient id="dressM" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#b0eadc"/><stop offset="100%" stop-color="#3fad96"/></linearGradient><linearGradient id="hairP" x1="0.2" y1="0" x2="0.85" y2="1"><stop offset="0%" stop-color="#b07850"/><stop offset="55%" stop-color="#7a4a30"/><stop offset="100%" stop-color="#5a3424"/></linearGradient><linearGradient id="hairM" x1="0.2" y1="0" x2="0.85" y2="1"><stop offset="0%" stop-color="#c08658"/><stop offset="55%" stop-color="#855538"/><stop offset="100%" stop-color="#6a4030"/></linearGradient>
+      <symbol id="alarm" viewBox="0 0 70 70"><circle cx="35" cy="35" r="30" fill="#e53935"/><circle cx="35" cy="35" r="20" fill="#ef5350"/><circle cx="35" cy="35" r="8" fill="#ffcdd2"/><path d="M6 10 L0 4 M64 10 L70 4" stroke="#e53935" stroke-width="4" stroke-linecap="round"/></symbol>
+      <symbol id="ch-puppy-happy-wave-firehat-coat" viewBox="-15 -24 130 172"><path d="M74 118 Q96 110 93 90" fill="none" stroke="#f5e6cf" stroke-width="8" stroke-linecap="round"/><circle cx="93" cy="90" r="4.5" fill="#c8935e"/><ellipse cx="32" cy="134" rx="15" ry="8" fill="#e9d8bd"/><ellipse cx="32" cy="135.5" rx="8" ry="4.3" fill="#fffaf2" opacity=".85"/><ellipse cx="68" cy="134" rx="15" ry="8" fill="#e9d8bd"/><ellipse cx="68" cy="135.5" rx="8" ry="4.3" fill="#fffaf2" opacity=".85"/><ellipse cx="50" cy="104" rx="28" ry="27" fill="#f5e6cf"/><ellipse cx="50" cy="110" rx="17" ry="15" fill="#fffaf2"/><ellipse cx="40" cy="92" rx="6" ry="3.4" fill="#fff" opacity=".28"/><ellipse cx="50" cy="52" rx="29" ry="27" fill="#f5e6cf"/><ellipse cx="37" cy="36" rx="8" ry="4.5" fill="#fff" opacity=".28"/><ellipse cx="50" cy="63" rx="14" ry="10" fill="#fffaf2" opacity=".92"/><ellipse cx="62" cy="48" rx="9" ry="10" fill="#c8935e" opacity=".8"/><path d="M33 51 Q39 44 45 51" fill="none" stroke="#3a3228" stroke-width="2.5" stroke-linecap="round"/><path d="M55 51 Q61 44 67 51" fill="none" stroke="#3a3228" stroke-width="2.5" stroke-linecap="round"/><ellipse cx="50" cy="58" rx="3.3" ry="2.4" fill="#3a2a22"/><circle cx="49" cy="57.2" r=".8" fill="#fff" opacity=".6"/><path d="M43 63 Q50 72 57 63 Q50 66 43 63 Z" fill="#b8544c"/><ellipse cx="50" cy="67.5" rx="3" ry="1.6" fill="#f08a8a"/><ellipse cx="29" cy="61" rx="6.5" ry="4.2" fill="#f5a8a0" opacity=".5"/><ellipse cx="71" cy="61" rx="6.5" ry="4.2" fill="#f5a8a0" opacity=".5"/><g transform="translate(25,40) rotate(20)"><ellipse cx="0" cy="15" rx="10" ry="20" fill="#c8935e"/><ellipse cx="-2" cy="8" rx="3" ry="6" fill="#fff" opacity=".25"/></g><g transform="translate(75,40) rotate(-20)"><ellipse cx="0" cy="15" rx="10" ry="20" fill="#c8935e"/></g><path d="M23 92 Q50 80 77 92 L78 124 Q50 132 22 124 Z" fill="#e53935"/><path d="M40 86 L50 96 L60 86" stroke="#fff" stroke-width="3" fill="none"/><path d="M50 96 V126" stroke="#b71c1c" stroke-width="2"/><circle cx="50" cy="104" r="2" fill="#ffd54f"/><circle cx="50" cy="114" r="2" fill="#ffd54f"/><path d="M20 40 Q22 8 50 8 Q78 8 80 40 Z" fill="#e53935"/><path d="M10 42 Q50 30 90 42 Q50 50 10 42 Z" fill="#c62828"/><path d="M44 14 h12 v14 h-12 Z" fill="#ffca28"/><path d="M50 16 v10" stroke="#e53935" stroke-width="2"/><g transform="translate(25,98) rotate(18)"><ellipse cx="0" cy="10" rx="7.5" ry="12.5" fill="#e1d3be"/><ellipse cx="0" cy="20" rx="6.8" ry="5.8" fill="#fffaf2"/><ellipse cx="-2" cy="18" rx="2" ry="1.4" fill="#fff" opacity=".45"/></g><g transform="translate(74,88) rotate(-130)"><ellipse cx="0" cy="10" rx="7.5" ry="12.5" fill="#e1d3be"/><ellipse cx="0" cy="20" rx="6.8" ry="5.8" fill="#fffaf2"/><ellipse cx="-2" cy="18" rx="2" ry="1.4" fill="#fff" opacity=".45"/></g></symbol>
+      <symbol id="digit-1" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" rx="16" fill="#e3f2fd" stroke="#90caf9" stroke-width="3"/><text x="50" y="68" text-anchor="middle" font-size="52" font-weight="700" fill="#5d4037">1</text></symbol>
+      <symbol id="digit-9" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" rx="16" fill="#e3f2fd" stroke="#90caf9" stroke-width="3"/><text x="50" y="68" text-anchor="middle" font-size="52" font-weight="700" fill="#5d4037">9</text></symbol>
+      <symbol id="drawer" viewBox="0 0 120 70"><rect x="2" y="2" width="116" height="66" rx="6" fill="#a1683a"/><rect x="10" y="10" width="100" height="50" rx="4" fill="#8d5a36"/><rect x="48" y="30" width="24" height="8" rx="3" fill="#ffd54f"/></symbol>
+      <symbol id="exit-sign" viewBox="0 0 120 60"><rect x="2" y="2" width="116" height="56" rx="6" fill="#2e7d32"/><circle cx="34" cy="16" r="6" fill="#fff"/><path d="M32 22 L26 38 L36 44 L32 54 M28 32 L18 30 M30 26 L42 32 M26 38 L18 48" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/><rect x="62" y="12" width="30" height="40" fill="#fff"/><path d="M96 32 H112 M106 26 L112 32 L106 38" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/></symbol>
+      <symbol id="g-ning-happy" viewBox="-12 0 134 175">
+        
+        <ellipse cx="43" cy="157" rx="10.5" ry="4.8" fill="#2c947c"/>
+        <ellipse cx="67" cy="157" rx="10.5" ry="4.8" fill="#2c947c"/>
+        <ellipse cx="43" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <ellipse cx="67" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <path d="M35 86 C24 98 23 122 31 147 Q55 158 79 147 C87 122 86 98 75 86 Q55 97 35 86 Z"
+              fill="url(#dressM)" stroke="#2c947c" stroke-width="0.8" opacity="0.98"/>
+        <path d="M33 146 Q55 154 77 146" fill="none" stroke="#fff" stroke-width="2.2" opacity="0.35" stroke-linecap="round"/>
+        <ellipse cx="55" cy="84" rx="19" ry="14" fill="url(#dressM)"/>
+        <ellipse cx="36" cy="86" rx="7" ry="6" fill="url(#dressM)"/>
+        <ellipse cx="74" cy="86" rx="7" ry="6" fill="url(#dressM)"/>
+        <path d="M44 74 Q55 84 66 74 L64 84 Q55 88 46 84 Z" fill="#fff8f4"/>
+        <circle cx="55" cy="86" r="2.2" fill="#fff"/>
+        <circle cx="55" cy="86" r="1.1" fill="#2fa890"/>
+        <path d="M40 88 Q30 100 26 114" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M70 88 Q80 100 84 114" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(26,116) rotate(-8)">
+        <ellipse cx="-5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <g transform="translate(84,116) rotate(8)">
+        <ellipse cx="5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <!-- 侧发（略短，避免挡住嘴边饼干） -->
+        <path d="M30 48 C20 56 18 74 28 82 C34 72 35 58 33 52 Z" fill="url(#hairM)"/>
+        <path d="M80 48 C90 56 92 74 82 82 C76 72 75 58 77 52 Z" fill="url(#hairM)"/>
+        <!-- 脖子 / 耳 -->
+        <rect x="48" y="66" width="14" height="13" rx="5" fill="#f3c9b6"/>
+        <ellipse cx="30" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <ellipse cx="80" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <!-- 头 -->
+        <ellipse cx="55" cy="45" rx="26.5" ry="27.5" fill="#f3c9b6"/>
+        <!-- 顶发 -->
+        <path d="M28 45 C27 22 40 12 55 12 C70 12 83 22 82 45
+                 C76 30 66 24 55 24 C44 24 34 30 28 45 Z" fill="url(#hairM)"/>
+        <!-- 刘海 -->
+        <path d="M30 36 C36 47 42 38 46 34 C51 45 55 34 55 34
+                 C55 34 59 45 64 34 C68 38 74 47 80 36
+                 C72 22 62 18 55 18 C48 18 38 22 30 36 Z" fill="url(#hairM)"/>
+        <!-- 发丝高光 -->
+        <path d="M42 22 Q48 28 46 36" fill="none" stroke="#c48a62" stroke-width="1.6" opacity="0.45" stroke-linecap="round"/>
+        <path d="M58 20 Q64 26 66 34" fill="none" stroke="#c48a62" stroke-width="1.3" opacity="0.35" stroke-linecap="round"/>
+        <!-- 蝴蝶结 + 飘带 -->
+        <g transform="translate(55,11)">
+          <path d="M-6 4 Q-14 16 -8 18" fill="none" stroke="#6ec9b4" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M6 4 Q14 16 8 18" fill="none" stroke="#6ec9b4" stroke-width="2.4" stroke-linecap="round"/>
+          <ellipse cx="-9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#6ec9b4"/>
+          <ellipse cx="9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#6ec9b4"/>
+          <ellipse cx="-9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <ellipse cx="9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <circle cx="0" cy="0" r="4.2" fill="#2fa890"/>
+          <circle cx="0.8" cy="-0.8" r="1.3" fill="#fff" opacity="0.45"/>
+        </g>
+        <path d="M41 49 Q47 42.5 53 49" fill="none" stroke="#3a2820" stroke-width="2.3" stroke-linecap="round"/>
+        <path d="M57 49 Q63 42.5 69 49" fill="none" stroke="#3a2820" stroke-width="2.3" stroke-linecap="round"/>
+        <ellipse cx="34" cy="55" rx="5.2" ry="3" fill="#ff9aaa" opacity="0.52"/>
+        <ellipse cx="76" cy="55" rx="5.2" ry="3" fill="#ff9aaa" opacity="0.52"/>
+        <ellipse cx="55" cy="53" rx="1.5" ry="1.05" fill="#d99988"/>
+        <path d="M47 59 Q55 68 63 59" fill="none" stroke="#c07068" stroke-width="1.65" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="g-ning-normal" viewBox="-12 0 134 175">
+        
+        <ellipse cx="43" cy="157" rx="10.5" ry="4.8" fill="#2c947c"/>
+        <ellipse cx="67" cy="157" rx="10.5" ry="4.8" fill="#2c947c"/>
+        <ellipse cx="43" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <ellipse cx="67" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <path d="M35 86 C24 98 23 122 31 147 Q55 158 79 147 C87 122 86 98 75 86 Q55 97 35 86 Z"
+              fill="url(#dressM)" stroke="#2c947c" stroke-width="0.8" opacity="0.98"/>
+        <path d="M33 146 Q55 154 77 146" fill="none" stroke="#fff" stroke-width="2.2" opacity="0.35" stroke-linecap="round"/>
+        <ellipse cx="55" cy="84" rx="19" ry="14" fill="url(#dressM)"/>
+        <ellipse cx="36" cy="86" rx="7" ry="6" fill="url(#dressM)"/>
+        <ellipse cx="74" cy="86" rx="7" ry="6" fill="url(#dressM)"/>
+        <path d="M44 74 Q55 84 66 74 L64 84 Q55 88 46 84 Z" fill="#fff8f4"/>
+        <circle cx="55" cy="86" r="2.2" fill="#fff"/>
+        <circle cx="55" cy="86" r="1.1" fill="#2fa890"/>
+        <path d="M40 88 Q34 102 32 116" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M70 88 Q76 102 78 116" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(32,118) rotate(-2)">
+        <ellipse cx="5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <g transform="translate(78,118) rotate(2)">
+        <ellipse cx="-5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <!-- 侧发（略短，避免挡住嘴边饼干） -->
+        <path d="M30 48 C20 56 18 74 28 82 C34 72 35 58 33 52 Z" fill="url(#hairM)"/>
+        <path d="M80 48 C90 56 92 74 82 82 C76 72 75 58 77 52 Z" fill="url(#hairM)"/>
+        <!-- 脖子 / 耳 -->
+        <rect x="48" y="66" width="14" height="13" rx="5" fill="#f3c9b6"/>
+        <ellipse cx="30" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <ellipse cx="80" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <!-- 头 -->
+        <ellipse cx="55" cy="45" rx="26.5" ry="27.5" fill="#f3c9b6"/>
+        <!-- 顶发 -->
+        <path d="M28 45 C27 22 40 12 55 12 C70 12 83 22 82 45
+                 C76 30 66 24 55 24 C44 24 34 30 28 45 Z" fill="url(#hairM)"/>
+        <!-- 刘海 -->
+        <path d="M30 36 C36 47 42 38 46 34 C51 45 55 34 55 34
+                 C55 34 59 45 64 34 C68 38 74 47 80 36
+                 C72 22 62 18 55 18 C48 18 38 22 30 36 Z" fill="url(#hairM)"/>
+        <!-- 发丝高光 -->
+        <path d="M42 22 Q48 28 46 36" fill="none" stroke="#c48a62" stroke-width="1.6" opacity="0.45" stroke-linecap="round"/>
+        <path d="M58 20 Q64 26 66 34" fill="none" stroke="#c48a62" stroke-width="1.3" opacity="0.35" stroke-linecap="round"/>
+        <!-- 蝴蝶结 + 飘带 -->
+        <g transform="translate(55,11)">
+          <path d="M-6 4 Q-14 16 -8 18" fill="none" stroke="#6ec9b4" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M6 4 Q14 16 8 18" fill="none" stroke="#6ec9b4" stroke-width="2.4" stroke-linecap="round"/>
+          <ellipse cx="-9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#6ec9b4"/>
+          <ellipse cx="9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#6ec9b4"/>
+          <ellipse cx="-9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <ellipse cx="9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <circle cx="0" cy="0" r="4.2" fill="#2fa890"/>
+          <circle cx="0.8" cy="-0.8" r="1.3" fill="#fff" opacity="0.45"/>
+        </g>
+        <!-- 眼睛 -->
+        <ellipse cx="45" cy="49" rx="4.4" ry="5" fill="#fff"/>
+        <ellipse cx="65" cy="49" rx="4.4" ry="5" fill="#fff"/>
+        <ellipse cx="45.4" cy="49.6" rx="2.9" ry="3.4" fill="#6b4a38"/>
+        <ellipse cx="65.4" cy="49.6" rx="2.9" ry="3.4" fill="#6b4a38"/>
+        <ellipse cx="45.5" cy="50" rx="1.5" ry="1.85" fill="#2a1810"/>
+        <ellipse cx="65.5" cy="50" rx="1.5" ry="1.85" fill="#2a1810"/>
+        <circle cx="46.6" cy="48" r="1.15" fill="#fff"/>
+        <circle cx="66.6" cy="48" r="1.15" fill="#fff"/>
+        <circle cx="44.4" cy="51.2" r="0.55" fill="#fff" opacity="0.7"/>
+        <circle cx="64.4" cy="51.2" r="0.55" fill="#fff" opacity="0.7"/>
+        <!-- 睫毛 -->
+        <path d="M40.5 45.5 L39 43.8" stroke="#3a2820" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M42.2 44.6 L41.5 42.7" stroke="#3a2820" stroke-width="1.05" stroke-linecap="round"/>
+        <path d="M69.5 45.5 L71 43.8" stroke="#3a2820" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M67.8 44.6 L68.5 42.7" stroke="#3a2820" stroke-width="1.05" stroke-linecap="round"/>
+        <!-- 眉 -->
+        <path d="M39 42 Q45 39.8 50 42" fill="none" stroke="#6a4a3c" stroke-width="1.25" stroke-linecap="round"/>
+        <path d="M60 42 Q65 39.8 71 42" fill="none" stroke="#6a4a3c" stroke-width="1.25" stroke-linecap="round"/>
+        <!-- 腮红 / 鼻 / 笑 -->
+        <ellipse cx="34" cy="55" rx="5" ry="2.9" fill="#ff9aaa" opacity="0.48"/>
+        <ellipse cx="76" cy="55" rx="5" ry="2.9" fill="#ff9aaa" opacity="0.48"/>
+        <ellipse cx="55" cy="53" rx="1.45" ry="1.05" fill="#d99988"/>
+        <path d="M48 59 Q55 64.5 62 59" fill="none" stroke="#c07068" stroke-width="1.55" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="g-qing-happy" viewBox="-12 0 134 175">
+        
+        <ellipse cx="43" cy="157" rx="10.5" ry="4.8" fill="#d96584"/>
+        <ellipse cx="67" cy="157" rx="10.5" ry="4.8" fill="#d96584"/>
+        <ellipse cx="43" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <ellipse cx="67" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <path d="M35 86 C24 98 23 122 31 147 Q55 158 79 147 C87 122 86 98 75 86 Q55 97 35 86 Z"
+              fill="url(#dressP)" stroke="#d96584" stroke-width="0.8" opacity="0.98"/>
+        <path d="M33 146 Q55 154 77 146" fill="none" stroke="#fff" stroke-width="2.2" opacity="0.35" stroke-linecap="round"/>
+        <ellipse cx="55" cy="84" rx="19" ry="14" fill="url(#dressP)"/>
+        <ellipse cx="36" cy="86" rx="7" ry="6" fill="url(#dressP)"/>
+        <ellipse cx="74" cy="86" rx="7" ry="6" fill="url(#dressP)"/>
+        <path d="M44 74 Q55 84 66 74 L64 84 Q55 88 46 84 Z" fill="#fff8f4"/>
+        <circle cx="55" cy="86" r="2.2" fill="#fff"/>
+        <circle cx="55" cy="86" r="1.1" fill="#ff5f87"/>
+        <path d="M40 88 Q30 100 26 114" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M70 88 Q80 100 84 114" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(26,116) rotate(-8)">
+        <ellipse cx="-5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <g transform="translate(84,116) rotate(8)">
+        <ellipse cx="5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <!-- 侧发（略短，避免挡住嘴边饼干） -->
+        <path d="M30 48 C20 56 18 74 28 82 C34 72 35 58 33 52 Z" fill="url(#hairP)"/>
+        <path d="M80 48 C90 56 92 74 82 82 C76 72 75 58 77 52 Z" fill="url(#hairP)"/>
+        <!-- 脖子 / 耳 -->
+        <rect x="48" y="66" width="14" height="13" rx="5" fill="#f3c9b6"/>
+        <ellipse cx="30" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <ellipse cx="80" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <!-- 头 -->
+        <ellipse cx="55" cy="45" rx="26.5" ry="27.5" fill="#f3c9b6"/>
+        <!-- 顶发 -->
+        <path d="M28 45 C27 22 40 12 55 12 C70 12 83 22 82 45
+                 C76 30 66 24 55 24 C44 24 34 30 28 45 Z" fill="url(#hairP)"/>
+        <!-- 刘海 -->
+        <path d="M30 36 C36 47 42 38 46 34 C51 45 55 34 55 34
+                 C55 34 59 45 64 34 C68 38 74 47 80 36
+                 C72 22 62 18 55 18 C48 18 38 22 30 36 Z" fill="url(#hairP)"/>
+        <!-- 发丝高光 -->
+        <path d="M42 22 Q48 28 46 36" fill="none" stroke="#c48a62" stroke-width="1.6" opacity="0.45" stroke-linecap="round"/>
+        <path d="M58 20 Q64 26 66 34" fill="none" stroke="#c48a62" stroke-width="1.3" opacity="0.35" stroke-linecap="round"/>
+        <!-- 蝴蝶结 + 飘带 -->
+        <g transform="translate(55,11)">
+          <path d="M-6 4 Q-14 16 -8 18" fill="none" stroke="#ff8fab" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M6 4 Q14 16 8 18" fill="none" stroke="#ff8fab" stroke-width="2.4" stroke-linecap="round"/>
+          <ellipse cx="-9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#ff8fab"/>
+          <ellipse cx="9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#ff8fab"/>
+          <ellipse cx="-9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <ellipse cx="9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <circle cx="0" cy="0" r="4.2" fill="#ff5f87"/>
+          <circle cx="0.8" cy="-0.8" r="1.3" fill="#fff" opacity="0.45"/>
+        </g>
+        <path d="M41 49 Q47 42.5 53 49" fill="none" stroke="#3a2820" stroke-width="2.3" stroke-linecap="round"/>
+        <path d="M57 49 Q63 42.5 69 49" fill="none" stroke="#3a2820" stroke-width="2.3" stroke-linecap="round"/>
+        <ellipse cx="34" cy="55" rx="5.2" ry="3" fill="#ff9aaa" opacity="0.52"/>
+        <ellipse cx="76" cy="55" rx="5.2" ry="3" fill="#ff9aaa" opacity="0.52"/>
+        <ellipse cx="55" cy="53" rx="1.5" ry="1.05" fill="#d99988"/>
+        <path d="M47 59 Q55 68 63 59" fill="none" stroke="#c07068" stroke-width="1.65" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="g-qing-normal" viewBox="-12 0 134 175">
+        
+        <ellipse cx="43" cy="157" rx="10.5" ry="4.8" fill="#d96584"/>
+        <ellipse cx="67" cy="157" rx="10.5" ry="4.8" fill="#d96584"/>
+        <ellipse cx="43" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <ellipse cx="67" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <path d="M35 86 C24 98 23 122 31 147 Q55 158 79 147 C87 122 86 98 75 86 Q55 97 35 86 Z"
+              fill="url(#dressP)" stroke="#d96584" stroke-width="0.8" opacity="0.98"/>
+        <path d="M33 146 Q55 154 77 146" fill="none" stroke="#fff" stroke-width="2.2" opacity="0.35" stroke-linecap="round"/>
+        <ellipse cx="55" cy="84" rx="19" ry="14" fill="url(#dressP)"/>
+        <ellipse cx="36" cy="86" rx="7" ry="6" fill="url(#dressP)"/>
+        <ellipse cx="74" cy="86" rx="7" ry="6" fill="url(#dressP)"/>
+        <path d="M44 74 Q55 84 66 74 L64 84 Q55 88 46 84 Z" fill="#fff8f4"/>
+        <circle cx="55" cy="86" r="2.2" fill="#fff"/>
+        <circle cx="55" cy="86" r="1.1" fill="#ff5f87"/>
+        <path d="M40 88 Q34 102 32 116" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M70 88 Q76 102 78 116" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(32,118) rotate(-2)">
+        <ellipse cx="5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <g transform="translate(78,118) rotate(2)">
+        <ellipse cx="-5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <!-- 侧发（略短，避免挡住嘴边饼干） -->
+        <path d="M30 48 C20 56 18 74 28 82 C34 72 35 58 33 52 Z" fill="url(#hairP)"/>
+        <path d="M80 48 C90 56 92 74 82 82 C76 72 75 58 77 52 Z" fill="url(#hairP)"/>
+        <!-- 脖子 / 耳 -->
+        <rect x="48" y="66" width="14" height="13" rx="5" fill="#f3c9b6"/>
+        <ellipse cx="30" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <ellipse cx="80" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <!-- 头 -->
+        <ellipse cx="55" cy="45" rx="26.5" ry="27.5" fill="#f3c9b6"/>
+        <!-- 顶发 -->
+        <path d="M28 45 C27 22 40 12 55 12 C70 12 83 22 82 45
+                 C76 30 66 24 55 24 C44 24 34 30 28 45 Z" fill="url(#hairP)"/>
+        <!-- 刘海 -->
+        <path d="M30 36 C36 47 42 38 46 34 C51 45 55 34 55 34
+                 C55 34 59 45 64 34 C68 38 74 47 80 36
+                 C72 22 62 18 55 18 C48 18 38 22 30 36 Z" fill="url(#hairP)"/>
+        <!-- 发丝高光 -->
+        <path d="M42 22 Q48 28 46 36" fill="none" stroke="#c48a62" stroke-width="1.6" opacity="0.45" stroke-linecap="round"/>
+        <path d="M58 20 Q64 26 66 34" fill="none" stroke="#c48a62" stroke-width="1.3" opacity="0.35" stroke-linecap="round"/>
+        <!-- 蝴蝶结 + 飘带 -->
+        <g transform="translate(55,11)">
+          <path d="M-6 4 Q-14 16 -8 18" fill="none" stroke="#ff8fab" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M6 4 Q14 16 8 18" fill="none" stroke="#ff8fab" stroke-width="2.4" stroke-linecap="round"/>
+          <ellipse cx="-9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#ff8fab"/>
+          <ellipse cx="9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#ff8fab"/>
+          <ellipse cx="-9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <ellipse cx="9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <circle cx="0" cy="0" r="4.2" fill="#ff5f87"/>
+          <circle cx="0.8" cy="-0.8" r="1.3" fill="#fff" opacity="0.45"/>
+        </g>
+        <!-- 眼睛 -->
+        <ellipse cx="45" cy="49" rx="4.4" ry="5" fill="#fff"/>
+        <ellipse cx="65" cy="49" rx="4.4" ry="5" fill="#fff"/>
+        <ellipse cx="45.4" cy="49.6" rx="2.9" ry="3.4" fill="#6b4a38"/>
+        <ellipse cx="65.4" cy="49.6" rx="2.9" ry="3.4" fill="#6b4a38"/>
+        <ellipse cx="45.5" cy="50" rx="1.5" ry="1.85" fill="#2a1810"/>
+        <ellipse cx="65.5" cy="50" rx="1.5" ry="1.85" fill="#2a1810"/>
+        <circle cx="46.6" cy="48" r="1.15" fill="#fff"/>
+        <circle cx="66.6" cy="48" r="1.15" fill="#fff"/>
+        <circle cx="44.4" cy="51.2" r="0.55" fill="#fff" opacity="0.7"/>
+        <circle cx="64.4" cy="51.2" r="0.55" fill="#fff" opacity="0.7"/>
+        <!-- 睫毛 -->
+        <path d="M40.5 45.5 L39 43.8" stroke="#3a2820" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M42.2 44.6 L41.5 42.7" stroke="#3a2820" stroke-width="1.05" stroke-linecap="round"/>
+        <path d="M69.5 45.5 L71 43.8" stroke="#3a2820" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M67.8 44.6 L68.5 42.7" stroke="#3a2820" stroke-width="1.05" stroke-linecap="round"/>
+        <!-- 眉 -->
+        <path d="M39 42 Q45 39.8 50 42" fill="none" stroke="#6a4a3c" stroke-width="1.25" stroke-linecap="round"/>
+        <path d="M60 42 Q65 39.8 71 42" fill="none" stroke="#6a4a3c" stroke-width="1.25" stroke-linecap="round"/>
+        <!-- 腮红 / 鼻 / 笑 -->
+        <ellipse cx="34" cy="55" rx="5" ry="2.9" fill="#ff9aaa" opacity="0.48"/>
+        <ellipse cx="76" cy="55" rx="5" ry="2.9" fill="#ff9aaa" opacity="0.48"/>
+        <ellipse cx="55" cy="53" rx="1.45" ry="1.05" fill="#d99988"/>
+        <path d="M48 59 Q55 64.5 62 59" fill="none" stroke="#c07068" stroke-width="1.55" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="lighter" viewBox="0 0 30 60"><rect x="2" y="16" width="26" height="42" rx="5" fill="#42a5f5"/><rect x="4" y="4" width="18" height="14" rx="2" fill="#b0bec5"/><circle cx="22" cy="10" r="4" fill="#78909c"/></symbol>
+      <symbol id="matches" viewBox="0 0 60 40"><rect x="2" y="12" width="56" height="26" rx="3" fill="#ef5350"/><rect x="2" y="12" width="56" height="8" fill="#ffca28"/><path d="M14 12 V0 M24 12 V2" stroke="#ffe0b2" stroke-width="3"/><circle cx="14" cy="0" r="3" fill="#b71c1c"/><circle cx="24" cy="2" r="3" fill="#b71c1c"/></symbol>
+      <symbol id="smoke" viewBox="0 0 200 80"><circle cx="40" cy="40" r="30" fill="#90a4ae" opacity=".55"/><circle cx="90" cy="30" r="34" fill="#90a4ae" opacity=".5"/><circle cx="150" cy="42" r="30" fill="#90a4ae" opacity=".55"/></symbol>
+      <symbol id="towel" viewBox="0 0 70 100"><rect x="4" y="6" width="62" height="6" rx="3" fill="#90a4ae"/><circle cx="8" cy="9" r="5" fill="#78909c"/><circle cx="62" cy="9" r="5" fill="#78909c"/><path d="M12 10 L58 10 L58 92 Q35 98 12 92 Z" fill="#ffd54f"/><path d="M12 10 L24 10 L24 94 L12 92 Z" fill="#ffe082"/><path d="M12 72 H58 M12 80 H58" stroke="#ff8a65" stroke-width="4"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="app" id="app">
+    <header class="topbar">
+      <nav class="book-nav">
+        <a class="home-link" href="../index.html#twins_fire">返回首页</a>
+        <a class="home-link" href="../swim_duck/index.html">上一本</a>
+        <a class="home-link" href="../lost_chick/index.html">下一本</a>
+      </nav>
+      <span class="brand">清清宁宁学防火</span>
+      <span class="page-indicator" id="pageIndicator">1 / 9</span>
+    </header>
+
+    <main class="stage" id="stage" aria-live="polite">
+      <div class="fx-layer" id="fxLayer" aria-hidden="true"></div>
+      <section class="page is-active" data-page="0">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff8e1"/><rect x="-480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="0" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="540" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="600" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="660" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="720" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="780" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="840" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><use href="#exit-sign" x="235.0" y="75.0" width="90.0" height="45.0"/><ellipse cx="180.0" cy="518.0" rx="38.0" ry="6.8" fill="#3c2a14" opacity=".16"/><use href="#ch-puppy-happy-wave-firehat-coat" x="118.2" y="362.3" width="123.5" height="163.4"/><ellipse cx="70.0" cy="518.0" rx="21.0" ry="3.8" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="pet" role="button" aria-label="清清" data-say="学会防火" data-fx="hearts"><use href="#g-qing-happy" x="29.8" y="422.8" width="80.4" height="105.0"/></g><ellipse cx="300.0" cy="518.0" rx="21.0" ry="3.8" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="pet" role="button" aria-label="宁宁" data-say="我们不怕" data-fx="hearts"><use href="#g-ning-happy" x="259.8" y="422.8" width="80.4" height="105.0"/></g></svg><div class="vignette"></div></div>
+        <div class="caption caption-center"><h1>清清宁宁学防火</h1><p>点图画会有惊喜 · 点下一页开始</p></div>
+      </section>
+      <section class="page" data-page="1">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff8e1"/><rect x="-480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="0" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="540" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="600" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="660" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="720" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="780" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="840" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><ellipse cx="230.0" cy="518.0" rx="40.0" ry="7.2" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="tap" role="button" aria-label="消防员叔叔" data-say="小朋友们好，今天学防火" data-fx="sparks"><use href="#ch-puppy-happy-wave-firehat-coat" x="165.0" y="354.0" width="130.0" height="172.0"/></g><ellipse cx="80.0" cy="518.0" rx="22.8" ry="4.1" fill="#3c2a14" opacity=".16"/><use href="#g-qing-normal" x="36.4" y="414.7" width="87.1" height="113.8"/></svg><div class="vignette"></div></div>
+        <div class="caption"><p>消防员叔叔来幼儿园了。<br />点消防员叔叔。</p></div>
+      </section>
+      <section class="page" data-page="2" data-done="收好啦">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff8e1"/><rect x="-480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="0" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="540" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="600" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="660" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="720" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="780" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="840" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><use href="#drawer" x="225.0" y="455.8" width="110.0" height="64.2"/><g class="drop " data-multi="1" aria-label="抽屉"><g class="drop-hint"><rect x="235.0" y="450.0" width="90" height="40" rx="10" fill="#ffffff" fill-opacity=".45" stroke="#ff7fa3" stroke-width="3" stroke-dasharray="7 6"/></g></g><g class="hot " data-interact="drag" role="button" aria-label="火柴" data-drop=".drop" data-say="交给大人收好" data-hint="按住拖进抽屉"><use href="#matches" x="45.0" y="436.7" width="50.0" height="33.3"/></g><g class="hot " data-interact="drag" role="button" aria-label="打火机" data-drop=".drop" data-say="交给大人收好" data-hint="按住拖进抽屉"><use href="#lighter" x="137.0" y="418.0" width="26.0" height="52.0"/></g><ellipse cx="200.0" cy="518.0" rx="17.5" ry="3.1" fill="#3c2a14" opacity=".16"/><use href="#g-ning-normal" x="166.5" y="439.0" width="67.0" height="87.5"/></svg><div class="vignette"></div></div>
+        <div class="caption"><p>火柴和打火机不是玩具。<br />把它们拖进抽屉，交给大人。</p></div>
+      </section>
+      <section class="page" data-page="3">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff8e1"/><rect x="-480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="0" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="540" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="600" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="660" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="720" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="780" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="840" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><use href="#smoke" x="80.0" y="104.0" width="240.0" height="96.0"/><g class="hot " data-interact="hold" role="button" aria-label="警铃" data-anim="is-no" data-say="着火啦！快出去！" data-fx="none" data-hint="按住警铃"><use href="#alarm" x="275.0" y="70.0" width="50.0" height="50.0"/></g><ellipse cx="90.0" cy="518.0" rx="21.0" ry="3.8" fill="#3c2a14" opacity=".16"/><use href="#g-qing-normal" x="49.8" y="422.8" width="80.4" height="105.0"/></svg><div class="vignette"></div></div>
+        <div class="caption"><p>发现着火了，要大声喊大人。<br />按住警铃。</p></div>
+      </section>
+      <section class="page" data-page="4" data-done="捂好啦">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff8e1"/><rect x="-480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="0" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="540" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="600" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="660" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="720" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="780" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="840" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><use href="#smoke" x="80.0" y="104.0" width="240.0" height="96.0"/><g class="drop " aria-label="口鼻"><g class="drop-hint"><rect x="87.0" y="417.0" width="46" height="30" rx="10" fill="#ffffff" fill-opacity=".45" stroke="#ff7fa3" stroke-width="3" stroke-dasharray="7 6"/></g></g><g class="hot " data-interact="drag" role="button" aria-label="湿毛巾" data-drop=".drop" data-say="捂住口鼻" data-hint="按住湿毛巾拖到清清脸上"><use href="#towel" x="230.0" y="384.3" width="60.0" height="85.7"/></g><ellipse cx="110.0" cy="518.0" rx="26.2" ry="4.7" fill="#3c2a14" opacity=".16"/><use href="#g-qing-normal" x="59.8" y="398.5" width="100.5" height="131.2"/></svg><div class="vignette"></div></div>
+        <div class="caption"><p>用湿毛巾捂住口鼻，<br />不吸进烟。把毛巾拖到清清脸上。</p></div>
+      </section>
+      <section class="page" data-page="5">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff8e1"/><rect x="-480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="0" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="540" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="600" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="660" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="720" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="780" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="840" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><use href="#smoke" x="30.0" y="100.0" width="300.0" height="120.0"/><use href="#exit-sign" x="245.0" y="255.0" width="90.0" height="45.0"/><ellipse cx="80.0" cy="518.0" rx="21.0" ry="3.8" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="hold" role="button" aria-label="清清" data-move-to="180,0" data-move="1" data-move-ms="2200" data-say="弯下腰，往外走" data-fx="none" data-hint="按住清清，弯腰往外走"><use href="#g-qing-normal" x="39.8" y="422.8" width="80.4" height="105.0"/></g></svg><div class="vignette"></div></div>
+        <div class="caption"><p>烟往上飘，要弯下腰低头走。<br />按住清清，往出口走。</p></div>
+      </section>
+      <section class="page" data-page="6">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff8e1"/><rect x="-480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="0" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="540" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="600" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="660" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="720" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="780" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="840" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><g class="hot " data-interact="tap" role="button" aria-label="安全出口" data-say="跟着绿色小人走" data-fx="sparks" data-anim="is-pulse"><use href="#exit-sign" x="110.0" y="190.0" width="140.0" height="70.0"/></g><ellipse cx="90.0" cy="518.0" rx="21.0" ry="3.8" fill="#3c2a14" opacity=".16"/><use href="#g-qing-happy" x="49.8" y="422.8" width="80.4" height="105.0"/><ellipse cx="270.0" cy="518.0" rx="21.0" ry="3.8" fill="#3c2a14" opacity=".16"/><use href="#g-ning-happy" x="229.8" y="422.8" width="80.4" height="105.0"/></svg><div class="vignette"></div></div>
+        <div class="caption"><p>绿色小人指着的是安全出口。<br />点安全出口标志。</p></div>
+      </section>
+      <section class="page" data-page="7" data-done="记住了：119">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff8e1"/><rect x="-480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="0" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="540" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="600" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="660" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="720" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="780" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="840" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><g class="hot " data-interact="seq" role="button" aria-label="数字1" data-step="1" data-say="1" data-fx="sparks"><use href="#digit-1" x="46.0" y="260.0" width="80.0" height="80.0"/></g><g class="hot " data-interact="seq" role="button" aria-label="数字1" data-step="2" data-say="1" data-fx="sparks"><use href="#digit-1" x="140.0" y="260.0" width="80.0" height="80.0"/></g><g class="hot " data-interact="seq" role="button" aria-label="数字9" data-step="3" data-say="9" data-fx="sparks"><use href="#digit-9" x="234.0" y="260.0" width="80.0" height="80.0"/></g><ellipse cx="90.0" cy="518.0" rx="19.2" ry="3.5" fill="#3c2a14" opacity=".16"/><use href="#g-qing-normal" x="53.1" y="430.9" width="73.7" height="96.3"/><ellipse cx="270.0" cy="518.0" rx="19.2" ry="3.5" fill="#3c2a14" opacity=".16"/><use href="#g-ning-normal" x="233.2" y="430.9" width="73.7" height="96.3"/></svg><div class="vignette"></div></div>
+        <div class="caption"><p>火警电话是 119。<br />按顺序点：1、1、9。</p></div>
+      </section>
+      <section class="page" data-page="8">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff8e1"/><rect x="-480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="0" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="60" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="120" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="180" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="240" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="300" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="360" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="420" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="480" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="540" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="600" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="660" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="720" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="780" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="840" y="-400" width="20" height="840" fill="#ffe082" opacity=".35"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><use href="#exit-sign" x="235.0" y="75.0" width="90.0" height="45.0"/><ellipse cx="180.0" cy="518.0" rx="38.0" ry="6.8" fill="#3c2a14" opacity=".16"/><use href="#ch-puppy-happy-wave-firehat-coat" x="118.2" y="362.3" width="123.5" height="163.4"/><ellipse cx="70.0" cy="518.0" rx="21.0" ry="3.8" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="pet" role="button" aria-label="清清" data-say="不玩火" data-fx="hearts"><use href="#g-qing-happy" x="29.8" y="422.8" width="80.4" height="105.0"/></g><ellipse cx="300.0" cy="518.0" rx="21.0" ry="3.8" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="pet" role="button" aria-label="宁宁" data-say="记住119" data-fx="hearts"><use href="#g-ning-happy" x="259.8" y="422.8" width="80.4" height="105.0"/></g></svg><div class="vignette"></div></div>
+        <div class="caption caption-center"><p>不玩火，捂口鼻，弯腰走，<br />火警电话 119。</p><p class="end-mark">— 完 —</p></div>
+      </section>
+    </main>
+
+    <nav class="controls">
+      <button class="btn" id="btnPrev" type="button">上一页</button>
+      <div class="dots" id="dots"></div>
+      <button class="btn btn-primary" id="btnNext" type="button">下一页</button>
+    </nav>
+    <p class="hint" id="hint">适合 4–6 岁 · 按住警铃、拖毛巾、点 119</p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#f8bbd0" />
+  <title>清清宁宁吵架了</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- SVG 角色与道具库：同一角色只换姿势，不改五官规格 -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <radialGradient id="gSun" cx="38%" cy="35%" r="65%"><stop offset="0%" stop-color="#fff8d0"/><stop offset="55%" stop-color="#ffe08a"/><stop offset="100%" stop-color="#f5b82e"/></radialGradient><radialGradient id="gMoon" cx="38%" cy="35%" r="65%"><stop offset="0%" stop-color="#fffdf2"/><stop offset="50%" stop-color="#ffe9a8"/><stop offset="100%" stop-color="#e8c070"/></radialGradient><linearGradient id="dressP" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#ffc8d6"/><stop offset="100%" stop-color="#ff7596"/></linearGradient><linearGradient id="dressM" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#b0eadc"/><stop offset="100%" stop-color="#3fad96"/></linearGradient><linearGradient id="hairP" x1="0.2" y1="0" x2="0.85" y2="1"><stop offset="0%" stop-color="#b07850"/><stop offset="55%" stop-color="#7a4a30"/><stop offset="100%" stop-color="#5a3424"/></linearGradient><linearGradient id="hairM" x1="0.2" y1="0" x2="0.85" y2="1"><stop offset="0%" stop-color="#c08658"/><stop offset="55%" stop-color="#855538"/><stop offset="100%" stop-color="#6a4030"/></linearGradient>
+      <symbol id="g-ning-happy" viewBox="-12 0 134 175">
+        
+        <ellipse cx="43" cy="157" rx="10.5" ry="4.8" fill="#2c947c"/>
+        <ellipse cx="67" cy="157" rx="10.5" ry="4.8" fill="#2c947c"/>
+        <ellipse cx="43" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <ellipse cx="67" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <path d="M35 86 C24 98 23 122 31 147 Q55 158 79 147 C87 122 86 98 75 86 Q55 97 35 86 Z"
+              fill="url(#dressM)" stroke="#2c947c" stroke-width="0.8" opacity="0.98"/>
+        <path d="M33 146 Q55 154 77 146" fill="none" stroke="#fff" stroke-width="2.2" opacity="0.35" stroke-linecap="round"/>
+        <ellipse cx="55" cy="84" rx="19" ry="14" fill="url(#dressM)"/>
+        <ellipse cx="36" cy="86" rx="7" ry="6" fill="url(#dressM)"/>
+        <ellipse cx="74" cy="86" rx="7" ry="6" fill="url(#dressM)"/>
+        <path d="M44 74 Q55 84 66 74 L64 84 Q55 88 46 84 Z" fill="#fff8f4"/>
+        <circle cx="55" cy="86" r="2.2" fill="#fff"/>
+        <circle cx="55" cy="86" r="1.1" fill="#2fa890"/>
+        <path d="M40 88 Q30 100 26 114" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M70 88 Q80 100 84 114" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(26,116) rotate(-8)">
+        <ellipse cx="-5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <g transform="translate(84,116) rotate(8)">
+        <ellipse cx="5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <!-- 侧发（略短，避免挡住嘴边饼干） -->
+        <path d="M30 48 C20 56 18 74 28 82 C34 72 35 58 33 52 Z" fill="url(#hairM)"/>
+        <path d="M80 48 C90 56 92 74 82 82 C76 72 75 58 77 52 Z" fill="url(#hairM)"/>
+        <!-- 脖子 / 耳 -->
+        <rect x="48" y="66" width="14" height="13" rx="5" fill="#f3c9b6"/>
+        <ellipse cx="30" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <ellipse cx="80" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <!-- 头 -->
+        <ellipse cx="55" cy="45" rx="26.5" ry="27.5" fill="#f3c9b6"/>
+        <!-- 顶发 -->
+        <path d="M28 45 C27 22 40 12 55 12 C70 12 83 22 82 45
+                 C76 30 66 24 55 24 C44 24 34 30 28 45 Z" fill="url(#hairM)"/>
+        <!-- 刘海 -->
+        <path d="M30 36 C36 47 42 38 46 34 C51 45 55 34 55 34
+                 C55 34 59 45 64 34 C68 38 74 47 80 36
+                 C72 22 62 18 55 18 C48 18 38 22 30 36 Z" fill="url(#hairM)"/>
+        <!-- 发丝高光 -->
+        <path d="M42 22 Q48 28 46 36" fill="none" stroke="#c48a62" stroke-width="1.6" opacity="0.45" stroke-linecap="round"/>
+        <path d="M58 20 Q64 26 66 34" fill="none" stroke="#c48a62" stroke-width="1.3" opacity="0.35" stroke-linecap="round"/>
+        <!-- 蝴蝶结 + 飘带 -->
+        <g transform="translate(55,11)">
+          <path d="M-6 4 Q-14 16 -8 18" fill="none" stroke="#6ec9b4" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M6 4 Q14 16 8 18" fill="none" stroke="#6ec9b4" stroke-width="2.4" stroke-linecap="round"/>
+          <ellipse cx="-9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#6ec9b4"/>
+          <ellipse cx="9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#6ec9b4"/>
+          <ellipse cx="-9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <ellipse cx="9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <circle cx="0" cy="0" r="4.2" fill="#2fa890"/>
+          <circle cx="0.8" cy="-0.8" r="1.3" fill="#fff" opacity="0.45"/>
+        </g>
+        <path d="M41 49 Q47 42.5 53 49" fill="none" stroke="#3a2820" stroke-width="2.3" stroke-linecap="round"/>
+        <path d="M57 49 Q63 42.5 69 49" fill="none" stroke="#3a2820" stroke-width="2.3" stroke-linecap="round"/>
+        <ellipse cx="34" cy="55" rx="5.2" ry="3" fill="#ff9aaa" opacity="0.52"/>
+        <ellipse cx="76" cy="55" rx="5.2" ry="3" fill="#ff9aaa" opacity="0.52"/>
+        <ellipse cx="55" cy="53" rx="1.5" ry="1.05" fill="#d99988"/>
+        <path d="M47 59 Q55 68 63 59" fill="none" stroke="#c07068" stroke-width="1.65" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="g-ning-normal" viewBox="-12 0 134 175">
+        
+        <ellipse cx="43" cy="157" rx="10.5" ry="4.8" fill="#2c947c"/>
+        <ellipse cx="67" cy="157" rx="10.5" ry="4.8" fill="#2c947c"/>
+        <ellipse cx="43" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <ellipse cx="67" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <path d="M35 86 C24 98 23 122 31 147 Q55 158 79 147 C87 122 86 98 75 86 Q55 97 35 86 Z"
+              fill="url(#dressM)" stroke="#2c947c" stroke-width="0.8" opacity="0.98"/>
+        <path d="M33 146 Q55 154 77 146" fill="none" stroke="#fff" stroke-width="2.2" opacity="0.35" stroke-linecap="round"/>
+        <ellipse cx="55" cy="84" rx="19" ry="14" fill="url(#dressM)"/>
+        <ellipse cx="36" cy="86" rx="7" ry="6" fill="url(#dressM)"/>
+        <ellipse cx="74" cy="86" rx="7" ry="6" fill="url(#dressM)"/>
+        <path d="M44 74 Q55 84 66 74 L64 84 Q55 88 46 84 Z" fill="#fff8f4"/>
+        <circle cx="55" cy="86" r="2.2" fill="#fff"/>
+        <circle cx="55" cy="86" r="1.1" fill="#2fa890"/>
+        <path d="M40 88 Q34 102 32 116" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M70 88 Q76 102 78 116" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(32,118) rotate(-2)">
+        <ellipse cx="5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <g transform="translate(78,118) rotate(2)">
+        <ellipse cx="-5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <!-- 侧发（略短，避免挡住嘴边饼干） -->
+        <path d="M30 48 C20 56 18 74 28 82 C34 72 35 58 33 52 Z" fill="url(#hairM)"/>
+        <path d="M80 48 C90 56 92 74 82 82 C76 72 75 58 77 52 Z" fill="url(#hairM)"/>
+        <!-- 脖子 / 耳 -->
+        <rect x="48" y="66" width="14" height="13" rx="5" fill="#f3c9b6"/>
+        <ellipse cx="30" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <ellipse cx="80" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <!-- 头 -->
+        <ellipse cx="55" cy="45" rx="26.5" ry="27.5" fill="#f3c9b6"/>
+        <!-- 顶发 -->
+        <path d="M28 45 C27 22 40 12 55 12 C70 12 83 22 82 45
+                 C76 30 66 24 55 24 C44 24 34 30 28 45 Z" fill="url(#hairM)"/>
+        <!-- 刘海 -->
+        <path d="M30 36 C36 47 42 38 46 34 C51 45 55 34 55 34
+                 C55 34 59 45 64 34 C68 38 74 47 80 36
+                 C72 22 62 18 55 18 C48 18 38 22 30 36 Z" fill="url(#hairM)"/>
+        <!-- 发丝高光 -->
+        <path d="M42 22 Q48 28 46 36" fill="none" stroke="#c48a62" stroke-width="1.6" opacity="0.45" stroke-linecap="round"/>
+        <path d="M58 20 Q64 26 66 34" fill="none" stroke="#c48a62" stroke-width="1.3" opacity="0.35" stroke-linecap="round"/>
+        <!-- 蝴蝶结 + 飘带 -->
+        <g transform="translate(55,11)">
+          <path d="M-6 4 Q-14 16 -8 18" fill="none" stroke="#6ec9b4" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M6 4 Q14 16 8 18" fill="none" stroke="#6ec9b4" stroke-width="2.4" stroke-linecap="round"/>
+          <ellipse cx="-9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#6ec9b4"/>
+          <ellipse cx="9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#6ec9b4"/>
+          <ellipse cx="-9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <ellipse cx="9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <circle cx="0" cy="0" r="4.2" fill="#2fa890"/>
+          <circle cx="0.8" cy="-0.8" r="1.3" fill="#fff" opacity="0.45"/>
+        </g>
+        <!-- 眼睛 -->
+        <ellipse cx="45" cy="49" rx="4.4" ry="5" fill="#fff"/>
+        <ellipse cx="65" cy="49" rx="4.4" ry="5" fill="#fff"/>
+        <ellipse cx="45.4" cy="49.6" rx="2.9" ry="3.4" fill="#6b4a38"/>
+        <ellipse cx="65.4" cy="49.6" rx="2.9" ry="3.4" fill="#6b4a38"/>
+        <ellipse cx="45.5" cy="50" rx="1.5" ry="1.85" fill="#2a1810"/>
+        <ellipse cx="65.5" cy="50" rx="1.5" ry="1.85" fill="#2a1810"/>
+        <circle cx="46.6" cy="48" r="1.15" fill="#fff"/>
+        <circle cx="66.6" cy="48" r="1.15" fill="#fff"/>
+        <circle cx="44.4" cy="51.2" r="0.55" fill="#fff" opacity="0.7"/>
+        <circle cx="64.4" cy="51.2" r="0.55" fill="#fff" opacity="0.7"/>
+        <!-- 睫毛 -->
+        <path d="M40.5 45.5 L39 43.8" stroke="#3a2820" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M42.2 44.6 L41.5 42.7" stroke="#3a2820" stroke-width="1.05" stroke-linecap="round"/>
+        <path d="M69.5 45.5 L71 43.8" stroke="#3a2820" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M67.8 44.6 L68.5 42.7" stroke="#3a2820" stroke-width="1.05" stroke-linecap="round"/>
+        <!-- 眉 -->
+        <path d="M39 42 Q45 39.8 50 42" fill="none" stroke="#6a4a3c" stroke-width="1.25" stroke-linecap="round"/>
+        <path d="M60 42 Q65 39.8 71 42" fill="none" stroke="#6a4a3c" stroke-width="1.25" stroke-linecap="round"/>
+        <!-- 腮红 / 鼻 / 笑 -->
+        <ellipse cx="34" cy="55" rx="5" ry="2.9" fill="#ff9aaa" opacity="0.48"/>
+        <ellipse cx="76" cy="55" rx="5" ry="2.9" fill="#ff9aaa" opacity="0.48"/>
+        <ellipse cx="55" cy="53" rx="1.45" ry="1.05" fill="#d99988"/>
+        <path d="M48 59 Q55 64.5 62 59" fill="none" stroke="#c07068" stroke-width="1.55" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="g-ning-sad" viewBox="-12 0 134 175">
+        
+        <ellipse cx="43" cy="157" rx="10.5" ry="4.8" fill="#2c947c"/>
+        <ellipse cx="67" cy="157" rx="10.5" ry="4.8" fill="#2c947c"/>
+        <ellipse cx="43" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <ellipse cx="67" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <path d="M35 86 C24 98 23 122 31 147 Q55 158 79 147 C87 122 86 98 75 86 Q55 97 35 86 Z"
+              fill="url(#dressM)" stroke="#2c947c" stroke-width="0.8" opacity="0.98"/>
+        <path d="M33 146 Q55 154 77 146" fill="none" stroke="#fff" stroke-width="2.2" opacity="0.35" stroke-linecap="round"/>
+        <ellipse cx="55" cy="84" rx="19" ry="14" fill="url(#dressM)"/>
+        <ellipse cx="36" cy="86" rx="7" ry="6" fill="url(#dressM)"/>
+        <ellipse cx="74" cy="86" rx="7" ry="6" fill="url(#dressM)"/>
+        <path d="M44 74 Q55 84 66 74 L64 84 Q55 88 46 84 Z" fill="#fff8f4"/>
+        <circle cx="55" cy="86" r="2.2" fill="#fff"/>
+        <circle cx="55" cy="86" r="1.1" fill="#2fa890"/>
+        <path d="M38 88 Q42 102 48 112" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M72 88 Q66 100 58 110" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(48,114) rotate(8)">
+        <ellipse cx="5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <g transform="translate(58,112) rotate(-20)">
+        <ellipse cx="-5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <!-- 侧发（略短，避免挡住嘴边饼干） -->
+        <path d="M30 48 C20 56 18 74 28 82 C34 72 35 58 33 52 Z" fill="url(#hairM)"/>
+        <path d="M80 48 C90 56 92 74 82 82 C76 72 75 58 77 52 Z" fill="url(#hairM)"/>
+        <!-- 脖子 / 耳 -->
+        <rect x="48" y="66" width="14" height="13" rx="5" fill="#f3c9b6"/>
+        <ellipse cx="30" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <ellipse cx="80" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <!-- 头 -->
+        <ellipse cx="55" cy="45" rx="26.5" ry="27.5" fill="#f3c9b6"/>
+        <!-- 顶发 -->
+        <path d="M28 45 C27 22 40 12 55 12 C70 12 83 22 82 45
+                 C76 30 66 24 55 24 C44 24 34 30 28 45 Z" fill="url(#hairM)"/>
+        <!-- 刘海 -->
+        <path d="M30 36 C36 47 42 38 46 34 C51 45 55 34 55 34
+                 C55 34 59 45 64 34 C68 38 74 47 80 36
+                 C72 22 62 18 55 18 C48 18 38 22 30 36 Z" fill="url(#hairM)"/>
+        <!-- 发丝高光 -->
+        <path d="M42 22 Q48 28 46 36" fill="none" stroke="#c48a62" stroke-width="1.6" opacity="0.45" stroke-linecap="round"/>
+        <path d="M58 20 Q64 26 66 34" fill="none" stroke="#c48a62" stroke-width="1.3" opacity="0.35" stroke-linecap="round"/>
+        <!-- 蝴蝶结 + 飘带 -->
+        <g transform="translate(55,11)">
+          <path d="M-6 4 Q-14 16 -8 18" fill="none" stroke="#6ec9b4" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M6 4 Q14 16 8 18" fill="none" stroke="#6ec9b4" stroke-width="2.4" stroke-linecap="round"/>
+          <ellipse cx="-9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#6ec9b4"/>
+          <ellipse cx="9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#6ec9b4"/>
+          <ellipse cx="-9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <ellipse cx="9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <circle cx="0" cy="0" r="4.2" fill="#2fa890"/>
+          <circle cx="0.8" cy="-0.8" r="1.3" fill="#fff" opacity="0.45"/>
+        </g>
+        <ellipse cx="45" cy="51" rx="4.1" ry="4.6" fill="#fff"/>
+        <ellipse cx="65" cy="51" rx="4.1" ry="4.6" fill="#fff"/>
+        <ellipse cx="45.4" cy="51.8" rx="2.6" ry="3.1" fill="#6b4a38"/>
+        <ellipse cx="65.4" cy="51.8" rx="2.6" ry="3.1" fill="#6b4a38"/>
+        <ellipse cx="45.5" cy="52.2" rx="1.3" ry="1.6" fill="#2a1810"/>
+        <ellipse cx="65.5" cy="52.2" rx="1.3" ry="1.6" fill="#2a1810"/>
+        <circle cx="46.4" cy="50.4" r="0.95" fill="#fff"/>
+        <circle cx="66.4" cy="50.4" r="0.95" fill="#fff"/>
+        <path d="M39 44 Q45 47.5 50 44" fill="none" stroke="#6a4a3c" stroke-width="1.25" stroke-linecap="round"/>
+        <path d="M60 44 Q65 47.5 71 44" fill="none" stroke="#6a4a3c" stroke-width="1.25" stroke-linecap="round"/>
+        <ellipse cx="34" cy="57" rx="4.5" ry="2.5" fill="#ff9aaa" opacity="0.35"/>
+        <ellipse cx="76" cy="57" rx="4.5" ry="2.5" fill="#ff9aaa" opacity="0.35"/>
+        <ellipse cx="55" cy="55" rx="1.4" ry="1" fill="#d99988"/>
+        <path d="M48 63 Q55 59 62 63" fill="none" stroke="#c07068" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M70 55 Q74 66 72 73" fill="none" stroke="#8ec8e8" stroke-width="1.9" stroke-linecap="round" opacity="0.85"/>
+        <ellipse cx="72" cy="75" rx="1.8" ry="2.2" fill="#8ec8e8" opacity="0.7"/>
+      </symbol>
+      <symbol id="g-qing-happy" viewBox="-12 0 134 175">
+        
+        <ellipse cx="43" cy="157" rx="10.5" ry="4.8" fill="#d96584"/>
+        <ellipse cx="67" cy="157" rx="10.5" ry="4.8" fill="#d96584"/>
+        <ellipse cx="43" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <ellipse cx="67" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <path d="M35 86 C24 98 23 122 31 147 Q55 158 79 147 C87 122 86 98 75 86 Q55 97 35 86 Z"
+              fill="url(#dressP)" stroke="#d96584" stroke-width="0.8" opacity="0.98"/>
+        <path d="M33 146 Q55 154 77 146" fill="none" stroke="#fff" stroke-width="2.2" opacity="0.35" stroke-linecap="round"/>
+        <ellipse cx="55" cy="84" rx="19" ry="14" fill="url(#dressP)"/>
+        <ellipse cx="36" cy="86" rx="7" ry="6" fill="url(#dressP)"/>
+        <ellipse cx="74" cy="86" rx="7" ry="6" fill="url(#dressP)"/>
+        <path d="M44 74 Q55 84 66 74 L64 84 Q55 88 46 84 Z" fill="#fff8f4"/>
+        <circle cx="55" cy="86" r="2.2" fill="#fff"/>
+        <circle cx="55" cy="86" r="1.1" fill="#ff5f87"/>
+        <path d="M40 88 Q30 100 26 114" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M70 88 Q80 100 84 114" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(26,116) rotate(-8)">
+        <ellipse cx="-5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <g transform="translate(84,116) rotate(8)">
+        <ellipse cx="5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <!-- 侧发（略短，避免挡住嘴边饼干） -->
+        <path d="M30 48 C20 56 18 74 28 82 C34 72 35 58 33 52 Z" fill="url(#hairP)"/>
+        <path d="M80 48 C90 56 92 74 82 82 C76 72 75 58 77 52 Z" fill="url(#hairP)"/>
+        <!-- 脖子 / 耳 -->
+        <rect x="48" y="66" width="14" height="13" rx="5" fill="#f3c9b6"/>
+        <ellipse cx="30" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <ellipse cx="80" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <!-- 头 -->
+        <ellipse cx="55" cy="45" rx="26.5" ry="27.5" fill="#f3c9b6"/>
+        <!-- 顶发 -->
+        <path d="M28 45 C27 22 40 12 55 12 C70 12 83 22 82 45
+                 C76 30 66 24 55 24 C44 24 34 30 28 45 Z" fill="url(#hairP)"/>
+        <!-- 刘海 -->
+        <path d="M30 36 C36 47 42 38 46 34 C51 45 55 34 55 34
+                 C55 34 59 45 64 34 C68 38 74 47 80 36
+                 C72 22 62 18 55 18 C48 18 38 22 30 36 Z" fill="url(#hairP)"/>
+        <!-- 发丝高光 -->
+        <path d="M42 22 Q48 28 46 36" fill="none" stroke="#c48a62" stroke-width="1.6" opacity="0.45" stroke-linecap="round"/>
+        <path d="M58 20 Q64 26 66 34" fill="none" stroke="#c48a62" stroke-width="1.3" opacity="0.35" stroke-linecap="round"/>
+        <!-- 蝴蝶结 + 飘带 -->
+        <g transform="translate(55,11)">
+          <path d="M-6 4 Q-14 16 -8 18" fill="none" stroke="#ff8fab" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M6 4 Q14 16 8 18" fill="none" stroke="#ff8fab" stroke-width="2.4" stroke-linecap="round"/>
+          <ellipse cx="-9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#ff8fab"/>
+          <ellipse cx="9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#ff8fab"/>
+          <ellipse cx="-9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <ellipse cx="9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <circle cx="0" cy="0" r="4.2" fill="#ff5f87"/>
+          <circle cx="0.8" cy="-0.8" r="1.3" fill="#fff" opacity="0.45"/>
+        </g>
+        <path d="M41 49 Q47 42.5 53 49" fill="none" stroke="#3a2820" stroke-width="2.3" stroke-linecap="round"/>
+        <path d="M57 49 Q63 42.5 69 49" fill="none" stroke="#3a2820" stroke-width="2.3" stroke-linecap="round"/>
+        <ellipse cx="34" cy="55" rx="5.2" ry="3" fill="#ff9aaa" opacity="0.52"/>
+        <ellipse cx="76" cy="55" rx="5.2" ry="3" fill="#ff9aaa" opacity="0.52"/>
+        <ellipse cx="55" cy="53" rx="1.5" ry="1.05" fill="#d99988"/>
+        <path d="M47 59 Q55 68 63 59" fill="none" stroke="#c07068" stroke-width="1.65" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="g-qing-normal" viewBox="-12 0 134 175">
+        
+        <ellipse cx="43" cy="157" rx="10.5" ry="4.8" fill="#d96584"/>
+        <ellipse cx="67" cy="157" rx="10.5" ry="4.8" fill="#d96584"/>
+        <ellipse cx="43" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <ellipse cx="67" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <path d="M35 86 C24 98 23 122 31 147 Q55 158 79 147 C87 122 86 98 75 86 Q55 97 35 86 Z"
+              fill="url(#dressP)" stroke="#d96584" stroke-width="0.8" opacity="0.98"/>
+        <path d="M33 146 Q55 154 77 146" fill="none" stroke="#fff" stroke-width="2.2" opacity="0.35" stroke-linecap="round"/>
+        <ellipse cx="55" cy="84" rx="19" ry="14" fill="url(#dressP)"/>
+        <ellipse cx="36" cy="86" rx="7" ry="6" fill="url(#dressP)"/>
+        <ellipse cx="74" cy="86" rx="7" ry="6" fill="url(#dressP)"/>
+        <path d="M44 74 Q55 84 66 74 L64 84 Q55 88 46 84 Z" fill="#fff8f4"/>
+        <circle cx="55" cy="86" r="2.2" fill="#fff"/>
+        <circle cx="55" cy="86" r="1.1" fill="#ff5f87"/>
+        <path d="M40 88 Q34 102 32 116" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M70 88 Q76 102 78 116" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(32,118) rotate(-2)">
+        <ellipse cx="5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <g transform="translate(78,118) rotate(2)">
+        <ellipse cx="-5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <!-- 侧发（略短，避免挡住嘴边饼干） -->
+        <path d="M30 48 C20 56 18 74 28 82 C34 72 35 58 33 52 Z" fill="url(#hairP)"/>
+        <path d="M80 48 C90 56 92 74 82 82 C76 72 75 58 77 52 Z" fill="url(#hairP)"/>
+        <!-- 脖子 / 耳 -->
+        <rect x="48" y="66" width="14" height="13" rx="5" fill="#f3c9b6"/>
+        <ellipse cx="30" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <ellipse cx="80" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <!-- 头 -->
+        <ellipse cx="55" cy="45" rx="26.5" ry="27.5" fill="#f3c9b6"/>
+        <!-- 顶发 -->
+        <path d="M28 45 C27 22 40 12 55 12 C70 12 83 22 82 45
+                 C76 30 66 24 55 24 C44 24 34 30 28 45 Z" fill="url(#hairP)"/>
+        <!-- 刘海 -->
+        <path d="M30 36 C36 47 42 38 46 34 C51 45 55 34 55 34
+                 C55 34 59 45 64 34 C68 38 74 47 80 36
+                 C72 22 62 18 55 18 C48 18 38 22 30 36 Z" fill="url(#hairP)"/>
+        <!-- 发丝高光 -->
+        <path d="M42 22 Q48 28 46 36" fill="none" stroke="#c48a62" stroke-width="1.6" opacity="0.45" stroke-linecap="round"/>
+        <path d="M58 20 Q64 26 66 34" fill="none" stroke="#c48a62" stroke-width="1.3" opacity="0.35" stroke-linecap="round"/>
+        <!-- 蝴蝶结 + 飘带 -->
+        <g transform="translate(55,11)">
+          <path d="M-6 4 Q-14 16 -8 18" fill="none" stroke="#ff8fab" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M6 4 Q14 16 8 18" fill="none" stroke="#ff8fab" stroke-width="2.4" stroke-linecap="round"/>
+          <ellipse cx="-9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#ff8fab"/>
+          <ellipse cx="9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#ff8fab"/>
+          <ellipse cx="-9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <ellipse cx="9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <circle cx="0" cy="0" r="4.2" fill="#ff5f87"/>
+          <circle cx="0.8" cy="-0.8" r="1.3" fill="#fff" opacity="0.45"/>
+        </g>
+        <!-- 眼睛 -->
+        <ellipse cx="45" cy="49" rx="4.4" ry="5" fill="#fff"/>
+        <ellipse cx="65" cy="49" rx="4.4" ry="5" fill="#fff"/>
+        <ellipse cx="45.4" cy="49.6" rx="2.9" ry="3.4" fill="#6b4a38"/>
+        <ellipse cx="65.4" cy="49.6" rx="2.9" ry="3.4" fill="#6b4a38"/>
+        <ellipse cx="45.5" cy="50" rx="1.5" ry="1.85" fill="#2a1810"/>
+        <ellipse cx="65.5" cy="50" rx="1.5" ry="1.85" fill="#2a1810"/>
+        <circle cx="46.6" cy="48" r="1.15" fill="#fff"/>
+        <circle cx="66.6" cy="48" r="1.15" fill="#fff"/>
+        <circle cx="44.4" cy="51.2" r="0.55" fill="#fff" opacity="0.7"/>
+        <circle cx="64.4" cy="51.2" r="0.55" fill="#fff" opacity="0.7"/>
+        <!-- 睫毛 -->
+        <path d="M40.5 45.5 L39 43.8" stroke="#3a2820" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M42.2 44.6 L41.5 42.7" stroke="#3a2820" stroke-width="1.05" stroke-linecap="round"/>
+        <path d="M69.5 45.5 L71 43.8" stroke="#3a2820" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M67.8 44.6 L68.5 42.7" stroke="#3a2820" stroke-width="1.05" stroke-linecap="round"/>
+        <!-- 眉 -->
+        <path d="M39 42 Q45 39.8 50 42" fill="none" stroke="#6a4a3c" stroke-width="1.25" stroke-linecap="round"/>
+        <path d="M60 42 Q65 39.8 71 42" fill="none" stroke="#6a4a3c" stroke-width="1.25" stroke-linecap="round"/>
+        <!-- 腮红 / 鼻 / 笑 -->
+        <ellipse cx="34" cy="55" rx="5" ry="2.9" fill="#ff9aaa" opacity="0.48"/>
+        <ellipse cx="76" cy="55" rx="5" ry="2.9" fill="#ff9aaa" opacity="0.48"/>
+        <ellipse cx="55" cy="53" rx="1.45" ry="1.05" fill="#d99988"/>
+        <path d="M48 59 Q55 64.5 62 59" fill="none" stroke="#c07068" stroke-width="1.55" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="g-qing-sad" viewBox="-12 0 134 175">
+        
+        <ellipse cx="43" cy="157" rx="10.5" ry="4.8" fill="#d96584"/>
+        <ellipse cx="67" cy="157" rx="10.5" ry="4.8" fill="#d96584"/>
+        <ellipse cx="43" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <ellipse cx="67" cy="155.2" rx="4.8" ry="1.8" fill="#fff" opacity="0.5"/>
+        <path d="M35 86 C24 98 23 122 31 147 Q55 158 79 147 C87 122 86 98 75 86 Q55 97 35 86 Z"
+              fill="url(#dressP)" stroke="#d96584" stroke-width="0.8" opacity="0.98"/>
+        <path d="M33 146 Q55 154 77 146" fill="none" stroke="#fff" stroke-width="2.2" opacity="0.35" stroke-linecap="round"/>
+        <ellipse cx="55" cy="84" rx="19" ry="14" fill="url(#dressP)"/>
+        <ellipse cx="36" cy="86" rx="7" ry="6" fill="url(#dressP)"/>
+        <ellipse cx="74" cy="86" rx="7" ry="6" fill="url(#dressP)"/>
+        <path d="M44 74 Q55 84 66 74 L64 84 Q55 88 46 84 Z" fill="#fff8f4"/>
+        <circle cx="55" cy="86" r="2.2" fill="#fff"/>
+        <circle cx="55" cy="86" r="1.1" fill="#ff5f87"/>
+        <path d="M38 88 Q42 102 48 112" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M72 88 Q66 100 58 110" fill="none" stroke="#f3c9b6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <g transform="translate(48,114) rotate(8)">
+        <ellipse cx="5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <g transform="translate(58,112) rotate(-20)">
+        <ellipse cx="-5.2" cy="-0.5" rx="3.4" ry="4.2" fill="#f3c9b6"/>
+        <ellipse cx="0" cy="0.8" rx="6.6" ry="7.6" fill="#f3c9b6"/>
+        <ellipse cx="-0.6" cy="-1.6" rx="4.4" ry="3.6" fill="#ffe6d8" opacity="0.5"/>
+        <path d="M-3.2 1.2 Q0 3.2 3.2 1.2" fill="none" stroke="#e0a888" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+        <!-- 侧发（略短，避免挡住嘴边饼干） -->
+        <path d="M30 48 C20 56 18 74 28 82 C34 72 35 58 33 52 Z" fill="url(#hairP)"/>
+        <path d="M80 48 C90 56 92 74 82 82 C76 72 75 58 77 52 Z" fill="url(#hairP)"/>
+        <!-- 脖子 / 耳 -->
+        <rect x="48" y="66" width="14" height="13" rx="5" fill="#f3c9b6"/>
+        <ellipse cx="30" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <ellipse cx="80" cy="52" rx="3.2" ry="4" fill="#f3c9b6"/>
+        <!-- 头 -->
+        <ellipse cx="55" cy="45" rx="26.5" ry="27.5" fill="#f3c9b6"/>
+        <!-- 顶发 -->
+        <path d="M28 45 C27 22 40 12 55 12 C70 12 83 22 82 45
+                 C76 30 66 24 55 24 C44 24 34 30 28 45 Z" fill="url(#hairP)"/>
+        <!-- 刘海 -->
+        <path d="M30 36 C36 47 42 38 46 34 C51 45 55 34 55 34
+                 C55 34 59 45 64 34 C68 38 74 47 80 36
+                 C72 22 62 18 55 18 C48 18 38 22 30 36 Z" fill="url(#hairP)"/>
+        <!-- 发丝高光 -->
+        <path d="M42 22 Q48 28 46 36" fill="none" stroke="#c48a62" stroke-width="1.6" opacity="0.45" stroke-linecap="round"/>
+        <path d="M58 20 Q64 26 66 34" fill="none" stroke="#c48a62" stroke-width="1.3" opacity="0.35" stroke-linecap="round"/>
+        <!-- 蝴蝶结 + 飘带 -->
+        <g transform="translate(55,11)">
+          <path d="M-6 4 Q-14 16 -8 18" fill="none" stroke="#ff8fab" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M6 4 Q14 16 8 18" fill="none" stroke="#ff8fab" stroke-width="2.4" stroke-linecap="round"/>
+          <ellipse cx="-9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#ff8fab"/>
+          <ellipse cx="9.5" cy="-0.5" rx="9.5" ry="6.2" fill="#ff8fab"/>
+          <ellipse cx="-9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <ellipse cx="9.5" cy="-1.5" rx="4.5" ry="2.4" fill="#fff" opacity="0.35"/>
+          <circle cx="0" cy="0" r="4.2" fill="#ff5f87"/>
+          <circle cx="0.8" cy="-0.8" r="1.3" fill="#fff" opacity="0.45"/>
+        </g>
+        <ellipse cx="45" cy="51" rx="4.1" ry="4.6" fill="#fff"/>
+        <ellipse cx="65" cy="51" rx="4.1" ry="4.6" fill="#fff"/>
+        <ellipse cx="45.4" cy="51.8" rx="2.6" ry="3.1" fill="#6b4a38"/>
+        <ellipse cx="65.4" cy="51.8" rx="2.6" ry="3.1" fill="#6b4a38"/>
+        <ellipse cx="45.5" cy="52.2" rx="1.3" ry="1.6" fill="#2a1810"/>
+        <ellipse cx="65.5" cy="52.2" rx="1.3" ry="1.6" fill="#2a1810"/>
+        <circle cx="46.4" cy="50.4" r="0.95" fill="#fff"/>
+        <circle cx="66.4" cy="50.4" r="0.95" fill="#fff"/>
+        <path d="M39 44 Q45 47.5 50 44" fill="none" stroke="#6a4a3c" stroke-width="1.25" stroke-linecap="round"/>
+        <path d="M60 44 Q65 47.5 71 44" fill="none" stroke="#6a4a3c" stroke-width="1.25" stroke-linecap="round"/>
+        <ellipse cx="34" cy="57" rx="4.5" ry="2.5" fill="#ff9aaa" opacity="0.35"/>
+        <ellipse cx="76" cy="57" rx="4.5" ry="2.5" fill="#ff9aaa" opacity="0.35"/>
+        <ellipse cx="55" cy="55" rx="1.4" ry="1" fill="#d99988"/>
+        <path d="M48 63 Q55 59 62 63" fill="none" stroke="#c07068" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M70 55 Q74 66 72 73" fill="none" stroke="#8ec8e8" stroke-width="1.9" stroke-linecap="round" opacity="0.85"/>
+        <ellipse cx="72" cy="75" rx="1.8" ry="2.2" fill="#8ec8e8" opacity="0.7"/>
+      </symbol>
+      <symbol id="heart" viewBox="0 0 60 54"><path d="M30 52 C-4 30 0 2 18 2 Q26 2 30 12 Q34 2 42 2 C60 2 64 30 30 52 Z" fill="#ff5f87"/><ellipse cx="18" cy="14" rx="6" ry="4" fill="#fff" opacity=".5"/></symbol>
+      <symbol id="hourglass" viewBox="0 0 60 90"><rect x="4" y="2" width="52" height="8" rx="3" fill="#8d6e63"/><rect x="4" y="80" width="52" height="8" rx="3" fill="#8d6e63"/><path d="M12 10 Q12 36 30 45 Q12 54 12 80 H48 Q48 54 30 45 Q48 36 48 10 Z" fill="#e1f5fe" stroke="#90a4ae" stroke-width="2"/><path d="M18 26 H42 Q38 38 30 42 Q22 38 18 26 Z M16 78 Q30 60 44 78 Z" fill="#ffca28"/></symbol>
+      <symbol id="star" viewBox="0 0 40 40"><path d="M20.0 3.0 L24.7 14.5 L37.1 15.4 L27.6 23.5 L30.6 35.6 L20.0 29.0 L9.4 35.6 L12.4 23.5 L2.9 15.4 L15.3 14.5 Z" fill="#ffe08a" stroke="#f5c542" stroke-width="2" stroke-linejoin="round"/><ellipse cx="15" cy="15" rx="3" ry="2" fill="#fff" opacity=".7"/></symbol>
+      <symbol id="teddy" viewBox="0 0 60 70"><circle cx="16" cy="12" r="8" fill="#a1683a"/><circle cx="44" cy="12" r="8" fill="#a1683a"/><circle cx="30" cy="22" r="16" fill="#c48a4a"/><ellipse cx="30" cy="52" rx="18" ry="16" fill="#c48a4a"/><ellipse cx="30" cy="54" rx="10" ry="9" fill="#e0b080"/><ellipse cx="30" cy="27" rx="7" ry="5" fill="#e0b080"/><circle cx="24" cy="20" r="2" fill="#3a2a22"/><circle cx="36" cy="20" r="2" fill="#3a2a22"/><ellipse cx="30" cy="25" rx="2.4" ry="1.8" fill="#3a2a22"/></symbol>
+      <symbol id="throw-toy" viewBox="0 0 100 80"><rect x="44" y="20" width="34" height="34" rx="5" fill="#ef5350" transform="rotate(20 61 37)"/><path d="M8 30 H34 M14 44 H36 M10 58 H30" stroke="#b0bec5" stroke-width="5" stroke-linecap="round"/><path d="M70 66 L86 74 M80 58 L96 60" stroke="#ff7043" stroke-width="4" stroke-linecap="round"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="app" id="app">
+    <header class="topbar">
+      <nav class="book-nav">
+        <a class="home-link" href="../index.html#twins_quarrel">返回首页</a>
+        <a class="home-link" href="../birthday_beaver/index.html">上一本</a>
+        <a class="home-link" href="../hot_kitchen/index.html">下一本</a>
+      </nav>
+      <span class="brand">清清宁宁吵架了</span>
+      <span class="page-indicator" id="pageIndicator">1 / 9</span>
+    </header>
+
+    <main class="stage" id="stage" aria-live="polite">
+      <div class="fx-layer" id="fxLayer" aria-hidden="true"></div>
+      <section class="page is-active" data-page="0">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff0f5"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><use href="#teddy" x="155.0" y="461.7" width="50.0" height="58.3"/><ellipse cx="100.0" cy="518.0" rx="28.0" ry="5.0" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="pet" role="button" aria-label="清清" data-say="我们和好啦" data-fx="hearts"><use href="#g-qing-happy" x="46.4" y="390.4" width="107.2" height="140.0"/></g><ellipse cx="260.0" cy="518.0" rx="28.0" ry="5.0" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="pet" role="button" aria-label="宁宁" data-say="好姐妹" data-fx="hearts"><use href="#g-ning-happy" x="206.4" y="390.4" width="107.2" height="140.0"/></g></svg><div class="vignette"></div></div>
+        <div class="caption caption-center"><h1>清清宁宁吵架了</h1><p>点图画会有惊喜 · 点下一页开始</p></div>
+      </section>
+      <section class="page" data-page="1">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff0f5"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><g class="hot " data-interact="tap" role="button" aria-label="小熊玩偶" data-say="我们都想要它" data-fx="none"><use href="#teddy" x="150.0" y="450.0" width="60.0" height="70.0"/></g><ellipse cx="80.0" cy="518.0" rx="26.2" ry="4.7" fill="#3c2a14" opacity=".16"/><use href="#g-qing-normal" x="29.8" y="398.5" width="100.5" height="131.2"/><ellipse cx="280.0" cy="518.0" rx="26.2" ry="4.7" fill="#3c2a14" opacity=".16"/><use href="#g-ning-normal" x="229.8" y="398.5" width="100.5" height="131.2"/></svg><div class="vignette"></div></div>
+        <div class="caption"><p>清清和宁宁都想要同一个小熊玩偶。<br />点小熊。</p></div>
+      </section>
+      <section class="page" data-page="2">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff0f5"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><use href="#teddy" x="155.0" y="411.7" width="50.0" height="58.3"/><ellipse cx="100.0" cy="518.0" rx="26.2" ry="4.7" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="tap" role="button" aria-label="清清" data-group="sad" data-say="是我先拿的" data-fx="none"><use href="#g-qing-sad" x="49.8" y="398.5" width="100.5" height="131.2"/></g><ellipse cx="260.0" cy="518.0" rx="26.2" ry="4.7" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="tap" role="button" aria-label="宁宁" data-group="sad" data-say="我也想玩" data-fx="none"><use href="#g-ning-sad" x="209.8" y="398.5" width="100.5" height="131.2"/></g></svg><div class="vignette"></div></div>
+        <div class="caption"><p>你拉我扯，两个人都不高兴了。<br />点清清和宁宁。</p></div>
+      </section>
+      <section class="page" data-page="3">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff0f5"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><ellipse cx="70.0" cy="518.0" rx="22.8" ry="4.1" fill="#3c2a14" opacity=".16"/><use href="#g-qing-sad" x="26.4" y="414.7" width="87.1" height="113.8"/><ellipse cx="290.0" cy="518.0" rx="22.8" ry="4.1" fill="#3c2a14" opacity=".16"/><use href="#g-ning-sad" x="246.4" y="414.7" width="87.1" height="113.8"/><g class="hot " data-interact="hold" role="button" aria-label="爱心" data-add="is-grow" data-move="1" data-say="停一停，深呼吸" data-fx="hearts" data-hint="按住爱心，一起深呼吸"><use href="#heart" x="140.0" y="328.0" width="80.0" height="72.0"/></g></svg><div class="vignette"></div></div>
+        <div class="caption"><p>先停一停，深呼吸。<br />按住爱心。</p></div>
+      </section>
+      <section class="page" data-page="4">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff0f5"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><g class="hot " data-interact="quiz" role="button" aria-label="轮流玩" data-ok="1" data-say="对，轮流玩，两个人都能玩"><use href="#hourglass" x="80.0" y="310.0" width="60.0" height="90.0"/></g><g class="hot " data-interact="quiz" role="button" aria-label="抢过来" data-ok="0" data-say="抢玩具会吵得更凶"><use href="#throw-toy" x="215.0" y="318.0" width="90.0" height="72.0"/></g></svg><div class="vignette"></div></div>
+        <div class="caption"><p>想一个好办法吧。<br />哪个办法好？点一点。</p></div>
+      </section>
+      <section class="page" data-page="5" data-done="数到五，换人啦">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff0f5"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><ellipse cx="90.0" cy="518.0" rx="24.5" ry="4.4" fill="#3c2a14" opacity=".16"/><use href="#g-qing-happy" x="43.1" y="406.6" width="93.8" height="122.5"/><use href="#teddy" x="120.0" y="423.3" width="40.0" height="46.7"/><ellipse cx="280.0" cy="518.0" rx="24.5" ry="4.4" fill="#3c2a14" opacity=".16"/><use href="#g-ning-normal" x="233.1" y="406.6" width="93.8" height="122.5"/><g class="hot dim" data-interact="count" role="button" aria-label="星星" ><use href="#star" x="38.0" y="256.0" width="44.0" height="44.0"/></g><g class="hot dim" data-interact="count" role="button" aria-label="星星" ><use href="#star" x="98.0" y="216.0" width="44.0" height="44.0"/></g><g class="hot dim" data-interact="count" role="button" aria-label="星星" ><use href="#star" x="158.0" y="266.0" width="44.0" height="44.0"/></g><g class="hot dim" data-interact="count" role="button" aria-label="星星" ><use href="#star" x="218.0" y="226.0" width="44.0" height="44.0"/></g><g class="hot dim" data-interact="count" role="button" aria-label="星星" ><use href="#star" x="278.0" y="276.0" width="44.0" height="44.0"/></g></svg><div class="vignette"></div></div>
+        <div class="caption"><p>清清先玩，宁宁数到五。<br />点星星，一起数。</p></div>
+      </section>
+      <section class="page" data-page="6" data-done="谢谢姐姐">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff0f5"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><ellipse cx="80.0" cy="518.0" rx="24.5" ry="4.4" fill="#3c2a14" opacity=".16"/><use href="#g-qing-normal" x="33.1" y="406.6" width="93.8" height="122.5"/><ellipse cx="280.0" cy="518.0" rx="24.5" ry="4.4" fill="#3c2a14" opacity=".16"/><use href="#g-ning-happy" x="233.1" y="406.6" width="93.8" height="122.5"/><g class="drop " aria-label="宁宁手里"><g class="drop-hint"><rect x="220.0" y="430.0" width="60" height="60" rx="10" fill="#ffffff" fill-opacity=".45" stroke="#ff7fa3" stroke-width="3" stroke-dasharray="7 6"/></g></g><g class="hot " data-interact="drag" role="button" aria-label="小熊" data-drop=".drop" data-say="宁宁，给你玩" data-hint="按住小熊拖给宁宁"><use href="#teddy" x="105.0" y="411.7" width="50.0" height="58.3"/></g></svg><div class="vignette"></div></div>
+        <div class="caption"><p>轮到宁宁啦。<br />把小熊拖给宁宁。</p></div>
+      </section>
+      <section class="page" data-page="7">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff0f5"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><ellipse cx="260.0" cy="518.0" rx="26.2" ry="4.7" fill="#3c2a14" opacity=".16"/><g class="nn"><use href="#g-ning-normal" x="209.8" y="398.5" width="100.5" height="131.2"/></g><ellipse cx="100.0" cy="518.0" rx="26.2" ry="4.7" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="tap" role="button" aria-label="清清" data-say="对不起，刚才不该抢" data-reply="我也对不起，抱一抱" data-reply-at=".nn" data-fx="hearts"><use href="#g-qing-happy" x="49.8" y="398.5" width="100.5" height="131.2"/></g></svg><div class="vignette"></div></div>
+        <div class="caption"><p>说一声对不起，抱一抱。<br />点清清。</p></div>
+      </section>
+      <section class="page" data-page="8">
+        <div class="sky sky-day"><svg class="scene" viewBox="0 0 360 540" preserveAspectRatio="xMidYMax meet"><rect x="-500" y="-400" width="1360" height="840" fill="#fff0f5"/><rect x="-500" y="440" width="1360" height="600" fill="#e0c9a6"/><rect x="-500" y="436" width="1360" height="8" fill="#beaa8d"/><path d="M-40 444 L-80 540" stroke="#ceb898" stroke-width="2"/><path d="M30 444 L-10 540" stroke="#ceb898" stroke-width="2"/><path d="M100 444 L60 540" stroke="#ceb898" stroke-width="2"/><path d="M170 444 L130 540" stroke="#ceb898" stroke-width="2"/><path d="M240 444 L200 540" stroke="#ceb898" stroke-width="2"/><path d="M310 444 L270 540" stroke="#ceb898" stroke-width="2"/><path d="M380 444 L340 540" stroke="#ceb898" stroke-width="2"/><rect x="189.0" y="114" width="122" height="112" rx="8" fill="#c48a4a"/><rect x="195.0" y="120" width="110" height="100" rx="4" fill="#bfe6fb"/><ellipse cx="233.5" cy="155.0" rx="16" ry="7" fill="#fff" opacity=".85"/><path d="M250 120 V220 M195.0 170.0 H305.0" stroke="#c48a4a" stroke-width="5"/><path d="M203.0 130 L225.0 130 L203.0 150" stroke="#fff" stroke-width="3" fill="none" opacity=".6"/><use href="#teddy" x="155.0" y="461.7" width="50.0" height="58.3"/><ellipse cx="100.0" cy="518.0" rx="28.0" ry="5.0" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="pet" role="button" aria-label="清清" data-say="一起玩更开心" data-fx="hearts"><use href="#g-qing-happy" x="46.4" y="390.4" width="107.2" height="140.0"/></g><ellipse cx="260.0" cy="518.0" rx="28.0" ry="5.0" fill="#3c2a14" opacity=".16"/><g class="hot " data-interact="pet" role="button" aria-label="宁宁" data-say="好姐妹" data-fx="hearts"><use href="#g-ning-happy" x="206.4" y="390.4" width="107.2" height="140.0"/></g></svg><div class="vignette"></div></div>
+        <div class="caption caption-center"><p>吵架了没关系，<br />停一停、想办法、说对不起，又是好姐妹。</p><p class="end-mark">— 完 —</p></div>
+      </section>
+    </main>
+
+    <nav class="controls">
+      <button class="btn" id="btnPrev" type="button">上一页</button>
+      <div class="dots" id="dots"></div>
+      <button class="btn btn-primary" id="btnNext" type="button">下一页</button>
+    </nav>
+    <p class="hint" id="hint">适合 3–6 岁 · 按住深呼吸、选办法、拖玩偶</p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
