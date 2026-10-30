@@ -1,0 +1,809 @@
+:root {
+  --bg: #fff4e8;
+  --ink: #4a3a32;
+  --pink: #ff8fab;
+  --mint: #4db6a0;
+  --warm: #f7c98a;
+  --soft: #f0e4d4;
+  --caption-bg: rgba(255, 250, 244, 0.92);
+  --shadow: 0 10px 28px rgba(90, 60, 40, 0.12);
+  --radius: 22px;
+  --ease: cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "ZCOOL XiaoWei", "Ma Shan Zheng", "PingFang SC", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 20% 10%, #ffe8c8 0%, transparent 45%),
+    radial-gradient(ellipse at 90% 80%, #ffd6e0 0%, transparent 40%),
+    linear-gradient(165deg, #fff8ef, #ffe9d4 55%, #f8e0c8);
+  overflow: hidden;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: env(safe-area-inset-top) 12px env(safe-area-inset-bottom);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 6px 6px;
+  flex-shrink: 0;
+}
+
+.brand {
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+}
+
+.page-indicator {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: #fffaf4;
+  touch-action: pan-y;
+}
+
+.fx-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 30;
+  overflow: hidden;
+}
+
+.page {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(18px);
+  transition: opacity 0.35s ease, transform 0.35s var(--ease), visibility 0.35s;
+  pointer-events: none;
+}
+
+.page.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.sky {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* 各页统一客厅景物 */
+.sky-room,
+.sky-warm,
+.sky-soft,
+.sky-end {
+  background:
+    radial-gradient(circle at 78% 14%, #ffe9a8 0%, transparent 26%),
+    linear-gradient(180deg, #b7dff5 0%, #eaf5fc 40%, #f7ebcf 68%, #e8d6b0 100%);
+}
+
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 40px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.cloud-a {
+  width: 54px;
+  height: 18px;
+  top: 10%;
+  left: 10%;
+}
+
+.cloud-a::before {
+  width: 22px;
+  height: 22px;
+  left: 8px;
+  top: -10px;
+}
+
+.cloud-a::after {
+  width: 28px;
+  height: 28px;
+  left: 24px;
+  top: -14px;
+}
+
+.cloud-b {
+  width: 42px;
+  height: 14px;
+  top: 16%;
+  left: 42%;
+  opacity: 0.85;
+}
+
+.cloud-b::before {
+  width: 18px;
+  height: 18px;
+  left: 6px;
+  top: -8px;
+}
+
+.cloud-b::after {
+  width: 22px;
+  height: 22px;
+  left: 18px;
+  top: -11px;
+}
+
+.floor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 28%;
+  background: linear-gradient(180deg, #e8c9a0 0%, #d4b07e 100%);
+  z-index: 1;
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(60, 40, 30, 0.08) 100%);
+  z-index: 1;
+}
+
+.table {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 10%;
+  height: 14%;
+  border-radius: 18px 18px 10px 10px;
+  background: linear-gradient(180deg, #dbb07e, #c09060);
+  box-shadow: 0 8px 0 #a07048;
+  z-index: 2;
+}
+
+.art {
+  position: absolute;
+  z-index: 5;
+  border: none;
+  background: transparent;
+}
+
+.art-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 6px 8px rgba(60, 40, 30, 0.12));
+  transition: transform 0.25s var(--ease);
+}
+
+.interact:active .art-svg,
+.interact.is-pop .art-svg {
+  transform: scale(1.08);
+}
+
+.ground-shadow {
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: 2%;
+  height: 10%;
+  border-radius: 50%;
+  background: rgba(80, 50, 30, 0.18);
+  z-index: -1;
+}
+
+.girl-wrap {
+  width: 36%;
+  aspect-ratio: 134 / 175;
+  bottom: 11%;
+  z-index: 5;
+}
+
+.girl-wrap .art-svg {
+  animation: girl-sway 3.8s ease-in-out infinite;
+  transform-origin: 50% 92%;
+}
+
+.girl-wrap.girl-left .art-svg {
+  transform: rotate(-2.5deg);
+  animation-name: girl-sway-left;
+}
+
+.girl-wrap.girl-right .art-svg {
+  transform: rotate(2.5deg);
+  animation-name: girl-sway-right;
+  animation-delay: 0.45s;
+}
+
+.girl-wrap.small {
+  width: 26%;
+  bottom: 20%;
+}
+
+.girl-left {
+  left: 4%;
+}
+
+.girl-right {
+  right: 4%;
+}
+
+.girl-center {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36%;
+  bottom: 14%;
+}
+
+.girl-center-right {
+  right: 8%;
+  width: 34%;
+  bottom: 12%;
+}
+
+.name-tag {
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  margin-top: -4px;
+  font-weight: 600;
+}
+
+.name-tag.pink {
+  color: #e06080;
+}
+
+.name-tag.mint {
+  color: #2e9a84;
+}
+
+.sun-wrap {
+  width: 18%;
+  top: 4%;
+  right: 6%;
+  animation: bob 4s ease-in-out infinite;
+}
+
+.bird-wrap {
+  width: 16%;
+  top: 12%;
+  left: 8%;
+  animation: bob 3.2s ease-in-out infinite 0.4s;
+}
+
+.bird-wrap.fly {
+  left: auto;
+  right: 12%;
+  top: 8%;
+}
+
+/* 拉手页：两人装进同一容器，站近；交握钉在腰间 */
+.twins-hold-scene {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  /* 抬高人物，手不要压在桌面上 */
+  bottom: 18%;
+  height: 55%;
+  z-index: 8;
+}
+
+/* 两人紧挨，袖口到腰侧的短臂刚好握住 */
+.page[data-page="5"] .twins-hold-scene .girl-wrap {
+  width: 60%;
+  bottom: 0;
+  top: auto;
+  height: 100%;
+  aspect-ratio: auto;
+}
+
+.page[data-page="5"] .twins-hold-scene .girl-left {
+  left: 0;
+  z-index: 10; /* 清清在上，避免宁宁手臂画到她胸口上 */
+}
+
+.page[data-page="5"] .twins-hold-scene .girl-right {
+  right: 0;
+  left: auto;
+  z-index: 9;
+}
+
+.page[data-page="5"] .twins-hold-scene .girl-wrap .art-svg {
+  width: 100%;
+  height: 100%;
+  animation: none;
+  transform: none;
+}
+
+.page[data-page="7"] .girl-wrap {
+  z-index: 8;
+}
+
+.page[data-page="5"] .table {
+  bottom: 2%;
+  height: 7%;
+}
+
+.page[data-page="5"] .plate-wrap {
+  bottom: 2%;
+  width: 16%;
+  z-index: 3;
+}
+
+.page[data-page="7"] .plate-wrap {
+  bottom: 10%;
+  width: 26%;
+  z-index: 4;
+}
+
+/* 吃饼干：掌+饼同一层，贴在举臂末端 */
+.held-in-hand {
+  position: absolute;
+  width: 26%;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.held-in-hand .cookie-bit {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 2px 3px rgba(80, 50, 20, 0.28));
+  position: relative;
+  z-index: 1;
+}
+
+/* 掌心盖住饼干下缘，像捏着吃 */
+.held-in-hand .mitt-cap {
+  position: absolute;
+  left: 22%;
+  bottom: 2%;
+  width: 56%;
+  aspect-ratio: 1 / 1.08;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 32%, #ffe6d8 0%, #f3c9b6 58%, #e0a888 100%);
+  box-shadow: inset 0 -2px 0 rgba(200, 140, 110, 0.28);
+  z-index: 2;
+}
+
+/* 饼干放在脸颊外侧，不被头发挡住 */
+.held-in-hand.hand-right {
+  top: 26%;
+  right: -10%;
+}
+
+.held-in-hand.hand-left {
+  top: 26%;
+  left: -10%;
+}
+
+.page[data-page="7"] .held-in-hand {
+  z-index: 12;
+}
+
+.plate-wrap {
+  width: 36%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 16%;
+  z-index: 7;
+}
+
+.plate-wrap.plate-center {
+  bottom: 17%;
+  width: 38%;
+}
+
+.plate-wrap.plate-mid {
+  left: 12%;
+  transform: none;
+  bottom: 16%;
+  width: 32%;
+}
+
+.plate-wrap.plate-far {
+  width: 26%;
+  bottom: 18%;
+  opacity: 0.92;
+}
+
+.plate-wrap.plate-split {
+  bottom: 17%;
+  width: 44%;
+}
+
+.plate-wrap.plate-empty {
+  width: 30%;
+  bottom: 16%;
+}
+
+.plate {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 40%, #fff 0%, #e8e0d4 70%, #c8b8a0 100%);
+  box-shadow: 0 6px 0 #b09878, inset 0 2px 8px rgba(255, 255, 255, 0.7);
+}
+
+.plate.big {
+  aspect-ratio: 2.1 / 1;
+}
+
+.mini-cookie {
+  position: absolute;
+  width: 32%;
+  filter: drop-shadow(0 2px 2px rgba(80, 50, 20, 0.2));
+  transition: transform 0.2s var(--ease);
+}
+
+.plate .c1 {
+  left: 18%;
+  top: 18%;
+}
+
+.plate .c2 {
+  left: 48%;
+  top: 12%;
+}
+
+.plate .c3 {
+  left: 32%;
+  top: 42%;
+}
+
+.plate .c4 {
+  left: 58%;
+  top: 40%;
+  width: 28%;
+}
+
+.plate.empty .bite1 {
+  left: 22%;
+  top: 28%;
+  width: 30%;
+}
+
+.plate.empty .bite2 {
+  left: 52%;
+  top: 34%;
+  width: 28%;
+}
+
+.plate.crumbs-only {
+  background:
+    radial-gradient(circle at 30% 45%, #e0a868 0 3px, transparent 4px),
+    radial-gradient(circle at 55% 55%, #d49858 0 2.5px, transparent 3.5px),
+    radial-gradient(circle at 70% 40%, #e8b878 0 2px, transparent 3px),
+    radial-gradient(ellipse at 50% 40%, #fff 0%, #e8e0d4 70%, #c8b8a0 100%);
+}
+
+.plate.split {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 8% 6%;
+}
+
+.plate.split .half {
+  position: relative;
+  width: 42%;
+  height: 70%;
+}
+
+.plate.split .mini-cookie {
+  position: absolute;
+  width: 70%;
+}
+
+.plate.split .half .mini-cookie:first-child {
+  left: 0;
+  top: 0;
+}
+
+.plate.split .half .mini-cookie:last-child {
+  right: 0;
+  bottom: 0;
+}
+
+.crumb-bits {
+  position: absolute;
+  left: 30%;
+  right: 30%;
+  bottom: 18%;
+  height: 12%;
+  z-index: 4;
+  background:
+    radial-gradient(circle at 20% 40%, #e0a868 0 4px, transparent 5px),
+    radial-gradient(circle at 55% 60%, #d49858 0 3px, transparent 4px),
+    radial-gradient(circle at 80% 30%, #e8b878 0 3.5px, transparent 4.5px);
+}
+
+.hearts-deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  background:
+    radial-gradient(circle at 22% 28%, #ffb0c4 0 5px, transparent 6px),
+    radial-gradient(circle at 78% 32%, #ffb0c4 0 4px, transparent 5px),
+    radial-gradient(circle at 50% 20%, #ffc8d4 0 6px, transparent 7px);
+  opacity: 0.85;
+  animation: bob 3.5s ease-in-out infinite;
+}
+
+.caption {
+  flex-shrink: 0;
+  padding: 14px 16px 16px;
+  background: var(--caption-bg);
+  border-top: 1px solid rgba(200, 160, 120, 0.25);
+  text-align: left;
+  z-index: 10;
+}
+
+.caption-center {
+  text-align: center;
+}
+
+.caption h1 {
+  margin: 0 0 6px;
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: 1.55rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+}
+
+.caption p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.end-mark {
+  margin-top: 8px !important;
+  opacity: 0.65;
+  font-size: 0.95rem !important;
+}
+
+.edu-tip {
+  margin-top: 6px !important;
+  font-size: 0.8rem !important;
+  color: #7a6a5a;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 4px 4px;
+  flex-shrink: 0;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 2px 8px rgba(80, 50, 30, 0.08);
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, opacity 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ff9eb4, #ff7a9a);
+  color: #fff;
+}
+
+.dots {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(120, 90, 70, 0.25);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.dot.is-on {
+  background: var(--pink);
+  transform: scale(1.25);
+}
+
+.hint {
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.55;
+  margin: 4px 0 8px;
+  flex-shrink: 0;
+}
+
+/* 点击反馈 */
+.fx-heart,
+.fx-crumb,
+.fx-spark,
+.fx-feather {
+  position: absolute;
+  pointer-events: none;
+  animation: float-up 0.9s ease-out forwards;
+}
+
+.fx-heart {
+  width: 18px;
+  height: 18px;
+  background: var(--pink);
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+
+.fx-heart::before,
+.fx-heart::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.fx-heart::before {
+  left: -9px;
+}
+
+.fx-heart::after {
+  top: -9px;
+}
+
+.fx-crumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e0a868;
+}
+
+.fx-spark {
+  width: 8px;
+  height: 8px;
+  background: #ffe08a;
+  border-radius: 1px;
+  transform: rotate(45deg);
+}
+
+.fx-feather {
+  width: 14px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8ec4e8;
+  opacity: 0.9;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes girl-sway {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(1.2deg);
+  }
+}
+
+@keyframes girl-sway-left {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2.5deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(-0.5deg);
+  }
+}
+
+@keyframes girl-sway-right {
+  0%,
+  100% {
+    transform: translateY(0) rotate(2.5deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(4deg);
+  }
+}
+
+.girl-wrap.is-pop .art-svg {
+  animation: none;
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-48px) scale(0.6);
+  }
+}
+
+@media (min-width: 520px) {
+  .app {
+    padding-top: 16px;
+  }
+
+  .caption p {
+    font-size: 1.12rem;
+  }
+}
